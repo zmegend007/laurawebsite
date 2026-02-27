@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -18,30 +27,49 @@
       "blocks": {
         "m1": {
           "type": "text",
-          "settings": { "text": "Personal Styling" }
+          "settings": {
+            "text": "Personal Styling"
+          }
         },
         "m2": {
           "type": "text",
-          "settings": { "text": "Designer Rental" }
+          "settings": {
+            "text": "Designer Rental"
+          }
         },
         "m3": {
           "type": "text",
-          "settings": { "text": "Editorial" }
+          "settings": {
+            "text": "Editorial"
+          }
         },
         "m4": {
           "type": "text",
-          "settings": { "text": "Events" }
+          "settings": {
+            "text": "Events"
+          }
         },
         "m5": {
           "type": "text",
-          "settings": { "text": "Red Carpet" }
+          "settings": {
+            "text": "Red Carpet"
+          }
         },
         "m6": {
           "type": "text",
-          "settings": { "text": "Berlin" }
+          "settings": {
+            "text": "Berlin"
+          }
         }
       },
-      "block_order": ["m1", "m2", "m3", "m4", "m5", "m6"],
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "speed": 25,
@@ -73,9 +101,9 @@
       ],
       "settings": {
         "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
-        "content_alignment": "center",
         "padding_top": 100,
         "padding_bottom": 52
       }
@@ -127,20 +155,27 @@
     "featured_rental": {
       "type": "featured-collection",
       "settings": {
-        "title": "Available to Rent",
-        "heading_size": "h2",
         "collection": "for-rent",
         "products_to_show": 8,
+        "title": "Available to Rent",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
-        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
         "image_ratio": "portrait",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 52,
         "padding_bottom": 80
       }
@@ -166,7 +201,8 @@
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": "shopify://pages/about"
+            "button_link": "shopify://pages/about",
+            "button_style_secondary": false
           }
         }
       },
@@ -175,17 +211,18 @@
         "text",
         "button"
       ],
+      "disabled": true,
       "settings": {
-        "image_width": "medium",
-        "layout": "image_first",
+        "height": "adapt",
         "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-2",
         "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -256,6 +293,7 @@
         "paragraph",
         "email"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-4",
         "full_width": true,
