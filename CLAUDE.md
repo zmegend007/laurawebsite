@@ -100,30 +100,116 @@ AGENCY BACKEND (n8n)
 - **HURR-inspired rental PDP** but more personal, more Berlin
 
 ### Typography & Colour
-- Headings: editorial sans-serif (Neue Haas Grotesk / Helvetica Now / Google Font alt)
-- Body: clean, high-legibility sans-serif
-- Palette: `#000000`, `#FFFFFF`, `#F5F5F5`, one muted warm accent (TBD)
+- Headings: **Cormorant** (serif, weight 200–400) — editorial, refined
+- Body: **Work Sans** (sans-serif, weight 300–500) — clean, high-legibility
+- Palette: `#000000`, `#FFFFFF`, `#F5F5F5`, `#1A1A1A`, `#C4A882` (warm accent)
 - Photography: full-bleed, no rounded corners, no drop shadows
+- Grain texture overlay on hero + light sections for cinematic depth
 
 ### Navigation
 - Minimal top nav: logo left, hamburger right (mobile)
-- Max 5 links: Portfolio, Rent, Shop, About, Contact
+- Links: Styling | Rent | About | Contact
 
 ---
 
 ## Product Data Schema
 
-| Field | Shopify Mapping | Notes |
-|-------|-----------------|-------|
-| Title | `title` | German, with designer name |
-| Description | `body_html` | Styling note + fabric/care |
-| Images | `images` | Min 3 per garment |
-| Sale Price | `variants[].price` | For outright purchase |
-| Rental Pricing | FlexConversion config | Duration-based tiers |
-| Size | `variants[].option1` | DE/EU sizing |
-| Colour | `variants[].option2` | If applicable |
-| Tags | `tags` | `for-rent`, `for-sale`, `category:*`, `designer:*` |
-| Retail Value | Custom metafield | For "Save €Y" display |
+### Field Priority
+
+**Tier 1 — ESSENTIAL (every product):**
+
+| Field | Shopify Path | Format |
+|-------|-------------|--------|
+| Title | `title` | `Designer — Garment Type in Material` (e.g. "Roberto Collina — Wool V-Neck Sweater") |
+| Description | `body_html` | Editorial HTML — opening hook, material details, styling suggestions, sizing note |
+| Images | `images[]` | Min 3 per garment, with descriptive `alt` text |
+| Price | `variants[0].price` | Rental price (base for FlexConversion) |
+| Compare At Price | `variants[0].compare_at_price` | Retail value — powers strikethrough + savings display |
+| Vendor | `vendor` | Designer name exactly as known (e.g. "Roberto Collina", "Balenciaga") |
+| Product Type | `product_type` | Category: Sweater, Dress, Bag, Jacket, Trousers, Accessories |
+| Tags | `tags` | Comma-separated: `for-rent`, `for-sale`, `designer:Name`, `category:Type`, `season:SS25`, `color:Black`, `material:Wool` |
+| Size | `variants[0].option1` | DE/EU sizing (S, M, L, 36, 38, etc.) |
+| Status | `status` | `active` when ready |
+
+**Tier 2 — HIGH VALUE (when info available):**
+
+| Field | Shopify Path | Notes |
+|-------|-------------|-------|
+| Retail Value metafield | `custom.retail_value` (money) | Same as compare_at_price, stored as metafield for template display |
+| Fabric | `shopify.fabric` | Metaobject reference — Wool, Silk, Cotton, etc. |
+| Color Pattern | `shopify.color-pattern` | Metaobject reference — for filtering |
+| Image Alt Text | `images[].alt` | SEO + accessibility (e.g. "Roberto Collina cream wool V-neck sweater front view") |
+| SKU | `variants[0].sku` | Format: `DESIGNER-TYPE-SIZE` (e.g. `RC-SWEATER-S`) |
+
+**Tier 3 — AUTO/OPTIONAL:** neckline, target-gender, age-group, top-length-type, weight, barcode
+
+**Tier 4 — APP-MANAGED (never set manually):** `flex_conversion.config`, `inventory_quantity`
+
+### Product Description Template
+
+Every product description follows this structure in `body_html`. Keep it **short — mobile-first**. Most customers scroll on their phone.
+
+```html
+<p><strong>3-word hook.</strong> 1-2 sentences max — garment appeal + designer nod + condition.</p>
+
+<h4>The Designer</h4>
+<p>2-3 sentences about the designer/house. Heritage, craftsmanship, where they're stocked. This is what customers google — give it to them here.</p>
+
+<h4>Details</h4>
+<ul>
+  <li>Material & composition (e.g. "68% Baby Alpaca blend — finer than cashmere")</li>
+  <li>Measurements — combine on one line with · separator</li>
+  <li>Size + fit note on one line</li>
+  <li>Condition</li>
+  <li>Retail value</li>
+</ul>
+```
+
+**Rules:**
+- **NO styling tips.** That's Laura's domain — she advises clients in person. Never include "pair with" or "wear it to" suggestions.
+- Tone: editorial luxury magazine. Confident, never salesy.
+- Max 3 sections: Hook → Designer → Details. Nothing else.
+- Keep bullet points tight — use · separators to combine related info on one line.
+
+---
+
+## Product Pipeline Workflow
+
+When the user says "we got new products" or similar, execute this pipeline for each product:
+
+### Step 1: Discover
+- Get a fresh API token via client credentials grant
+- `GET /admin/api/2024-10/products.json` — find new/updated products
+- Identify products that need enrichment (missing description, sparse tags, no alt text)
+
+### Step 2: Research
+- Use **WebSearch** to research the designer and specific garment
+- Look for: brand story, material details, retail price, collection info, "as seen in" references
+- Cross-reference with any info the user provided (emails, notes, images)
+
+### Step 3: Write
+- Generate editorial product description using the template above
+- Craft title in format: `Designer — Garment Type in Material`
+- Build complete tag set: `for-rent`, `designer:X`, `category:X`, `season:X`, `color:X`, `material:X`
+- Write descriptive alt text for each image
+
+### Step 4: Push
+- `PUT /admin/api/2024-10/products/{id}.json` with:
+  - `title`, `body_html`, `vendor`, `product_type`, `tags`
+  - `variants[0].compare_at_price` (retail value)
+  - `images[].alt` (descriptive alt text)
+- Set metafields via `POST /admin/api/2024-10/products/{id}/metafields.json`:
+  - `custom.retail_value` (money type)
+
+### Step 5: Verify
+- `GET /admin/api/2024-10/products/{id}.json` — confirm all fields saved
+- Report back to user with summary of what was updated
+
+### API Credentials
+- Stored in Claude's local memory (never committed to git)
+- See `~/.claude/projects/-Users-Pumpkinshoe2-Desktop-laura-website/memory/shopify-credentials.md`
+- **Token flow:** `POST /admin/oauth/access_token` with `grant_type=client_credentials`
+- **Scopes:** write_products, write_files, write_inventory, write_metaobject_definitions, write_content
 
 ---
 
