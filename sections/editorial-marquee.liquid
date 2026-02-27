@@ -1,0 +1,153 @@
+{%- style -%}
+  .editorial-marquee {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+    background-color: rgb(var(--color-background));
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  }
+
+  .editorial-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll {{ section.settings.speed }}s linear infinite;
+  }
+
+  .editorial-marquee:hover .editorial-marquee__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .editorial-marquee__item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 3rem;
+    white-space: nowrap;
+  }
+
+  .editorial-marquee__text {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(var(--color-foreground));
+  }
+
+  .editorial-marquee__separator {
+    width: 6px;
+    height: 6px;
+    background: rgb(var(--color-foreground));
+    opacity: 0.2;
+    flex-shrink: 0;
+  }
+
+  /* Reverse direction variant */
+  .editorial-marquee--reverse .editorial-marquee__track {
+    animation-direction: reverse;
+  }
+{%- endstyle -%}
+
+<section class="editorial-marquee color-{{ section.settings.color_scheme }}{% if section.settings.reverse %} editorial-marquee--reverse{% endif %}">
+  <div class="editorial-marquee__track" aria-hidden="true">
+    {%- for i in (1..2) -%}
+      {%- for block in section.blocks -%}
+        <div class="editorial-marquee__item" {{ block.shopify_attributes }}>
+          <span class="editorial-marquee__text">{{ block.settings.text }}</span>
+          <span class="editorial-marquee__separator"></span>
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial Marquee",
+  "tag": "section",
+  "class": "section-editorial-marquee",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" },
+        { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }
+      ],
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll speed (seconds)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 25,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse direction",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "default": 20,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Editorial Styling"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial Marquee",
+      "blocks": [
+        { "type": "text", "settings": { "text": "Personal Styling" } },
+        { "type": "text", "settings": { "text": "Designer Rental" } },
+        { "type": "text", "settings": { "text": "Editorial" } },
+        { "type": "text", "settings": { "text": "Events" } },
+        { "type": "text", "settings": { "text": "Red Carpet" } },
+        { "type": "text", "settings": { "text": "Berlin" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

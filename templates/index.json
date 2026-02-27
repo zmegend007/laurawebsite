@@ -13,6 +13,43 @@
         "button_link_2": "shopify://pages/contact"
       }
     },
+    "marquee": {
+      "type": "editorial-marquee",
+      "blocks": {
+        "m1": {
+          "type": "text",
+          "settings": { "text": "Personal Styling" }
+        },
+        "m2": {
+          "type": "text",
+          "settings": { "text": "Designer Rental" }
+        },
+        "m3": {
+          "type": "text",
+          "settings": { "text": "Editorial" }
+        },
+        "m4": {
+          "type": "text",
+          "settings": { "text": "Events" }
+        },
+        "m5": {
+          "type": "text",
+          "settings": { "text": "Red Carpet" }
+        },
+        "m6": {
+          "type": "text",
+          "settings": { "text": "Berlin" }
+        }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5", "m6"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": 25,
+        "reverse": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "intro": {
       "type": "rich-text",
       "blocks": {
@@ -39,8 +76,8 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "content_alignment": "center",
-        "padding_top": 80,
-        "padding_bottom": 40
+        "padding_top": 100,
+        "padding_bottom": 52
       }
     },
     "services": {
@@ -104,7 +141,7 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 40,
+        "padding_top": 52,
         "padding_bottom": 80
       }
     },
@@ -149,8 +186,8 @@
         "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "testimonials": {
@@ -189,8 +226,8 @@
       "settings": {
         "label": "Kind Words",
         "color_scheme": "scheme-2",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "newsletter": {
@@ -222,13 +259,14 @@
       "settings": {
         "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
     "hero",
+    "marquee",
     "intro",
     "services",
     "featured_rental",

@@ -60,36 +60,36 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "content_alignment": "center",
-        "padding_top": 80,
+        "padding_top": 100,
         "padding_bottom": 52
       }
     },
     "services": {
-      "type": "multicolumn",
+      "type": "editorial-services",
       "blocks": {
         "wardrobe": {
-          "type": "column",
+          "type": "service",
           "settings": {
             "title": "Wardrobe Edit",
-            "text": "<p>A deep dive into your existing wardrobe. We identify what works, what doesn't, and create a capsule that reflects who you are today. Includes a personalised shopping list for key missing pieces.</p>",
+            "text": "A deep dive into your existing wardrobe. We identify what works, what doesn't, and create a capsule that reflects who you are today.",
             "link_label": "",
             "link": ""
           }
         },
         "shopping": {
-          "type": "column",
+          "type": "service",
           "settings": {
             "title": "Shopping Accompaniment",
-            "text": "<p>A curated shopping experience in Berlin's best boutiques and department stores. I pre-select pieces based on your brief, so every fitting room moment counts.</p>",
+            "text": "A curated shopping experience in Berlin's best boutiques and department stores. Every fitting room moment counts.",
             "link_label": "",
             "link": ""
           }
         },
         "transformation": {
-          "type": "column",
+          "type": "service",
           "settings": {
             "title": "Full Transformation",
-            "text": "<p>The complete package: wardrobe audit, personal colour and body analysis, curated shopping, and ongoing style guidance. For those ready for a real shift in how they present themselves.</p>",
+            "text": "The complete package: wardrobe audit, personal colour and body analysis, curated shopping, and ongoing style guidance.",
             "link_label": "",
             "link": ""
           }
@@ -101,20 +101,11 @@
         "transformation"
       ],
       "settings": {
-        "title": "Services",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
+        "label": "Packages",
+        "heading": "Choose Your Path",
         "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "process": {
@@ -154,8 +145,8 @@
         "section_color_scheme": "scheme-1",
         "row_color_scheme": "scheme-1",
         "mobile_content_alignment": "left",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "cta": {
@@ -178,7 +169,7 @@
           "type": "button",
           "settings": {
             "button_label": "Book a Consultation",
-            "button_link": "",
+            "button_link": "shopify://pages/contact",
             "button_style_secondary": false
           }
         }
@@ -193,8 +184,8 @@
         "color_scheme": "scheme-3",
         "full_width": true,
         "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },

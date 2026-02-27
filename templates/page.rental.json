@@ -135,8 +135,8 @@
         "color_scheme": "scheme-2",
         "full_width": true,
         "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "featured": {
@@ -221,8 +221,8 @@
         "container_color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "cta": {
@@ -245,7 +245,7 @@
           "type": "button",
           "settings": {
             "button_label": "Get in Touch",
-            "button_link": "",
+            "button_link": "shopify://pages/contact",
             "button_style_secondary": false
           }
         }
@@ -260,8 +260,8 @@
         "color_scheme": "scheme-3",
         "full_width": true,
         "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
