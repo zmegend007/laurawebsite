@@ -424,6 +424,12 @@ button[type="submit"] {
   padding: 0.5rem 1.4rem;
 }
 
+/* Hide "Sale" badge — items are for rent, not on sale.
+   compare_at_price is used to show retail value, not a discount. */
+.price__badge-sale {
+  display: none !important;
+}
+
 
 /* ─────────────────────────────────────────────────────
    § FEATURED COLLECTION
