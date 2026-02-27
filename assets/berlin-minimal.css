@@ -395,8 +395,28 @@ button[type="submit"] {
   overflow: hidden;
 }
 
-.card__media img {
+.card__media img,
+.card__media .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Force media containers to fill their card */
+.card__media .media,
+.card__media .media--transparent {
+  width: 100%;
+  height: 100%;
+}
+
+.card__media .media img,
+.card__media .media--transparent img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  max-width: none;
 }
 
 .card-wrapper:hover .card__media img,
