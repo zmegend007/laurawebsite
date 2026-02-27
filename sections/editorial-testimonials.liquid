@@ -8,19 +8,20 @@
   }
 
   .editorial-testimonials__label {
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    opacity: 0.5;
-    margin-bottom: 4rem;
+    opacity: 0.35;
+    margin-bottom: 5rem;
     font-weight: 500;
   }
 
   .editorial-testimonials__slider {
     position: relative;
-    max-width: 72rem;
+    max-width: 68rem;
     margin: 0 auto;
     padding: 0 2rem;
+    min-height: 20rem;
   }
 
   .editorial-testimonials__slide {
@@ -29,82 +30,88 @@
 
   .editorial-testimonials__slide.is-active {
     display: block;
-    animation: testimonialFade 0.6s ease forwards;
+    animation: testimonialFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @keyframes testimonialFade {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .editorial-testimonials__quote {
     font-family: var(--font-heading-family);
-    font-size: clamp(2rem, 3.2vw, 3.2rem);
-    line-height: 1.4;
+    font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+    line-height: 1.35;
     font-weight: 300;
     font-style: italic;
-    margin: 0 0 3rem;
+    margin: 0 0 3.6rem;
     letter-spacing: 0.02em;
+    max-width: 58rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .editorial-testimonials__quote::before {
     content: '\201C';
     display: block;
-    font-size: 5rem;
-    line-height: 1;
-    opacity: 0.15;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading-family);
+    font-size: 6rem;
+    line-height: 0.6;
+    opacity: 0.1;
+    margin-bottom: 2rem;
     font-style: normal;
+    font-weight: 200;
   }
 
   .editorial-testimonials__author {
-    font-size: 1.2rem;
-    letter-spacing: 0.12em;
+    font-size: 1rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 500;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   .editorial-testimonials__context {
-    font-size: 1.1rem;
-    letter-spacing: 0.06em;
-    opacity: 0.35;
-    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    opacity: 0.25;
+    margin-top: 0.5rem;
   }
 
   .editorial-testimonials__dots {
     display: flex;
     justify-content: center;
-    gap: 1.2rem;
-    margin-top: 4rem;
+    gap: 1.4rem;
+    margin-top: 5rem;
   }
 
   .editorial-testimonials__dot {
-    width: 8px;
-    height: 8px;
-    border: 1px solid rgba(var(--color-foreground), 0.3);
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
     background: transparent;
     cursor: pointer;
     padding: 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
   }
 
   .editorial-testimonials__dot.is-active {
     background: rgb(var(--color-foreground));
     border-color: rgb(var(--color-foreground));
+    transform: scale(1.3);
   }
 
   .editorial-testimonials__dot:hover {
-    border-color: rgb(var(--color-foreground));
+    border-color: rgba(var(--color-foreground), 0.5);
   }
 {%- endstyle -%}
 
 <section class="editorial-testimonials color-{{ section.settings.color_scheme }}">
   {% if section.settings.label != blank %}
-    <p class="editorial-testimonials__label">{{ section.settings.label }}</p>
+    <p class="editorial-testimonials__label bm-reveal">{{ section.settings.label }}</p>
   {% endif %}
 
-  <div class="editorial-testimonials__slider" data-testimonial-slider>
+  <div class="editorial-testimonials__slider bm-reveal" data-testimonial-slider>
     {% for block in section.blocks %}
       <div
         class="editorial-testimonials__slide{% if forloop.first %} is-active{% endif %}"

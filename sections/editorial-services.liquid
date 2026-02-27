@@ -8,26 +8,27 @@
   .editorial-services__header {
     text-align: center;
     max-width: 64rem;
-    margin: 0 auto 6rem;
+    margin: 0 auto 7rem;
     padding: 0 2rem;
   }
 
   .editorial-services__label {
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    opacity: 0.5;
-    margin-bottom: 1.6rem;
+    opacity: 0.35;
+    margin-bottom: 1.8rem;
     font-weight: 500;
   }
 
   .editorial-services__title {
     font-family: var(--font-heading-family);
-    font-size: clamp(2.8rem, 4vw, 4.8rem);
-    letter-spacing: 0.06em;
-    font-weight: 300;
+    font-size: clamp(3rem, 5vw, 5.6rem);
+    letter-spacing: 0.1em;
+    font-weight: 200;
     margin: 0;
-    line-height: 1.1;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .editorial-services__grid {
@@ -36,6 +37,7 @@
     max-width: var(--page-width);
     margin: 0 auto;
     padding: 0 2rem;
+    counter-reset: service-counter;
   }
 
   @media screen and (min-width: 750px) {
@@ -47,78 +49,88 @@
   .editorial-services__item {
     padding: 4rem 3rem;
     position: relative;
+    counter-increment: service-counter;
+    transition: background-color 0.4s ease;
+  }
+
+  .editorial-services__item:hover {
+    background-color: rgba(var(--color-foreground), 0.015);
   }
 
   @media screen and (min-width: 750px) {
     .editorial-services__item {
-      padding: 4rem;
+      padding: 4.5rem;
     }
 
     .editorial-services__item:not(:last-child) {
-      border-right: 1px solid rgba(var(--color-foreground), 0.08);
+      border-right: 1px solid rgba(var(--color-foreground), 0.05);
     }
   }
 
   @media screen and (max-width: 749px) {
     .editorial-services__item:not(:last-child) {
-      border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.05);
     }
   }
 
   .editorial-services__number {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    opacity: 0.35;
-    margin-bottom: 2rem;
+    opacity: 0.25;
+    margin-bottom: 2.4rem;
     font-weight: 500;
   }
 
   .editorial-services__item-title {
     font-family: var(--font-heading-family);
-    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
-    letter-spacing: 0.05em;
-    font-weight: 400;
-    margin: 0 0 1.6rem;
-    line-height: 1.2;
+    font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    margin: 0 0 1.8rem;
+    line-height: 1.15;
   }
 
   .editorial-services__item-text {
-    font-size: 1.4rem;
-    line-height: 1.75;
-    opacity: 0.6;
-    margin: 0 0 2rem;
+    font-size: 1.35rem;
+    line-height: 1.8;
+    opacity: 0.45;
+    margin: 0 0 2.4rem;
   }
 
   .editorial-services__link {
-    font-size: 1.1rem;
-    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     text-decoration: none;
     color: rgb(var(--color-foreground));
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    transition: opacity 0.3s ease;
+    gap: 0.8rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.15);
   }
 
   .editorial-services__link:hover {
-    opacity: 0.6;
+    opacity: 1;
+    border-bottom-color: rgb(var(--color-foreground));
   }
 
   .editorial-services__link-arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.4rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-size: 1.3rem;
+    display: inline-block;
   }
 
   .editorial-services__link:hover .editorial-services__link-arrow {
-    transform: translateX(4px);
+    transform: translateX(6px);
   }
 {%- endstyle -%}
 
 <section class="editorial-services color-{{ section.settings.color_scheme }}">
-  <div class="editorial-services__header">
+  <div class="editorial-services__header bm-reveal">
     {% if section.settings.label != blank %}
       <p class="editorial-services__label">{{ section.settings.label }}</p>
     {% endif %}
@@ -127,9 +139,9 @@
     {% endif %}
   </div>
 
-  <div class="editorial-services__grid">
+  <div class="editorial-services__grid bm-stagger">
     {% for block in section.blocks %}
-      <div class="editorial-services__item" {{ block.shopify_attributes }}>
+      <div class="editorial-services__item bm-reveal" {{ block.shopify_attributes }}>
         <p class="editorial-services__number">0{{ forloop.index }}</p>
         {% if block.settings.title != blank %}
           <h3 class="editorial-services__item-title">{{ block.settings.title }}</h3>

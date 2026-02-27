@@ -2,8 +2,8 @@
   .video-hero {
     position: relative;
     width: 100%;
-    height: 90vh;
-    min-height: 500px;
+    height: 100vh;
+    min-height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -32,8 +32,26 @@
   .video-hero__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 | times: 0.6 }}),
+      rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }}),
+      rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 | times: 0.8 }})
+    );
     z-index: 2;
+  }
+
+  /* Grain on hero for cinematic texture */
+  .video-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
   }
 
   .video-hero__content {
@@ -42,29 +60,32 @@
     text-align: center;
     color: #fff;
     padding: 2rem;
-    max-width: 80rem;
+    max-width: 90rem;
   }
 
   .video-hero__heading {
     font-family: var(--font-heading-family);
-    font-size: clamp(2.4rem, 6vw, 6rem);
-    font-weight: 300;
-    letter-spacing: 0.14em;
+    font-size: clamp(3.2rem, 9vw, 9.5rem);
+    font-weight: 200;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin: 0 0 1.2rem;
-    line-height: 1.1;
+    margin: 0;
+    line-height: 0.9;
     color: #fff;
+    animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
   }
 
   .video-hero__subheading {
     font-family: var(--font-body-family);
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    letter-spacing: 0.2em;
+    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+    letter-spacing: 0.35em;
     text-transform: uppercase;
-    margin: 0 0 3rem;
-    opacity: 0.9;
+    margin: 2rem 0 0;
+    opacity: 0;
     font-weight: 300;
     color: #fff;
+    animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
   }
 
   .video-hero__buttons {
@@ -72,29 +93,46 @@
     gap: 1.6rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 3.6rem;
+    opacity: 0;
+    animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .video-hero__btn {
     display: inline-block;
-    padding: 1.4rem 3.2rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.16em;
+    padding: 1.6rem 3.8rem;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     text-decoration: none;
-    border: 1px solid #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     font-family: var(--font-body-family);
+    font-weight: 500;
   }
 
   .video-hero__btn--primary {
     background-color: #fff;
     color: #000;
+    border-color: #fff;
   }
 
   .video-hero__btn--primary:hover {
     background-color: transparent;
     color: #fff;
+    transform: translateY(-2px);
   }
 
   .video-hero__btn--secondary {
@@ -103,15 +141,21 @@
   }
 
   .video-hero__btn--secondary:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
   }
 
   /* Mobile: show poster, hide video for performance */
   @media screen and (max-width: 749px) {
-    .video-hero { height: 80vh; }
+    .video-hero { height: 100vh; }
     .video-hero__video-desktop { display: none; }
     .video-hero__poster { display: block; }
+    .video-hero__heading {
+      letter-spacing: 0.12em;
+    }
+    .video-hero__btn {
+      padding: 1.4rem 2.8rem;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -193,6 +237,12 @@
         </a>
       {% endif %}
     </div>
+  </div>
+
+  {%- comment -%} Scroll indicator {%- endcomment -%}
+  <div class="video-hero__scroll-indicator" data-scroll-indicator>
+    <span class="video-hero__scroll-label">Scroll</span>
+    <span class="video-hero__scroll-line"></span>
   </div>
 </section>
 

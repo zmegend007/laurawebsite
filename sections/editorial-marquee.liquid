@@ -3,14 +3,15 @@
     padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
     overflow: hidden;
     background-color: rgb(var(--color-background));
-    border-top: 1px solid rgba(var(--color-foreground), 0.08);
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    border-top: 1px solid rgba(var(--color-foreground), 0.04);
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.04);
   }
 
   .editorial-marquee__track {
     display: flex;
     width: max-content;
     animation: marqueeScroll {{ section.settings.speed }}s linear infinite;
+    will-change: transform;
   }
 
   .editorial-marquee:hover .editorial-marquee__track {
@@ -25,29 +26,34 @@
   .editorial-marquee__item {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    padding: 0 3rem;
+    gap: 4rem;
+    padding: 0 4rem;
     white-space: nowrap;
   }
 
   .editorial-marquee__text {
     font-family: var(--font-heading-family);
-    font-size: clamp(1.4rem, 2vw, 2rem);
-    letter-spacing: 0.18em;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 300;
     color: rgb(var(--color-foreground));
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  .editorial-marquee:hover .editorial-marquee__text {
+    opacity: 0.6;
   }
 
   .editorial-marquee__separator {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     background: rgb(var(--color-foreground));
-    opacity: 0.2;
+    opacity: 0.12;
     flex-shrink: 0;
   }
 
-  /* Reverse direction variant */
   .editorial-marquee--reverse .editorial-marquee__track {
     animation-direction: reverse;
   }
@@ -55,7 +61,7 @@
 
 <section class="editorial-marquee color-{{ section.settings.color_scheme }}{% if section.settings.reverse %} editorial-marquee--reverse{% endif %}">
   <div class="editorial-marquee__track" aria-hidden="true">
-    {%- for i in (1..2) -%}
+    {%- for i in (1..3) -%}
       {%- for block in section.blocks -%}
         <div class="editorial-marquee__item" {{ block.shopify_attributes }}>
           <span class="editorial-marquee__text">{{ block.settings.text }}</span>
@@ -92,7 +98,7 @@
       "min": 10,
       "max": 60,
       "step": 5,
-      "default": 25,
+      "default": 30,
       "unit": "s"
     },
     {
@@ -108,7 +114,7 @@
       "min": 0,
       "max": 60,
       "step": 4,
-      "default": 20,
+      "default": 24,
       "unit": "px"
     },
     {
@@ -118,7 +124,7 @@
       "min": 0,
       "max": 60,
       "step": 4,
-      "default": 20,
+      "default": 24,
       "unit": "px"
     }
   ],
