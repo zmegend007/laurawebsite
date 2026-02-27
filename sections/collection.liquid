@@ -1,47 +1,95 @@
-{% comment %}
-  This section is used in the collection template to render collection page
-  listing all products within a collection.
+<section class="collection section-padding">
+  <div class="collection__header">
+    <h1 class="collection__title">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <p class="collection__description text-muted">{{ collection.description }}</p>
+    {% endif %}
+    <p class="collection__count text-muted">{{ collection.products_count }} {% if collection.products_count == 1 %}Stück{% else %}Stücke{% endif %}</p>
+  </div>
 
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
-{% endcomment %}
+  {% if collection.products_count > 0 %}
+    <div class="collection__grid">
+      {% paginate collection.products by 24 %}
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      {% endpaginate %}
+    </div>
 
-<h1>{{ collection.title }}</h1>
-
-<div class="collection-products">
-  {% paginate collection.products by 20 %}
-    {% for product in collection.products %}
-      <div class="collection-product">
-        {% if product.featured_image %}
-          {% render 'image',
-            class: 'collection-product__image',
-            image: product.featured_image,
-            url: product.url,
-            width: 400,
-            height: 400,
-            crop: 'center'
-          %}
-        {% endif %}
-        <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
-          <p>{{ product.price | money }}</p>
-        </div>
-      </div>
-    {% endfor %}
-
-    {{ paginate | default_pagination }}
-  {% endpaginate %}
-</div>
+    {% paginate collection.products by 24 %}
+      {% if paginate.pages > 1 %}
+        <nav class="collection__pagination" aria-label="Seitennavigation">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="btn btn--outline">&larr; Zurück</a>
+          {% endif %}
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="btn btn--outline">Weiter &rarr;</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    {% endpaginate %}
+  {% else %}
+    <p class="collection__empty text-muted text-center">Diese Kollektion enthält noch keine Produkte.</p>
+  {% endif %}
+</section>
 
 {% stylesheet %}
-  .collection-products {
+  .collection__header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .collection__title {
+    font-size: var(--text-3xl);
+  }
+
+  .collection__description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    max-width: 60ch;
+    margin: var(--space-sm) auto 0;
+  }
+
+  .collection__count {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: var(--space-sm);
+  }
+
+  .collection__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .collection__pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+  }
+
+  .collection__empty {
+    padding: var(--space-xl) 0;
+  }
+
+  @media (max-width: 999px) {
+    .collection__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 749px) {
+    .collection__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:general.collection",
+  "name": "Kollektion",
   "settings": []
 }
 {% endschema %}

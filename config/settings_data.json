@@ -1,12 +1,16 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
-  "current": {}
+  "current": {
+    "type_heading_font": "helvetica_n3",
+    "type_body_font": "helvetica_n3",
+    "color_background": "#FFFFFF",
+    "color_background_alt": "#F5F5F5",
+    "color_foreground": "#000000",
+    "color_foreground_muted": "#717171",
+    "color_accent": "#A68A6E",
+    "color_border": "#E5E5E5",
+    "max_page_width": "90rem",
+    "min_page_margin": 24,
+    "whatsapp_number": "4915773142682",
+    "social_youtube": "https://www.youtube.com/@LauraMonaMesserschmitt"
+  }
 }

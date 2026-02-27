@@ -1,0 +1,145 @@
+<section class="testimonials section-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="testimonials__heading text-upper text-spacing">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="testimonials__list">
+    {% for block in section.blocks %}
+      <blockquote class="testimonials__item" {{ block.shopify_attributes }}>
+        <p class="testimonials__quote">{{ block.settings.quote }}</p>
+        <footer class="testimonials__author">
+          <cite class="testimonials__name">{{ block.settings.name }}</cite>
+          {% if block.settings.role != blank %}
+            <span class="testimonials__role text-muted">{{ block.settings.role }}</span>
+          {% endif %}
+        </footer>
+      </blockquote>
+    {% endfor %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .testimonials__heading {
+    font-size: var(--text-xs);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonials__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .testimonials__item {
+    padding: 0;
+    border: none;
+    margin: 0;
+  }
+
+  .testimonials__quote {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-fg);
+  }
+
+  .testimonials__quote::before {
+    content: "\201E";
+    display: block;
+    font-size: var(--text-3xl);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .testimonials__author {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--space-md);
+  }
+
+  .testimonials__name {
+    font-style: normal;
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .testimonials__role {
+    font-size: var(--text-xs);
+    margin-top: 0.25rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Kundenstimmen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Kundenstimmen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Zitat"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Rolle / Beruf"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kundenstimmen",
+      "category": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Laura hat ein unglaubliches Auge für Details und hat mir geholfen, den perfekten Look für meinen Auftritt zu finden.",
+            "name": "Bianca Waechter",
+            "role": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Professionell, kreativ und immer mit einem Gespür für den individuellen Stil — absolute Empfehlung.",
+            "name": "Julia Rosa Peer",
+            "role": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Die Zusammenarbeit mit Laura war inspirierend. Sie versteht es, Mode als Ausdruck der Persönlichkeit einzusetzen.",
+            "name": "Hanna Hilsdorf",
+            "role": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

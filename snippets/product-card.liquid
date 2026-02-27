@@ -1,0 +1,120 @@
+{% doc %}
+  Product card for collection grids.
+  Displays image, title, price. Hover reveals second image.
+
+  @param {product} product - The product to render
+  @param {string} [class] - Optional additional CSS class
+{% enddoc %}
+
+<a href="{{ product.url }}" class="product-card {{ class }}">
+  <div class="product-card__image-wrap">
+    {% if product.featured_image %}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        srcset="{{ product.featured_image | image_url: width: 300 }} 300w, {{ product.featured_image | image_url: width: 600 }} 600w, {{ product.featured_image | image_url: width: 900 }} 900w"
+        sizes="(max-width: 749px) 50vw, 25vw"
+        alt="{{ product.title }}"
+        loading="lazy"
+        class="product-card__image product-card__image--primary"
+      >
+      {% if product.images.size > 1 %}
+        <img
+          src="{{ product.images[1] | image_url: width: 600 }}"
+          alt="{{ product.title }}"
+          loading="lazy"
+          class="product-card__image product-card__image--hover"
+        >
+      {% endif %}
+    {% else %}
+      <div class="product-card__placeholder">
+        <span>{{ product.title | truncate: 20 }}</span>
+      </div>
+    {% endif %}
+
+    {% if product.tags contains 'for-rent' %}
+      <span class="product-card__badge">Mieten</span>
+    {% endif %}
+  </div>
+
+  <div class="product-card__info">
+    <h3 class="product-card__title">{{ product.title }}</h3>
+    <p class="product-card__price text-muted">{{ product.price | money }}</p>
+  </div>
+</a>
+
+{% stylesheet %}
+  .product-card {
+    display: block;
+  }
+
+  .product-card__image-wrap {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--color-bg-alt);
+  }
+
+  .product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-base);
+  }
+
+  .product-card__image--hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .product-card:hover .product-card__image--primary {
+    opacity: 0;
+  }
+
+  .product-card:hover .product-card__image--hover {
+    opacity: 1;
+  }
+
+  .product-card__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-alt);
+    color: var(--color-fg-muted);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .product-card__badge {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    padding: 0.25rem 0.75rem;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+  }
+
+  .product-card__info {
+    padding: var(--space-sm) 0;
+  }
+
+  .product-card__title {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .product-card__price {
+    font-size: var(--text-sm);
+    margin-top: 0.25rem;
+  }
+{% endstylesheet %}

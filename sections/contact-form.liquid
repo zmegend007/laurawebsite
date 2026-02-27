@@ -1,0 +1,175 @@
+<section class="contact section-padding">
+  <div class="contact__inner">
+    <div class="contact__text">
+      {% if section.settings.heading != blank %}
+        <h1 class="contact__heading">{{ section.settings.heading }}</h1>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="contact__description text-muted">{{ section.settings.description }}</p>
+      {% endif %}
+
+      <div class="contact__channels">
+        {% if settings.whatsapp_number != blank %}
+          <a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener" class="contact__channel">
+            <span class="contact__channel-label">WhatsApp</span>
+            <span class="contact__channel-value text-muted">+49 157 7314 2682</span>
+          </a>
+        {% endif %}
+        {% if settings.contact_email != blank %}
+          <a href="mailto:{{ settings.contact_email }}" class="contact__channel">
+            <span class="contact__channel-label">E-Mail</span>
+            <span class="contact__channel-value text-muted">{{ settings.contact_email }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="contact__form-wrap">
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="contact__success">Vielen Dank für Ihre Nachricht. Ich melde mich schnellstmöglich bei Ihnen.</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="contact__errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="contact__field">
+          <input
+            type="text"
+            name="contact[name]"
+            class="input"
+            placeholder="Name"
+            required
+          >
+        </div>
+
+        <div class="contact__field">
+          <input
+            type="email"
+            name="contact[email]"
+            class="input"
+            placeholder="E-Mail"
+            required
+          >
+        </div>
+
+        <div class="contact__field">
+          <textarea
+            name="contact[body]"
+            class="input"
+            placeholder="Ihre Nachricht"
+            required
+          ></textarea>
+        </div>
+
+        <input type="hidden" name="contact[{{ 'zeit' | append: 'stempel' }}]" value="{{ 'now' | date: '%s' }}">
+
+        <button type="submit" class="btn btn--primary contact__submit">Nachricht senden</button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .contact__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .contact__heading {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    max-width: 40ch;
+  }
+
+  .contact__channels {
+    margin-top: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact__channel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__channel-label {
+    font-size: var(--text-xs);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .contact__channel-value {
+    font-size: var(--text-sm);
+    margin-top: 0.25rem;
+  }
+
+  .contact__field {
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__submit {
+    width: 100%;
+    margin-top: var(--space-sm);
+  }
+
+  .contact__success {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    background-color: var(--color-bg-alt);
+    font-size: var(--text-sm);
+  }
+
+  .contact__errors {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    border: 1px solid #c00;
+    color: #c00;
+    font-size: var(--text-sm);
+  }
+
+  @media (max-width: 749px) {
+    .contact__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Kontaktformular",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Kontakt"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Beschreibung",
+      "default": "Haben Sie Fragen zu meinen Styling-Services oder möchten ein Kleidungsstück mieten? Schreiben Sie mir gerne."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kontaktformular",
+      "category": "Kontakt"
+    }
+  ]
+}
+{% endschema %}

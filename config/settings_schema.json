@@ -1,43 +1,81 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Skeleton",
-    "theme_version": "0.1.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_name": "Laura Messerschmitt Digital Showroom",
+    "theme_version": "1.0.0",
+    "theme_author": "Maison Malou Berlin",
+    "theme_documentation_url": "https://github.com/zmegend007/laurawebsite",
+    "theme_support_url": "https://github.com/zmegend007/laurawebsite/issues"
   },
   {
-    "name": "t:general.typography",
+    "name": "Typografie",
     "settings": [
       {
-        "type": "header",
-        "content": "t:general.fonts"
+        "type": "font_picker",
+        "id": "type_heading_font",
+        "default": "helvetica_n3",
+        "label": "Überschriften"
       },
       {
         "type": "font_picker",
-        "id": "type_primary_font",
-        "default": "work_sans_n4",
-        "label": "t:general.primary"
+        "id": "type_body_font",
+        "default": "helvetica_n3",
+        "label": "Fließtext"
       }
     ]
   },
   {
-    "name": "t:general.layout",
+    "name": "Farben",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "default": "#FFFFFF",
+        "label": "Hintergrund"
+      },
+      {
+        "type": "color",
+        "id": "color_background_alt",
+        "default": "#F5F5F5",
+        "label": "Hintergrund (alternativ)"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground",
+        "default": "#000000",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground_muted",
+        "default": "#717171",
+        "label": "Text (gedämpft)"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "default": "#A68A6E",
+        "label": "Akzentfarbe"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "default": "#E5E5E5",
+        "label": "Rahmen"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
     "settings": [
       {
         "type": "select",
         "id": "max_page_width",
-        "label": "t:labels.page_width",
+        "label": "Seitenbreite",
         "options": [
-          {
-            "value": "90rem",
-            "label": "t:options.page_width.narrow"
-          },
-          {
-            "value": "110rem",
-            "label": "t:options.page_width.wide"
-          }
+          { "value": "80rem", "label": "Schmal (80rem)" },
+          { "value": "90rem", "label": "Normal (90rem)" },
+          { "value": "110rem", "label": "Breit (110rem)" }
         ],
         "default": "90rem"
       },
@@ -46,37 +84,54 @@
         "id": "min_page_margin",
         "min": 10,
         "max": 100,
-        "step": 1,
+        "step": 2,
         "unit": "px",
-        "label": "t:labels.page_margin",
-        "default": 20
+        "label": "Seitenrand",
+        "default": 24
       }
     ]
   },
   {
-    "name": "t:general.colors",
+    "name": "Social Media",
     "settings": [
       {
-        "type": "color",
-        "id": "background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.background"
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
       },
       {
-        "type": "color",
-        "id": "foreground_color",
-        "default": "#333333",
-        "label": "t:labels.foreground"
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok"
       },
       {
-        "type": "range",
-        "id": "input_corner_radius",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "unit": "px",
-        "label": "t:labels.input_corner_radius",
-        "default": 4
+        "type": "url",
+        "id": "social_linkedin",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube",
+        "label": "YouTube",
+        "default": "https://www.youtube.com/@LauraMonaMesserschmitt"
+      }
+    ]
+  },
+  {
+    "name": "Kontakt",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "WhatsApp Nummer",
+        "default": "4915773142682",
+        "info": "Ohne + Zeichen, z.B. 4915773142682"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "E-Mail Adresse",
+        "info": "Branded Google Workspace E-Mail"
       }
     ]
   }

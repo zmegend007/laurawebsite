@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "about",
+      "settings": {
+        "heading": "Über Laura",
+        "body": "<p>Berlin-basierte Fashion Stylistin mit einem Auge für Details und einer Leidenschaft für individuelle Looks. Von Red Carpet Events bis hin zu persönlichen Styling-Sessions — Laura verbindet kreative Vision mit professioneller Expertise.</p>"
+      }
+    }
+  },
+  "order": ["main"]
+}
