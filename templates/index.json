@@ -1,49 +1,16 @@
 {
   "sections": {
     "hero_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Laura Messerschmitt",
-            "heading_size": "h0"
-          }
-        },
-        "subtext": {
-          "type": "text",
-          "settings": {
-            "text": "Berlin-Based Fashion Stylist",
-            "text_style": "subtitle"
-          }
-        },
-        "buttons": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Explore Collection",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Book a Consultation",
-            "button_link_2": "",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "subtext",
-        "buttons"
-      ],
+      "type": "video-hero",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "Laura Messerschmitt",
+        "subheading": "Berlin-Based Fashion Stylist",
+        "video_url": "",
+        "overlay_opacity": 35,
+        "button_label_1": "Explore Collection",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Book a Consultation",
+        "button_link_2": ""
       }
     },
     "intro_text": {

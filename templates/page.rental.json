@@ -1,0 +1,276 @@
+{
+  "sections": {
+    "banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designer Rental",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Luxury fashion, without the commitment",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Browse Collection",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "how_it_works": {
+      "type": "multicolumn",
+      "blocks": {
+        "browse": {
+          "type": "column",
+          "settings": {
+            "title": "01 Browse",
+            "text": "<p>Explore the collection and find the perfect piece for your occasion. Filter by category, size, or designer.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "book": {
+          "type": "column",
+          "settings": {
+            "title": "02 Book",
+            "text": "<p>Select your rental dates and duration. Pricing adjusts automatically — the longer you rent, the more you save.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "wear": {
+          "type": "column",
+          "settings": {
+            "title": "03 Wear",
+            "text": "<p>Your piece arrives freshly cleaned and ready to wear. Enjoy your event, then return it — we handle the rest.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "return": {
+          "type": "column",
+          "settings": {
+            "title": "04 Return",
+            "text": "<p>Use the prepaid return label included with your order. Drop it off at any DHL point within Berlin or ship it back.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "browse",
+        "book",
+        "wear",
+        "return"
+      ],
+      "settings": {
+        "title": "How It Works",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
+    },
+    "pricing_info": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pricing",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rental prices are based on duration. Each product page shows the retail value alongside rental pricing, so you always know how much you're saving. Longer rentals unlock better daily rates.</p><p>A refundable security deposit is collected at checkout and returned after inspection.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Available Now",
+        "heading_size": "h2",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What sizes are available?",
+            "icon": "none",
+            "row_content": "<p>Our collection ranges from EU 34 to EU 42. Each product page lists the specific sizes available. If you're unsure about fit, get in touch and I'll help.</p>"
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if something doesn't fit?",
+            "icon": "none",
+            "row_content": "<p>Contact me within 24 hours of receiving your rental. We'll arrange an exchange or provide a full refund of the rental fee.</p>"
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What about cleaning?",
+            "icon": "none",
+            "row_content": "<p>Every piece is professionally dry-cleaned before and after each rental. You don't need to clean anything — just return it as-is.</p>"
+          }
+        },
+        "q4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you deliver outside Berlin?",
+            "icon": "none",
+            "row_content": "<p>Yes. We ship across Germany via DHL Express. Berlin deliveries can be arranged same-day for orders placed before 12:00.</p>"
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens if an item is damaged?",
+            "icon": "none",
+            "row_content": "<p>Minor wear is expected and covered. For significant damage, the security deposit may be partially or fully retained. We assess each case fairly and transparently.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need Help Choosing?",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not sure which piece is right for your event? Send me a WhatsApp message or book a quick styling call. I'll help you find the perfect look.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get in Touch",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "how_it_works",
+    "pricing_info",
+    "featured",
+    "faq",
+    "cta"
+  ]
+}

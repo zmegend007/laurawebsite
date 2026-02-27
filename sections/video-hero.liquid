@@ -1,0 +1,268 @@
+{%- style -%}
+  .video-hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+  }
+
+  .video-hero__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .video-hero__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .video-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 2;
+  }
+
+  .video-hero__content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 80rem;
+  }
+
+  .video-hero__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 6vw, 6rem);
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 1.2rem;
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  .video-hero__subheading {
+    font-family: var(--font-body-family);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 3rem;
+    opacity: 0.9;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  .video-hero__buttons {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .video-hero__btn {
+    display: inline-block;
+    padding: 1.4rem 3.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-body-family);
+  }
+
+  .video-hero__btn--primary {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .video-hero__btn--primary:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .video-hero__btn--secondary {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .video-hero__btn--secondary:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* Mobile: show poster, hide video for performance */
+  @media screen and (max-width: 749px) {
+    .video-hero { height: 80vh; }
+    .video-hero__video-desktop { display: none; }
+    .video-hero__poster { display: block; }
+  }
+
+  @media screen and (min-width: 750px) {
+    .video-hero__poster { display: none; }
+    .video-hero__video-desktop { display: block; }
+  }
+{%- endstyle -%}
+
+<section class="video-hero">
+  {%- comment -%} Video for desktop {%- endcomment -%}
+  <video
+    class="video-hero__media video-hero__video-desktop"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    {% if section.settings.poster_image %}
+      poster="{{ section.settings.poster_image | image_url: width: 1920 }}"
+    {% else %}
+      poster="{{ 'hero-poster.webp' | asset_url }}"
+    {% endif %}
+  >
+    {% if section.settings.video_url != blank %}
+      <source src="{{ section.settings.video_url }}" type="video/mp4">
+    {% else %}
+      <source src="{{ 'hero-video.mp4' | asset_url }}" type="video/mp4">
+    {% endif %}
+  </video>
+
+  {%- comment -%} Poster image for mobile {%- endcomment -%}
+  {% if section.settings.poster_image %}
+    <img
+      class="video-hero__media video-hero__poster"
+      src="{{ section.settings.poster_image | image_url: width: 800 }}"
+      alt="{{ section.settings.heading | escape }}"
+      loading="eager"
+      width="800"
+      height="1200"
+    >
+  {% else %}
+    <img
+      class="video-hero__media video-hero__poster"
+      src="{{ 'hero-poster.webp' | asset_url }}"
+      alt="{{ section.settings.heading | escape }}"
+      loading="eager"
+      width="800"
+      height="1200"
+    >
+  {% endif %}
+
+  <div class="video-hero__overlay"></div>
+
+  <div class="video-hero__content">
+    {% if section.settings.heading != blank %}
+      <h1 class="video-hero__heading">{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="video-hero__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    <div class="video-hero__buttons">
+      {% if section.settings.button_label_1 != blank %}
+        <a
+          href="{{ section.settings.button_link_1 }}"
+          class="video-hero__btn video-hero__btn--primary"
+        >
+          {{ section.settings.button_label_1 }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.button_label_2 != blank %}
+        <a
+          href="{{ section.settings.button_link_2 }}"
+          class="video-hero__btn video-hero__btn--secondary"
+        >
+          {{ section.settings.button_label_2 }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video Hero",
+  "tag": "section",
+  "class": "section-video-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Laura Messerschmitt"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Berlin-Based Fashion Stylist"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL (MP4)",
+      "info": "Leave blank to use the default hero video. Upload to Settings > Files and paste the URL here."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster image (mobile fallback)",
+      "info": "Shown on mobile instead of video for performance. Leave blank to use default."
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay darkness",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Primary button label",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "Book a Consultation"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Hero"
+    }
+  ]
+}
+{% endschema %}

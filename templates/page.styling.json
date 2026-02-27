@@ -1,0 +1,208 @@
+{
+  "sections": {
+    "banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Personal Styling",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Your style, elevated",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "How It Works",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every styling journey begins with a conversation. I take the time to understand your lifestyle, preferences, and goals — then craft a personalised approach that makes getting dressed the best part of your day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "content_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
+    },
+    "services": {
+      "type": "multicolumn",
+      "blocks": {
+        "wardrobe": {
+          "type": "column",
+          "settings": {
+            "title": "Wardrobe Edit",
+            "text": "<p>A deep dive into your existing wardrobe. We identify what works, what doesn't, and create a capsule that reflects who you are today. Includes a personalised shopping list for key missing pieces.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "shopping": {
+          "type": "column",
+          "settings": {
+            "title": "Shopping Accompaniment",
+            "text": "<p>A curated shopping experience in Berlin's best boutiques and department stores. I pre-select pieces based on your brief, so every fitting room moment counts.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "transformation": {
+          "type": "column",
+          "settings": {
+            "title": "Full Transformation",
+            "text": "<p>The complete package: wardrobe audit, personal colour and body analysis, curated shopping, and ongoing style guidance. For those ready for a real shift in how they present themselves.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "wardrobe",
+        "shopping",
+        "transformation"
+      ],
+      "settings": {
+        "title": "Services",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "process": {
+      "type": "multirow",
+      "blocks": {
+        "step1": {
+          "type": "row",
+          "settings": {
+            "text": "<h3>01 — Consultation</h3><p>We start with a relaxed conversation — in person or over video — to understand your style goals, lifestyle, and budget. No judgement, just curiosity.</p>"
+          }
+        },
+        "step2": {
+          "type": "row",
+          "settings": {
+            "text": "<h3>02 — Curation</h3><p>Based on our consultation, I prepare a personalised style direction with mood boards, colour palettes, and specific piece recommendations.</p>"
+          }
+        },
+        "step3": {
+          "type": "row",
+          "settings": {
+            "text": "<h3>03 — Execution</h3><p>Whether it's a wardrobe edit at your home or a guided shopping trip through Berlin, we bring the plan to life together.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step1",
+        "step2",
+        "step3"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "scheme-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Get Started?",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Book a free 15-minute discovery call to discuss your styling needs. No commitment, just a conversation.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book a Consultation",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "intro",
+    "services",
+    "process",
+    "cta"
+  ]
+}
