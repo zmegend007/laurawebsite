@@ -152,34 +152,6 @@
         "padding_bottom": 80
       }
     },
-    "featured_rental": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "for-rent",
-        "products_to_show": 8,
-        "title": "Available to Rent",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "link",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 52,
-        "padding_bottom": 80
-      }
-    },
     "about_preview": {
       "type": "image-with-text",
       "blocks": {
@@ -307,7 +279,6 @@
     "marquee",
     "intro",
     "services",
-    "featured_rental",
     "about_preview",
     "testimonials",
     "newsletter"
