@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "about_image_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet Laura",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Laura Messerschmitt is a Berlin-based fashion stylist specialising in editorial, event, and personal styling. With a keen eye for detail and a deep understanding of contemporary fashion, she creates looks that are both striking and deeply personal.</p><p>Her Digital Showroom brings curated designer pieces directly to you — available for rent or purchase. Every item is hand-selected for quality, style, and versatility.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image_width": "medium",
+        "layout": "image_first",
+        "desktop_image_width": "medium",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "services_detail": {
+      "type": "multicolumn",
+      "blocks": {
+        "styling": {
+          "type": "column",
+          "settings": {
+            "title": "Personal Styling",
+            "text": "<p>Wardrobe consultations, shopping accompaniment, and complete style transformations tailored to your lifestyle and goals.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "rental": {
+          "type": "column",
+          "settings": {
+            "title": "Designer Rental",
+            "text": "<p>Access luxury fashion for events, shoots, and special occasions. Flexible durations, professional care, Berlin delivery.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "editorial": {
+          "type": "column",
+          "settings": {
+            "title": "Editorial & Events",
+            "text": "<p>Styling for magazines, campaigns, red carpets, and productions. Concept development through to final execution.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "styling",
+        "rental",
+        "editorial"
+      ],
+      "settings": {
+        "title": "What I Do",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let's Work Together",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you're looking for the perfect outfit for an event, a complete wardrobe refresh, or editorial styling — I'd love to hear from you.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get in Touch",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "content_alignment": "center",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_image_text",
+    "services_detail",
+    "cta"
+  ]
+}

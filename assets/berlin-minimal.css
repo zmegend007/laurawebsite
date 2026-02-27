@@ -1,0 +1,187 @@
+/* Berlin Minimal — Custom overrides for Laura Messerschmitt Digital Showroom */
+
+/* ═══════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.h0 {
+  letter-spacing: 0.08em;
+  font-weight: 300;
+}
+
+/* Body text: slightly more refined */
+body {
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════════════
+   BUTTONS — Sharp, minimal
+   ═══════════════════════════════════════════════════ */
+
+.button,
+button[type="submit"],
+.shopify-challenge__button {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   HEADER — Clean, airy
+   ═══════════════════════════════════════════════════ */
+
+.header {
+  letter-spacing: 0.06em;
+}
+
+.header__menu-item {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO BANNER — Full impact
+   ═══════════════════════════════════════════════════ */
+
+.banner {
+  min-height: 85vh;
+}
+
+@media screen and (min-width: 750px) {
+  .banner--large {
+    min-height: 90vh;
+  }
+}
+
+.banner__heading {
+  letter-spacing: 0.12em;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════════════
+   CARDS — No decoration, let images speak
+   ═══════════════════════════════════════════════════ */
+
+.card {
+  border-radius: 0 !important;
+}
+
+.card__inner {
+  border-radius: 0 !important;
+}
+
+.card__media {
+  border-radius: 0 !important;
+}
+
+.card__content {
+  border-radius: 0 !important;
+}
+
+/* Product card title: uppercase, spaced */
+.card__heading a {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/* Price styling */
+.price-item {
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — Dark, elegant
+   ═══════════════════════════════════════════════════ */
+
+.footer {
+  border-top: none;
+}
+
+.footer__title {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85em;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTIONS — Generous breathing room
+   ═══════════════════════════════════════════════════ */
+
+.section-template--main {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Rich text sections: refined spacing */
+.rich-text__wrapper {
+  max-width: 72rem;
+}
+
+/* ═══════════════════════════════════════════════════
+   FORMS — Minimal, sharp
+   ═══════════════════════════════════════════════════ */
+
+input,
+textarea,
+select {
+  border-radius: 0 !important;
+}
+
+.field__input {
+  border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   NEWSLETTER — Clean inline form
+   ═══════════════════════════════════════════════════ */
+
+.newsletter-form__field-wrapper {
+  border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILITY — Remove all rounded corners globally
+   ═══════════════════════════════════════════════════ */
+
+.badge {
+  border-radius: 0 !important;
+}
+
+.modal__content,
+.popup-modal__content {
+  border-radius: 0 !important;
+}
+
+/* Image treatment: full-bleed, no decoration */
+img {
+  border-radius: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   MULTICOLUMN — Service cards
+   ═══════════════════════════════════════════════════ */
+
+.multicolumn-card__info .h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATION — Subtle only
+   ═══════════════════════════════════════════════════ */
+
+a,
+button,
+.button,
+.card {
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
