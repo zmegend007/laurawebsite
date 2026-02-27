@@ -8,36 +8,36 @@
     "theme_support_url": "https://github.com/zmegend007/laurawebsite/issues"
   },
   {
-    "name": "Typografie",
+    "name": "Typography",
     "settings": [
       {
         "type": "font_picker",
         "id": "type_heading_font",
         "default": "helvetica_n3",
-        "label": "Überschriften"
+        "label": "Headings"
       },
       {
         "type": "font_picker",
         "id": "type_body_font",
         "default": "helvetica_n3",
-        "label": "Fließtext"
+        "label": "Body text"
       }
     ]
   },
   {
-    "name": "Farben",
+    "name": "Colors",
     "settings": [
       {
         "type": "color",
         "id": "color_background",
         "default": "#FFFFFF",
-        "label": "Hintergrund"
+        "label": "Background"
       },
       {
         "type": "color",
         "id": "color_background_alt",
         "default": "#F5F5F5",
-        "label": "Hintergrund (alternativ)"
+        "label": "Background (alt)"
       },
       {
         "type": "color",
@@ -49,19 +49,19 @@
         "type": "color",
         "id": "color_foreground_muted",
         "default": "#717171",
-        "label": "Text (gedämpft)"
+        "label": "Text (muted)"
       },
       {
         "type": "color",
         "id": "color_accent",
         "default": "#A68A6E",
-        "label": "Akzentfarbe"
+        "label": "Accent"
       },
       {
         "type": "color",
         "id": "color_border",
         "default": "#E5E5E5",
-        "label": "Rahmen"
+        "label": "Border"
       }
     ]
   },
@@ -71,11 +71,11 @@
       {
         "type": "select",
         "id": "max_page_width",
-        "label": "Seitenbreite",
+        "label": "Page width",
         "options": [
-          { "value": "80rem", "label": "Schmal (80rem)" },
+          { "value": "80rem", "label": "Narrow (80rem)" },
           { "value": "90rem", "label": "Normal (90rem)" },
-          { "value": "110rem", "label": "Breit (110rem)" }
+          { "value": "110rem", "label": "Wide (110rem)" }
         ],
         "default": "90rem"
       },
@@ -86,7 +86,7 @@
         "max": 100,
         "step": 2,
         "unit": "px",
-        "label": "Seitenrand",
+        "label": "Page margin",
         "default": 24
       }
     ]
@@ -118,20 +118,20 @@
     ]
   },
   {
-    "name": "Kontakt",
+    "name": "Contact",
     "settings": [
       {
         "type": "text",
         "id": "whatsapp_number",
-        "label": "WhatsApp Nummer",
+        "label": "WhatsApp number",
         "default": "4915773142682",
-        "info": "Ohne + Zeichen, z.B. 4915773142682"
+        "info": "Without + sign, e.g. 4915773142682"
       },
       {
         "type": "text",
         "id": "contact_email",
-        "label": "E-Mail Adresse",
-        "info": "Branded Google Workspace E-Mail"
+        "label": "Email address",
+        "info": "Branded Google Workspace email"
       }
     ]
   }

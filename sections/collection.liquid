@@ -4,7 +4,7 @@
     {% if collection.description != blank %}
       <p class="collection__description text-muted">{{ collection.description }}</p>
     {% endif %}
-    <p class="collection__count text-muted">{{ collection.products_count }} {% if collection.products_count == 1 %}Stück{% else %}Stücke{% endif %}</p>
+    <p class="collection__count text-muted">{{ collection.products_count }} {% if collection.products_count == 1 %}item{% else %}items{% endif %}</p>
   </div>
 
   {% if collection.products_count > 0 %}
@@ -18,18 +18,18 @@
 
     {% paginate collection.products by 24 %}
       {% if paginate.pages > 1 %}
-        <nav class="collection__pagination" aria-label="Seitennavigation">
+        <nav class="collection__pagination" aria-label="Page navigation">
           {% if paginate.previous %}
-            <a href="{{ paginate.previous.url }}" class="btn btn--outline">&larr; Zurück</a>
+            <a href="{{ paginate.previous.url }}" class="btn btn--outline">&larr; Previous</a>
           {% endif %}
           {% if paginate.next %}
-            <a href="{{ paginate.next.url }}" class="btn btn--outline">Weiter &rarr;</a>
+            <a href="{{ paginate.next.url }}" class="btn btn--outline">Next &rarr;</a>
           {% endif %}
         </nav>
       {% endif %}
     {% endpaginate %}
   {% else %}
-    <p class="collection__empty text-muted text-center">Diese Kollektion enthält noch keine Produkte.</p>
+    <p class="collection__empty text-muted text-center">This collection doesn't contain any products yet.</p>
   {% endif %}
 </section>
 
@@ -89,7 +89,7 @@
 
 {% schema %}
 {
-  "name": "Kollektion",
+  "name": "Collection",
   "settings": []
 }
 {% endschema %}

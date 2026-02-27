@@ -26,7 +26,7 @@
         {% assign retail_value = product.metafields.custom.retail_value %}
         {% if retail_value != blank and product.tags contains 'for-rent' %}
           <p class="pdp__savings text-muted">
-            UVP: {{ retail_value | money }} — Sie sparen {{ retail_value | minus: product.price | money }}
+            RRP: {{ retail_value | money }} — You save {{ retail_value | minus: product.price | money }}
           </p>
         {% endif %}
       </div>
@@ -57,7 +57,7 @@
             </div>
           {% endif %}
 
-          <select name="id" class="visually-hidden" aria-label="Variante">
+          <select name="id" class="visually-hidden" aria-label="Variant">
             {% for variant in product.variants %}
               <option
                 value="{{ variant.id }}"
@@ -74,7 +74,7 @@
           {% if product.tags contains 'for-rent' %}
             <button type="submit" class="btn btn--primary pdp__cta">Book This Look</button>
           {% else %}
-            <button type="submit" class="btn btn--primary pdp__cta">In den Warenkorb</button>
+            <button type="submit" class="btn btn--primary pdp__cta">Add to Cart</button>
           {% endif %}
         {% endform %}
       </div>
@@ -257,7 +257,7 @@
 
 {% schema %}
 {
-  "name": "Produktseite",
+  "name": "Product Page",
   "settings": [],
   "disabled_on": {
     "groups": ["header", "footer"]

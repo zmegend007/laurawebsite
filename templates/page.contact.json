@@ -3,8 +3,8 @@
     "main": {
       "type": "contact-form",
       "settings": {
-        "heading": "Kontakt",
-        "description": "Haben Sie Fragen zu meinen Styling-Services oder möchten ein Kleidungsstück mieten? Schreiben Sie mir gerne."
+        "heading": "Contact",
+        "description": "Have questions about my styling services or want to rent a piece? Feel free to reach out."
       }
     }
   },

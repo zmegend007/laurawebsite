@@ -37,7 +37,7 @@
                 value="{{ item.quantity }}"
                 min="0"
                 class="input cart__item-qty"
-                aria-label="Menge"
+                aria-label="Quantity"
               >
               <a href="{{ item.url_to_remove }}" class="cart__item-remove text-muted">{{ 'cart.remove' | t }}</a>
             </div>
@@ -47,10 +47,10 @@
 
       <div class="cart__summary">
         <div class="cart__total">
-          <span>Gesamt</span>
+          <span>Total</span>
           <span>{{ cart.total_price | money }}</span>
         </div>
-        <p class="cart__tax-note text-muted">Versandkosten werden an der Kasse berechnet.</p>
+        <p class="cart__tax-note text-muted">Shipping calculated at checkout.</p>
         <button type="submit" name="checkout" class="btn btn--primary cart__checkout">
           {{ 'cart.checkout' | t }}
         </button>
@@ -58,8 +58,8 @@
     </form>
   {% else %}
     <div class="cart__empty text-center">
-      <p class="text-muted">Ihr Warenkorb ist leer.</p>
-      <a href="{{ routes.all_products_collection_url }}" class="btn btn--outline cart__continue">Weiter stöbern</a>
+      <p class="text-muted">Your cart is empty.</p>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn--outline cart__continue">Continue Shopping</a>
     </div>
   {% endif %}
 </section>
@@ -180,7 +180,7 @@
 
 {% schema %}
 {
-  "name": "Warenkorb",
+  "name": "Cart",
   "settings": []
 }
 {% endschema %}

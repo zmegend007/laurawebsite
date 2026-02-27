@@ -30,7 +30,7 @@
   </div>
 
   <div class="footer__bottom">
-    <p class="text-muted">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Alle Rechte vorbehalten.</p>
+    <p class="text-muted">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
     {% if section.settings.show_payment_icons %}
       <div class="footer__payment">
         {% for type in shop.enabled_payment_types %}
@@ -126,18 +126,18 @@
 
 {% schema %}
 {
-  "name": "Fußzeile",
+  "name": "Footer",
   "settings": [
     {
       "type": "text",
       "id": "logo_text",
-      "label": "Logo-Text",
+      "label": "Logo text",
       "default": "Laura Messerschmitt"
     },
     {
       "type": "text",
       "id": "tagline",
-      "label": "Untertitel",
+      "label": "Tagline",
       "default": "Fashion Stylist — Berlin"
     },
     {
@@ -148,7 +148,7 @@
     {
       "type": "checkbox",
       "id": "show_payment_icons",
-      "label": "Zahlungsarten anzeigen",
+      "label": "Show payment icons",
       "default": true
     }
   ]

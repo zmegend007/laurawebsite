@@ -1,21 +1,25 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% render 'css-variables' %}
 
-    {% unless settings.type_heading_font.system? %}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-      {{ settings.type_heading_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
-    {% endunless %}
+    {% if settings.type_heading_font %}
+      {% unless settings.type_heading_font.system? %}
+        <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+        {{ settings.type_heading_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
+      {% endunless %}
+    {% endif %}
 
-    {% unless settings.type_body_font.system? %}
-      {% if settings.type_body_font != settings.type_heading_font %}
-        {{ settings.type_body_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
-      {% endif %}
-    {% endunless %}
+    {% if settings.type_body_font %}
+      {% unless settings.type_body_font.system? %}
+        {% if settings.type_body_font != settings.type_heading_font %}
+          {{ settings.type_body_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
+        {% endif %}
+      {% endunless %}
+    {% endif %}
 
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 

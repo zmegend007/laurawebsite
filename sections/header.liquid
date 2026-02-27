@@ -4,7 +4,7 @@
       {{ section.settings.logo_text | default: shop.name }}
     </a>
 
-    <nav class="header__nav" id="nav-menu" aria-label="Hauptnavigation">
+    <nav class="header__nav" id="nav-menu" aria-label="Main navigation">
       {% for link in section.settings.menu.links %}
         <a href="{{ link.url }}" class="header__link {% if link.active %}header__link--active{% endif %}">
           {{ link.title }}
@@ -13,7 +13,7 @@
     </nav>
 
     <div class="header__actions">
-      <a href="{{ routes.cart_url }}" class="header__cart" aria-label="Warenkorb">
+      <a href="{{ routes.cart_url }}" class="header__cart" aria-label="Cart">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M5 7h10l-1.5 8H6.5L5 7z"/>
           <path d="M7.5 7V5a2.5 2.5 0 0 1 5 0v2"/>
@@ -23,7 +23,7 @@
         {% endif %}
       </a>
 
-      <button class="header__burger" aria-label="Menü" aria-expanded="false" aria-controls="nav-menu" data-burger>
+      <button class="header__burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu" data-burger>
         <span></span>
         <span></span>
       </button>
@@ -206,18 +206,18 @@
 
 {% schema %}
 {
-  "name": "Kopfzeile",
+  "name": "Header",
   "settings": [
     {
       "type": "text",
       "id": "logo_text",
-      "label": "Logo-Text",
+      "label": "Logo text",
       "default": "Laura Messerschmitt"
     },
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Navigation",
+      "label": "Menu",
       "default": "main-menu"
     }
   ]
