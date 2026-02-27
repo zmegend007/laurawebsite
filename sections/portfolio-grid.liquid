@@ -22,6 +22,8 @@
                 sizes="(max-width: 749px) 100vw, 50vw"
                 alt="{{ article.title }}"
                 loading="lazy"
+                width="800"
+                height="{{ 800 | divided_by: article.image.aspect_ratio | round }}"
                 class="portfolio__image"
               >
             </div>

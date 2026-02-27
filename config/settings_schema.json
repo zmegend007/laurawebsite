@@ -13,13 +13,13 @@
       {
         "type": "font_picker",
         "id": "type_heading_font",
-        "default": "helvetica_n3",
+        "default": "assistant_n4",
         "label": "Headings"
       },
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "helvetica_n3",
+        "default": "assistant_n4",
         "label": "Body text"
       }
     ]

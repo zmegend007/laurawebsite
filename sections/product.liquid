@@ -9,6 +9,8 @@
             sizes="(max-width: 749px) 100vw, 50vw"
             alt="{{ image.alt | default: product.title }}"
             loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+            width="900"
+            height="{{ 900 | divided_by: image.aspect_ratio | round }}"
             class="pdp__image"
           >
         </div>

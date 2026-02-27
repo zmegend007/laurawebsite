@@ -19,6 +19,8 @@
       src="{{ section.settings.poster_image | image_url: width: 1920 }}"
       alt="{{ section.settings.heading }}"
       loading="eager"
+      width="1920"
+      height="{{ 1920 | divided_by: section.settings.poster_image.aspect_ratio | round }}"
     >
   {% endif %}
 
