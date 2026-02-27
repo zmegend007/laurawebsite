@@ -1,0 +1,50 @@
+<section class="hero full-width">
+  <h1 class="hero__name">Laura Messerschmitt</h1>
+  <p class="hero__tagline">Fashion Stylist — Berlin</p>
+</section>
+
+{% stylesheet %}
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero__name {
+    font-family: var(--font-primary--family), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+
+  .hero__tagline {
+    font-family: var(--font-primary--family), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}
