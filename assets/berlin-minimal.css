@@ -1,105 +1,221 @@
-/* Berlin Minimal — Custom overrides for Laura Messerschmitt Digital Showroom */
+/* Berlin Minimal — Laura Messerschmitt Digital Showroom
+   Premium editorial design system */
 
 /* ═══════════════════════════════════════════════════
-   TYPOGRAPHY
+   TYPOGRAPHY — Editorial, fashion-forward
    ═══════════════════════════════════════════════════ */
 
-h1, h2, h3, h4, h5, h6,
-.h0, .h1, .h2, .h3, .h4, .h5 {
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+h1, .h1, .h0 {
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  line-height: 1.05;
 }
 
 .h0 {
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   font-weight: 300;
+  font-size: clamp(3.6rem, 5.5vw, 7.2rem);
 }
 
-/* Body text: slightly more refined */
+h2, .h2 {
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h3, .h3 {
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+/* Subtle body refinement */
 body {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ═══════════════════════════════════════════════════
-   BUTTONS — Sharp, minimal
+   GLOBAL — Sharp, no decoration
    ═══════════════════════════════════════════════════ */
 
-.button,
-button[type="submit"],
-.shopify-challenge__button {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.85em;
+*,
+*::before,
+*::after {
   border-radius: 0 !important;
 }
 
 /* ═══════════════════════════════════════════════════
-   HEADER — Clean, airy
+   BUTTONS — Refined, editorial
    ═══════════════════════════════════════════════════ */
 
-.header {
-  letter-spacing: 0.06em;
+.button,
+.shopify-challenge__button,
+button[type="submit"] {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  padding: 1.4rem 3.6rem;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-weight: 500;
+}
+
+.button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  border-width: 1px;
+}
+
+/* ═══════════════════════════════════════════════════
+   HEADER — Airy, premium spacing
+   ═══════════════════════════════════════════════════ */
+
+.section-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .header__menu-item {
   text-transform: uppercase;
-  font-size: 0.85em;
-  letter-spacing: 0.1em;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.header__menu-item:hover {
+  opacity: 0.6;
+}
+
+.header__heading-link {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ═══════════════════════════════════════════════════
-   HERO BANNER — Full impact
+   HERO — Cinematic, full impact
    ═══════════════════════════════════════════════════ */
 
-.banner {
-  min-height: 85vh;
+.video-hero {
+  min-height: 100vh;
 }
 
-@media screen and (min-width: 750px) {
-  .banner--large {
-    min-height: 90vh;
-  }
-}
-
-.banner__heading {
-  letter-spacing: 0.12em;
+.video-hero__heading {
   font-weight: 300;
+  letter-spacing: 0.14em;
+}
+
+.video-hero__subheading {
+  letter-spacing: 0.25em;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
 }
 
 /* ═══════════════════════════════════════════════════
-   CARDS — No decoration, let images speak
+   CARDS — Minimal, let photography lead
    ═══════════════════════════════════════════════════ */
 
-.card {
-  border-radius: 0 !important;
+.card__heading a {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card__media img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .card__media img {
+  transform: scale(1.03);
 }
 
 .card__inner {
-  border-radius: 0 !important;
+  overflow: hidden;
 }
 
-.card__media {
-  border-radius: 0 !important;
-}
-
-.card__content {
-  border-radius: 0 !important;
-}
-
-/* Product card title: uppercase, spaced */
-.card__heading a {
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: 0.9em;
-}
-
-/* Price styling */
 .price-item {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  font-weight: 400;
 }
 
 /* ═══════════════════════════════════════════════════
-   FOOTER — Dark, elegant
+   RICH TEXT — Refined reading experience
+   ═══════════════════════════════════════════════════ */
+
+.rich-text__wrapper {
+  max-width: 68rem;
+}
+
+.rich-text__text p {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+@media screen and (min-width: 750px) {
+  .rich-text__text p {
+    font-size: 1.8rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   MULTICOLUMN — Service cards with edge
+   ═══════════════════════════════════════════════════ */
+
+.multicolumn-card__info .h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.multicolumn-card__info p {
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.65);
+}
+
+/* Subtle divider between columns on desktop */
+@media screen and (min-width: 990px) {
+  .multicolumn-list__item:not(:last-child) {
+    border-right: 1px solid rgba(var(--color-foreground), 0.08);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   IMAGE WITH TEXT — Editorial asymmetry
+   ═══════════════════════════════════════════════════ */
+
+.image-with-text__content {
+  padding: 4rem 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .image-with-text__content {
+    padding: 6rem 5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   COLLAPSIBLE / FAQ — Clean accordion
+   ═══════════════════════════════════════════════════ */
+
+.collapsible-content .accordion summary {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 2rem 0;
+}
+
+.collapsible-content .accordion .accordion__content {
+  color: rgba(var(--color-foreground), 0.65);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — Dark, sophisticated
    ═══════════════════════════════════════════════════ */
 
 .footer {
@@ -108,80 +224,170 @@ button[type="submit"],
 
 .footer__title {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer__content-bottom {
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* Social icons — subtle */
+.footer .social-icons .icon {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.footer .social-icons .icon:hover {
+  opacity: 1;
 }
 
 /* ═══════════════════════════════════════════════════
-   SECTIONS — Generous breathing room
+   NEWSLETTER — Premium inline form
    ═══════════════════════════════════════════════════ */
 
-.section-template--main {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-/* Rich text sections: refined spacing */
-.rich-text__wrapper {
-  max-width: 72rem;
-}
-
-/* ═══════════════════════════════════════════════════
-   FORMS — Minimal, sharp
-   ═══════════════════════════════════════════════════ */
-
-input,
-textarea,
-select {
-  border-radius: 0 !important;
-}
-
-.field__input {
-  border-radius: 0 !important;
-}
-
-/* ═══════════════════════════════════════════════════
-   NEWSLETTER — Clean inline form
-   ═══════════════════════════════════════════════════ */
-
-.newsletter-form__field-wrapper {
-  border-radius: 0 !important;
-}
-
-/* ═══════════════════════════════════════════════════
-   UTILITY — Remove all rounded corners globally
-   ═══════════════════════════════════════════════════ */
-
-.badge {
-  border-radius: 0 !important;
-}
-
-.modal__content,
-.popup-modal__content {
-  border-radius: 0 !important;
-}
-
-/* Image treatment: full-bleed, no decoration */
-img {
-  border-radius: 0 !important;
-}
-
-/* ═══════════════════════════════════════════════════
-   MULTICOLUMN — Service cards
-   ═══════════════════════════════════════════════════ */
-
-.multicolumn-card__info .h3 {
-  text-transform: uppercase;
+.newsletter__heading {
   letter-spacing: 0.06em;
 }
 
+.newsletter-form__field-wrapper .field__input {
+  letter-spacing: 0.04em;
+}
+
 /* ═══════════════════════════════════════════════════
-   ANIMATION — Subtle only
+   IMAGE BANNER — Full bleed with cinematic text
    ═══════════════════════════════════════════════════ */
 
-a,
-button,
-.button,
-.card {
-  transition: opacity 0.2s ease, color 0.2s ease;
+.banner--large {
+  min-height: 70vh;
+}
+
+.banner__heading {
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.banner__text .banner__text--subtitle {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════
+   FORMS — Minimal, sharp inputs
+   ═══════════════════════════════════════════════════ */
+
+.field__input,
+.field__label {
+  letter-spacing: 0.02em;
+}
+
+.field__input:focus {
+  border-color: rgb(var(--color-foreground));
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   PAGE TRANSITIONS & HOVER
+   ═══════════════════════════════════════════════════ */
+
+a {
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Smooth image reveals */
+.shopify-section img {
+  opacity: 0;
+  animation: fadeInImage 0.6s ease forwards;
+}
+
+@keyframes fadeInImage {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════
+   COLLECTION PAGE — Editorial grid
+   ═══════════════════════════════════════════════════ */
+
+.collection-hero__title {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.collection-hero__description p {
+  max-width: 60rem;
+  margin: 0 auto;
+  color: rgba(var(--color-foreground), 0.65);
+}
+
+/* ═══════════════════════════════════════════════════
+   PRODUCT PAGE — Refined PDP
+   ═══════════════════════════════════════════════════ */
+
+.product__title {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.product__text {
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.65);
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION SPACING — Generous, intentional
+   ═══════════════════════════════════════════════════ */
+
+@media screen and (min-width: 750px) {
+  .section-template--main .shopify-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   CUSTOM: EDITORIAL DIVIDER
+   ═══════════════════════════════════════════════════ */
+
+.section-editorial-divider {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.section-editorial-divider::after {
+  content: '';
+  display: block;
+  width: 6rem;
+  height: 1px;
+  background: rgba(var(--color-foreground), 0.2);
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLLBAR — Minimal
+   ═══════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }

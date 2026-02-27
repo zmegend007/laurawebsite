@@ -1,0 +1,277 @@
+{%- style -%}
+  .editorial-testimonials {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .editorial-testimonials__label {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 4rem;
+    font-weight: 500;
+  }
+
+  .editorial-testimonials__slider {
+    position: relative;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .editorial-testimonials__slide {
+    display: none;
+  }
+
+  .editorial-testimonials__slide.is-active {
+    display: block;
+    animation: testimonialFade 0.6s ease forwards;
+  }
+
+  @keyframes testimonialFade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .editorial-testimonials__quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
+    line-height: 1.4;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0 0 3rem;
+    letter-spacing: 0.02em;
+  }
+
+  .editorial-testimonials__quote::before {
+    content: '\201C';
+    display: block;
+    font-size: 5rem;
+    line-height: 1;
+    opacity: 0.15;
+    margin-bottom: 1rem;
+    font-style: normal;
+  }
+
+  .editorial-testimonials__author {
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+
+  .editorial-testimonials__context {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    opacity: 0.35;
+    margin-top: 0.4rem;
+  }
+
+  .editorial-testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 4rem;
+  }
+
+  .editorial-testimonials__dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(var(--color-foreground), 0.3);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .editorial-testimonials__dot.is-active {
+    background: rgb(var(--color-foreground));
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .editorial-testimonials__dot:hover {
+    border-color: rgb(var(--color-foreground));
+  }
+{%- endstyle -%}
+
+<section class="editorial-testimonials color-{{ section.settings.color_scheme }}">
+  {% if section.settings.label != blank %}
+    <p class="editorial-testimonials__label">{{ section.settings.label }}</p>
+  {% endif %}
+
+  <div class="editorial-testimonials__slider" data-testimonial-slider>
+    {% for block in section.blocks %}
+      <div
+        class="editorial-testimonials__slide{% if forloop.first %} is-active{% endif %}"
+        data-slide-index="{{ forloop.index0 }}"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.quote != blank %}
+          <blockquote class="editorial-testimonials__quote">
+            {{ block.settings.quote }}
+          </blockquote>
+        {% endif %}
+        {% if block.settings.author != blank %}
+          <p class="editorial-testimonials__author">{{ block.settings.author }}</p>
+        {% endif %}
+        {% if block.settings.context != blank %}
+          <p class="editorial-testimonials__context">{{ block.settings.context }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    {% if section.blocks.size > 1 %}
+      <div class="editorial-testimonials__dots">
+        {% for block in section.blocks %}
+          <button
+            class="editorial-testimonials__dot{% if forloop.first %} is-active{% endif %}"
+            data-dot-index="{{ forloop.index0 }}"
+            aria-label="Show testimonial {{ forloop.index }}"
+          ></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sliders = document.querySelectorAll('[data-testimonial-slider]');
+    sliders.forEach(function (slider) {
+      var slides = slider.querySelectorAll('[data-slide-index]');
+      var dots = slider.querySelectorAll('[data-dot-index]');
+      var current = 0;
+      var total = slides.length;
+      if (total <= 1) return;
+
+      function goTo(index) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        current = index;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(this.getAttribute('data-dot-index')));
+        });
+      });
+
+      setInterval(function () {
+        goTo((current + 1) % total);
+      }, 6000);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Editorial Testimonials",
+  "tag": "section",
+  "class": "section-editorial-testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Kind Words"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" },
+        { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }
+      ],
+      "default": "scheme-2"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Laura has an incredible eye for detail and truly understands how to make you feel confident in what you wear."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name",
+          "default": "Client Name"
+        },
+        {
+          "type": "text",
+          "id": "context",
+          "label": "Context (e.g. event, service type)",
+          "default": "Event Styling"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Laura has an incredible eye for detail and truly understands how to make you feel confident in what you wear. She transformed my wardrobe and my self-image.",
+            "author": "Sophie M.",
+            "context": "Personal Styling"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The rental experience was seamless. The dress arrived perfectly pressed, fit beautifully, and I felt like a million euros at the gala. Returning it was just as easy.",
+            "author": "Anna K.",
+            "context": "Designer Rental"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Working with Laura on our editorial shoot was a dream. She understood the vision immediately and elevated every look beyond what we imagined.",
+            "author": "Maximilian R.",
+            "context": "Editorial Styling"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

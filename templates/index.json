@@ -1,6 +1,6 @@
 {
   "sections": {
-    "hero_banner": {
+    "hero": {
       "type": "video-hero",
       "settings": {
         "heading": "Laura Messerschmitt",
@@ -8,12 +8,12 @@
         "video_url": "",
         "overlay_opacity": 35,
         "button_label_1": "Explore Collection",
-        "button_link_1": "shopify://collections/all",
+        "button_link_1": "shopify://collections/for-rent",
         "button_label_2": "Book a Consultation",
-        "button_link_2": ""
+        "button_link_2": "shopify://pages/contact"
       }
     },
-    "intro_text": {
+    "intro": {
       "type": "rich-text",
       "blocks": {
         "heading": {
@@ -26,7 +26,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Curated fashion for every occasion. Rent designer pieces for your next event or add timeless items to your wardrobe. Based in Berlin, styled with intention.</p>"
+            "text": "<p>Curated fashion for every occasion. Rent designer pieces for your next event or book a personal styling session. Based in Berlin, styled with intention.</p>"
           }
         }
       },
@@ -40,15 +40,59 @@
         "full_width": true,
         "content_alignment": "center",
         "padding_top": 80,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     },
-    "featured_collection": {
+    "services": {
+      "type": "editorial-services",
+      "blocks": {
+        "styling": {
+          "type": "service",
+          "settings": {
+            "title": "Personal Styling",
+            "text": "One-on-one consultations tailored to your aesthetic, body, and lifestyle. From wardrobe edits to complete transformations.",
+            "link_label": "Learn More",
+            "link": "shopify://pages/styling"
+          }
+        },
+        "rental": {
+          "type": "service",
+          "settings": {
+            "title": "Designer Rental",
+            "text": "Access luxury pieces for your next event. Curated, maintained, delivered to your door in Berlin and across Germany.",
+            "link_label": "Browse Collection",
+            "link": "shopify://collections/for-rent"
+          }
+        },
+        "events": {
+          "type": "service",
+          "settings": {
+            "title": "Event Styling",
+            "text": "Red carpet, editorial, and production styling. From concept to final look, every detail considered.",
+            "link_label": "Get in Touch",
+            "link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "styling",
+        "rental",
+        "events"
+      ],
+      "settings": {
+        "label": "What I Do",
+        "heading": "Services",
+        "color_scheme": "scheme-1",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "featured_rental": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured Pieces",
+        "title": "Available to Rent",
         "heading_size": "h2",
-        "collection": "all",
+        "collection": "for-rent",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -60,61 +104,8 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 52
-      }
-    },
-    "services": {
-      "type": "multicolumn",
-      "blocks": {
-        "styling": {
-          "type": "column",
-          "settings": {
-            "title": "Personal Styling",
-            "text": "<p>One-on-one styling consultations tailored to your personal aesthetic, body type, and lifestyle. From wardrobe edits to complete transformations.</p>",
-            "link_label": "Learn More",
-            "link": ""
-          }
-        },
-        "rental": {
-          "type": "column",
-          "settings": {
-            "title": "Designer Rental",
-            "text": "<p>Access luxury designer pieces for your next event without the full price tag. Carefully curated, professionally maintained, delivered to your door.</p>",
-            "link_label": "Browse Rentals",
-            "link": ""
-          }
-        },
-        "events": {
-          "type": "column",
-          "settings": {
-            "title": "Event Styling",
-            "text": "<p>Red carpet, editorial, and event styling for individuals and productions. From concept to final look, every detail considered.</p>",
-            "link_label": "Get in Touch",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "styling",
-        "rental",
-        "events"
-      ],
-      "settings": {
-        "title": "Services",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 40,
+        "padding_bottom": 80
       }
     },
     "about_preview": {
@@ -130,7 +121,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Laura Messerschmitt is a Berlin-based fashion stylist with a passion for creating memorable looks. With years of experience in editorial, event, and personal styling, she brings a unique perspective that blends high fashion with individual expression.</p>",
+            "text": "<p>Berlin-based fashion stylist with a passion for creating memorable looks. Years of experience in editorial, event, and personal styling — blending high fashion with individual expression.</p>",
             "text_style": "body"
           }
         },
@@ -138,7 +129,7 @@
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": ""
+            "button_link": "shopify://pages/about"
           }
         }
       },
@@ -154,55 +145,52 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
-    "video_section": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": true,
-        "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "testimonials": {
-      "type": "rich-text",
+      "type": "editorial-testimonials",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "t1": {
+          "type": "testimonial",
           "settings": {
-            "heading": "What Clients Say",
-            "heading_size": "h1"
+            "quote": "Laura has an incredible eye for detail and truly understands how to make you feel confident in what you wear. She transformed my wardrobe and my self-image.",
+            "author": "Sophie M.",
+            "context": "Personal Styling"
           }
         },
-        "quote": {
-          "type": "text",
+        "t2": {
+          "type": "testimonial",
           "settings": {
-            "text": "<p><em>\"Laura has an incredible eye for detail and truly understands how to make you feel confident in what you wear. She transformed my wardrobe and my self-image.\"</em></p>"
+            "quote": "The rental experience was seamless. The dress arrived perfectly pressed, fit beautifully, and I felt like a million euros at the gala.",
+            "author": "Anna K.",
+            "context": "Designer Rental"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Working with Laura on our editorial shoot was a dream. She understood the vision immediately and elevated every look beyond what we imagined.",
+            "author": "Maximilian R.",
+            "context": "Editorial Styling"
           }
         }
       },
       "block_order": [
-        "heading",
-        "quote"
+        "t1",
+        "t2",
+        "t3"
       ],
       "settings": {
-        "desktop_content_position": "center",
+        "label": "Kind Words",
         "color_scheme": "scheme-2",
-        "full_width": true,
-        "content_alignment": "center",
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "newsletter": {
@@ -218,7 +206,7 @@
         "paragraph": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Subscribe for styling tips, new arrivals, and exclusive rental offers.</p>"
+            "text": "<p>Styling tips, new arrivals, and exclusive rental offers.</p>"
           }
         },
         "email": {
@@ -232,20 +220,19 @@
         "email"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
-    "hero_banner",
-    "intro_text",
-    "featured_collection",
+    "hero",
+    "intro",
     "services",
+    "featured_rental",
     "about_preview",
-    "video_section",
     "testimonials",
     "newsletter"
   ]

@@ -1,0 +1,265 @@
+{%- style -%}
+  .editorial-services {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .editorial-services__header {
+    text-align: center;
+    max-width: 64rem;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+  }
+
+  .editorial-services__label {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+  }
+
+  .editorial-services__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 4vw, 4.8rem);
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .editorial-services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .editorial-services__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .editorial-services__item {
+    padding: 4rem 3rem;
+    position: relative;
+  }
+
+  @media screen and (min-width: 750px) {
+    .editorial-services__item {
+      padding: 4rem;
+    }
+
+    .editorial-services__item:not(:last-child) {
+      border-right: 1px solid rgba(var(--color-foreground), 0.08);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .editorial-services__item:not(:last-child) {
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    }
+  }
+
+  .editorial-services__number {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .editorial-services__item-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    margin: 0 0 1.6rem;
+    line-height: 1.2;
+  }
+
+  .editorial-services__item-text {
+    font-size: 1.4rem;
+    line-height: 1.75;
+    opacity: 0.6;
+    margin: 0 0 2rem;
+  }
+
+  .editorial-services__link {
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .editorial-services__link:hover {
+    opacity: 0.6;
+  }
+
+  .editorial-services__link-arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.4rem;
+  }
+
+  .editorial-services__link:hover .editorial-services__link-arrow {
+    transform: translateX(4px);
+  }
+{%- endstyle -%}
+
+<section class="editorial-services color-{{ section.settings.color_scheme }}">
+  <div class="editorial-services__header">
+    {% if section.settings.label != blank %}
+      <p class="editorial-services__label">{{ section.settings.label }}</p>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="editorial-services__title">{{ section.settings.heading }}</h2>
+    {% endif %}
+  </div>
+
+  <div class="editorial-services__grid">
+    {% for block in section.blocks %}
+      <div class="editorial-services__item" {{ block.shopify_attributes }}>
+        <p class="editorial-services__number">0{{ forloop.index }}</p>
+        {% if block.settings.title != blank %}
+          <h3 class="editorial-services__item-title">{{ block.settings.title }}</h3>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <p class="editorial-services__item-text">{{ block.settings.text }}</p>
+        {% endif %}
+        {% if block.settings.link_label != blank %}
+          <a href="{{ block.settings.link }}" class="editorial-services__link">
+            {{ block.settings.link_label }}
+            <span class="editorial-services__link-arrow">&rarr;</span>
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial Services",
+  "tag": "section",
+  "class": "section-editorial-services",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "What I Do"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Services"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" },
+        { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }
+      ],
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Service Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Describe this service offering."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial Services",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Personal Styling",
+            "text": "One-on-one consultations tailored to your aesthetic, body, and lifestyle. From wardrobe edits to complete transformations.",
+            "link_label": "Learn More"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Designer Rental",
+            "text": "Access luxury pieces for your next event. Curated, maintained, delivered to your door in Berlin and across Germany.",
+            "link_label": "Browse Collection"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Event Styling",
+            "text": "Red carpet, editorial, and production styling. From concept to final look, every detail considered.",
+            "link_label": "Get in Touch"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
