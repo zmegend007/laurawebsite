@@ -22,8 +22,8 @@ body {
 }
 
 ::selection {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 /* Grain texture — atmospheric overlay on light sections
@@ -237,7 +237,7 @@ button[type="submit"] {
    ───────────────────────────────────────────────────── */
 
 .section-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header {
@@ -312,7 +312,7 @@ button[type="submit"] {
   font-size: 1.5rem;
   font-weight: 400;
   padding: 1.8rem 2.4rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 
@@ -869,11 +869,11 @@ button[type="submit"] {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 
