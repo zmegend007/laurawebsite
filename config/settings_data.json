@@ -150,12 +150,12 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#0a0a0a",
+          "background": "#ffffff",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
+          "text": "#000000",
+          "button": "#c482c1",
           "button_label": "#0a0a0a",
-          "secondary_button_label": "#ffffff",
+          "secondary_button_label": "#c482c1",
           "shadow": "#ffffff"
         }
       },
