@@ -266,7 +266,7 @@
             "testimonial_2_author": "Bianca Waechter",
             "testimonial_2_role": "",
             "testimonial_2_rating": 5,
-            "testimonial_3_enabled": true,
+            "testimonial_3_enabled": false,
             "testimonial_3_image": "shopify://shop_images/image-480x766.jpg",
             "testimonial_3_text_position": "right",
             "testimonial_3_quote": "When I contacted Laura to style me for an event I had in Berlin, she didn't hesitate and she immediately jumped into sourcing looks. She is meticulous and pays attention to every detail. She even went as far as putting a team together for us to collaborate creatively. Laura, treats all her clients with the utmost respect and professionalism regardless of whether you have a big budget or small budget or no budget at all. She is a firm believer in, \"I am only as good as my last job\", and her work is testament to that. Thank you Laura, and I look forward to working with you again in the very near future.",
@@ -333,6 +333,7 @@
         "t2",
         "t3"
       ],
+      "disabled": true,
       "settings": {
         "label": "Kind Words",
         "color_scheme": "scheme-2",
