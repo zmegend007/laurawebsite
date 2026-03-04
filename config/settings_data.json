@@ -10,7 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/logo-transparent-white.png",
-    "logo_width": 120,
+    "logo_width": 50,
     "favicon": "shopify://shop_images/image-480x561.jpg",
     "type_header_font": "bagel_fat_one_n4",
     "heading_scale": 100,

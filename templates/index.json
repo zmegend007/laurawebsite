@@ -180,6 +180,7 @@
         },
         "row_JxyX7F": {
           "type": "row",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
@@ -191,6 +192,7 @@
         },
         "row_TkwCbX": {
           "type": "row",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
