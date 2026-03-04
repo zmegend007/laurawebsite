@@ -23,6 +23,7 @@ Premium stylist portfolio & rental engine for Laura Messerschmitt, a Berlin-base
 | Automation | n8n (Maison Malou managed) | Content pipeline, monthly reports, newsletter |
 | Analytics | Shopify Analytics + Google Search Console | Traffic & SEO |
 | Image Hosting | Shopify native | Product images hosted on Shopify CDN |
+| Email Ingest | Gmail API (OAuth2) | Fetch Laura's product emails + image attachments |
 
 ---
 
@@ -175,41 +176,127 @@ Every product description follows this structure in `body_html`. Keep it **short
 
 ## Product Pipeline Workflow
 
-When the user says "we got new products" or similar, execute this pipeline for each product:
+Two modes: **Enrich** (products already on Shopify) and **Ingest** (new products from Laura's emails).
 
-### Step 1: Discover
-- Get a fresh API token via client credentials grant
-- `GET /admin/api/2024-10/products.json` — find new/updated products
-- Identify products that need enrichment (missing description, sparse tags, no alt text)
+---
 
-### Step 2: Research
-- Use **WebSearch** to research the designer and specific garment
-- Look for: brand story, material details, retail price, collection info, "as seen in" references
-- Cross-reference with any info the user provided (emails, notes, images)
+### Mode A: Enrich Existing Products
 
-### Step 3: Write
-- Generate editorial product description using the template above
-- Craft title in format: `Designer — Garment Type in Material`
-- Build complete tag set: `for-rent`, `designer:X`, `category:X`, `season:X`, `color:X`, `material:X`
-- Write descriptive alt text for each image
+When the user says "we got new products" or similar, and products are already uploaded to Shopify:
 
-### Step 4: Push
-- `PUT /admin/api/2024-10/products/{id}.json` with:
-  - `title`, `body_html`, `vendor`, `product_type`, `tags`
-  - `variants[0].compare_at_price` (retail value)
-  - `images[].alt` (descriptive alt text)
-- Set metafields via `POST /admin/api/2024-10/products/{id}/metafields.json`:
-  - `custom.retail_value` (money type)
+**Step 1: Discover**
+- Get fresh Shopify API token via client credentials grant
+- `GET /admin/api/2024-10/products.json` — find all products
+- Identify unenriched: `vendor == "lauramesserschmitt"` OR no tags OR no `body_html`
 
-### Step 5: Verify
-- `GET /admin/api/2024-10/products/{id}.json` — confirm all fields saved
-- Report back to user with summary of what was updated
+**Step 2: Inspect**
+- Download all product images via Shopify CDN URLs
+- Visually inspect each image to identify: brand, garment type, material, colour, condition
+- Read labels/tags in photos for size, composition, origin — **these override title info**
+
+**Step 3: Research**
+- Use **WebSearch** to research designer and specific garment (parallel agents for speed)
+- Look for: brand story, retail price, collection info, material details
+- Cross-reference with Laura's email snippets if available
+
+**Step 4: Write**
+- Title format: `Designer — Garment Type in Material`
+- Editorial description: Hook → The Designer → Details (NO styling tips, mobile-first)
+- Tag set: `for-rent, designer, {brand-handle}, {product-type}, {size}, {material}, {colour}`
+- SKU format: `BRAND-TYPE-SIZE`
+- Alt text for every image (descriptive, SEO-friendly)
+- If brand/details unclear: prefix title with `?` and add `? needs-review` tag
+
+**Step 5: Push**
+- Single Python script per batch via Shopify Admin REST API:
+  - `PUT /products/{id}.json` — title, body_html, vendor, product_type, tags
+  - `PUT /variants/{id}.json` — SKU, compare_at_price (retail value)
+  - `PUT /products/{id}/images/{id}.json` — alt text for each image
+  - `POST /inventory_levels/set.json` — set to 1 if currently 0
+  - `POST /collects.json` — add to collections (Frontpage, Shoes, Bags, etc.)
+
+**Step 6: Hero Image Processing (Gemini)**
+- Download hero image (position 1) from Shopify CDN
+- Send to Gemini `gemini-2.5-flash-image` with locked prompt (see `memory/gemini-hero-template.md`)
+- Prompt places garment on a natural, healthy-bodied female model — grey studio, 1:1 square
+- Save output for user review before uploading
+- Upload edited 1024x1024 PNG as new hero (position 1); original mannequin photo shifts to position 2+
+- Credentials: Gemini API key in `memory/gemini-credentials.md`
+
+**Step 7: Verify**
+- Spot-check 2-3 products via API: confirm all fields saved, 0 missing alt texts, hero image updated
+- Report summary table to user with flagged items
+
+---
+
+### Mode B: Ingest from Laura's Emails (Gmail → Shopify)
+
+Laura sends product images and descriptions via email. This mode fetches them directly.
+
+**Step 0: Authenticate**
+- Gmail OAuth2 tokens stored at `~/.gmail-mcp/credentials.json`
+- If token expired, refresh via `POST https://oauth2.googleapis.com/token` with refresh_token
+- Google Cloud Project: `automation-fashionpipeline`
+
+**Step 1: Fetch Emails**
+- Search: `from:lauramonamesserschmitt@gmail.com has:attachment`
+- For each email: extract subject, snippet (contains garment description in German), date
+- For each image attachment: download via `GET /messages/{id}/attachments/{attId}`
+- Skip `1000024133.jpg` — this is Laura's email signature image, not product content
+
+**Step 2: Cross-Reference**
+- Compare email subjects/snippets against existing Shopify product titles
+- Match by brand + garment type to avoid duplicates
+- Flag emails whose products are already on Shopify (skip or update images)
+
+**Step 3: Parse Laura's Description**
+- Laura's email snippets contain: brand, garment type, size, colour, material, condition, sometimes retail price
+- These are in German — parse and translate key fields
+- Example: "Hermès Lederhose Größe 34 XS Hergestellt in Belgien Vintage" → Hermès, leather trousers, size 34/XS, Made in Belgium, vintage
+
+**Step 4: Create Shopify Product**
+- `POST /admin/api/2024-10/products.json` — create product with images from email
+- Upload images via Shopify's `images[].attachment` field (base64)
+- Set initial data from Laura's email description
+
+**Step 5: Enrich**
+- Run Mode A enrichment on the newly created product (research, write, push)
+
+**Step 6: Hero Image Processing (Gemini)**
+- Same as Mode A Step 6 — process hero through Gemini, upload edited version
+
+**Step 7: Verify**
+- Confirm all fields, hero image, and alt texts
+
+---
+
+### Email Sender
+- **From:** lauramonamesserschmitt@gmail.com
+- **To:** contact@marielouisemueller.com
+- **Volume:** ~138 emails, ~677 images to date (growing daily)
+- **Format:** German text with product details in subject/body + JPEG attachments
 
 ### API Credentials
-- Stored in Claude's local memory (never committed to git)
-- See `~/.claude/projects/-Users-Pumpkinshoe2-Desktop-laura-website/memory/shopify-credentials.md`
-- **Token flow:** `POST /admin/oauth/access_token` with `grant_type=client_credentials`
-- **Scopes:** write_products, write_files, write_inventory, write_metaobject_definitions, write_content
+- **Shopify:** Stored in Claude's local memory (never committed to git)
+  - See `~/.claude/projects/-Users-Pumpkinshoe2-Desktop-laurawebsite/memory/shopify-credentials.md`
+  - Token flow: `POST /admin/oauth/access_token` with `grant_type=client_credentials`
+  - Scopes: write_products, write_files, write_inventory, write_metaobject_definitions, write_content
+- **Gmail:** OAuth2 credentials at `~/.gmail-mcp/gcp-oauth.keys.json`
+  - Tokens at `~/.gmail-mcp/credentials.json` (auto-refresh)
+  - Google Cloud Project: `automation-fashionpipeline` (ID: 261602617341)
+  - Scopes: gmail.modify, gmail.settings.basic
+
+### Collections
+| Collection | ID | Type |
+|---|---|---|
+| Frontpage | 692721058176 | Manual |
+| Shoes | 692734099840 | Manual |
+| Bags | 692776305024 | Manual |
+| Vintage | 692734067072 | Manual |
+| For Rent | 692751139200 | Smart (tag: for-rent) |
+
+### Location ID
+`114145984896`
 
 ---
 
