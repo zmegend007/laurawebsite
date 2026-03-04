@@ -121,6 +121,15 @@
             "link": "shopify://products/outfit-styling"
           }
         },
+        "service_mRExUP": {
+          "type": "service",
+          "settings": {
+            "title": "Service Title",
+            "text": "Describe this service offering.",
+            "link_label": "",
+            "link": ""
+          }
+        },
         "rental": {
           "type": "service",
           "settings": {
@@ -142,6 +151,7 @@
       },
       "block_order": [
         "styling",
+        "service_mRExUP",
         "rental",
         "events"
       ],
@@ -153,13 +163,75 @@
         "padding_bottom": 80
       }
     },
+    "collection_list_VVBzMn": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_4CKhBt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "coats-jackets"
+          }
+        },
+        "featured_collection_9jBQx7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dresses"
+          }
+        },
+        "featured_collection_xNNTyf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bags"
+          }
+        },
+        "featured_collection_TMTpwm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "featured_collection_4bdH7f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bottoms"
+          }
+        },
+        "featured_collection_Rh4cea": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shoes"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_4CKhBt",
+        "featured_collection_9jBQx7",
+        "featured_collection_xNNTyf",
+        "featured_collection_TMTpwm",
+        "featured_collection_4bdH7f",
+        "featured_collection_Rh4cea"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Categories",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_NjxVw4": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "for-rent",
         "products_to_show": 4,
-        "title": "Featured collection",
+        "title": "ready to book",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -396,6 +468,7 @@
     "marquee",
     "intro",
     "services",
+    "collection_list_VVBzMn",
     "featured_collection_NjxVw4",
     "about_preview",
     "17726381116bba8fff",
