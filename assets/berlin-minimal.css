@@ -380,8 +380,8 @@ button[type="submit"] {
 
 .video-hero__heading {
   font-weight: 200;
-  letter-spacing: 0.18em;
-  font-size: clamp(3rem, 8vw, 8.5rem);
+  letter-spacing: 0.1em;
+  font-size: clamp(2.2rem, 5.5vw, 5.5rem);
   line-height: 0.95;
   text-transform: uppercase;
 }
