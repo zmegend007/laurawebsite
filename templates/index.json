@@ -71,7 +71,7 @@
         "m6"
       ],
       "settings": {
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "speed": 25,
         "reverse": false,
         "padding_top": 20,
@@ -453,7 +453,7 @@
       "settings": {
         "label": "Work Featured IN",
         "logo_height": 38,
-        "wordmark_size": 1.9,
+        "wordmark_size": 1.6,
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
