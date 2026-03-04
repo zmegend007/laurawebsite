@@ -233,11 +233,34 @@ button[type="submit"] {
 
 
 /* ─────────────────────────────────────────────────────
-   § HEADER — Airy gallery feel
+   § HEADER — Transparent overlay on hero
    ───────────────────────────────────────────────────── */
 
 .section-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+  border-bottom: none;
+}
+
+/* Solid bg when sticky on scroll */
+.section-header.shopify-section-header-sticky {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-wrapper {
+  background: transparent !important;
+  --color-foreground: 255, 255, 255;
+}
+
+.section-header.shopify-section-header-sticky .header-wrapper {
+  background: transparent !important;
 }
 
 .header {
@@ -259,12 +282,12 @@ button[type="submit"] {
   font-weight: 300;
 }
 
-/* Nav links — animated underline */
+/* Nav links — centered, larger, editorial */
 .header__menu-item {
   text-transform: uppercase;
-  font-size: 0.95rem;
-  letter-spacing: 0.2em;
-  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: 0.25em;
+  font-weight: 400;
   padding: 0.8rem 0;
   position: relative;
 }
@@ -289,7 +312,13 @@ button[type="submit"] {
 }
 
 .header__inline-menu .list-menu--inline {
-  gap: 4rem;
+  gap: 3.6rem;
+  justify-content: center;
+}
+
+/* Center the nav within the header for top-center layout */
+.header--top-center .header__inline-menu {
+  justify-content: center;
 }
 
 /* Cart icon */
@@ -313,6 +342,19 @@ button[type="submit"] {
   font-weight: 400;
   padding: 1.8rem 2.4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* Push content down on non-hero pages so it clears the
+   transparent header. The homepage hero is 100vh so it
+   handles this naturally. */
+.content-for-layout {
+  padding-top: 12rem;
+}
+
+/* Homepage: hero fills viewport, no extra padding needed */
+.template-index .content-for-layout {
+  padding-top: 0;
 }
 
 
