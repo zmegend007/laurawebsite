@@ -453,12 +453,12 @@
       ],
       "name": "Press Logos",
       "settings": {
-        "label": "Work Featured IN",
+        "label": "Works Featured In",
         "logo_height": 38,
         "wordmark_size": 1.6,
         "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "newsletter": {
