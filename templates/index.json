@@ -170,31 +170,34 @@
         "row_9YjHjg": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "image": "shopify://shop_images/service-personal-styling.png",
+            "caption": "From 200€",
+            "heading": "Personal Styling",
+            "text": "<p>Meet Laura for a one-on-one session and walk away with a look that fits you perfectly. Whether it's a date night, a business event, or a complete style refresh — she'll curate the right outfit from her collection of 90+ designer pieces.</p>",
+            "button_label": "Book a Session",
+            "button_link": "shopify://products/outfit-styling"
           }
         },
         "row_JxyX7F": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "image": "shopify://shop_images/service-event-styling.png",
+            "caption": "From 40€/hour",
+            "heading": "Event & Red Carpet",
+            "text": "<p>From Berlinale to Cannes, Laura brings the same editorial precision to your big moment. Full event styling — head to toe look curation, on-site support, and the confidence that every detail has been considered.</p>",
+            "button_label": "Get in Touch",
+            "button_link": "shopify://products/red-carpet-styling-pro-stunde"
           }
         },
         "row_TkwCbX": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "button_label": "Button label",
-            "button_link": ""
+            "image": "shopify://shop_images/service-wardrobe-makeover.png",
+            "caption": "From 40€/hour",
+            "heading": "Wardrobe Makeover",
+            "text": "<p>Laura comes to you and reimagines what you already own. A proper closet audit — what to keep, what to let go, and what's missing. You'll end up with a wardrobe you actually wear, every piece earning its place.</p>",
+            "button_label": "Book a Makeover",
+            "button_link": "shopify://products/wardrobe-makeover-pro-stunde"
           }
         }
       },
