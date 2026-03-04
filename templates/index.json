@@ -229,6 +229,77 @@
         "padding_bottom": 100
       }
     },
+    "17726381116bba8fff": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bb93e08_9eA88E": {
+          "type": "ai_gen_block_bb93e08",
+          "settings": {
+            "desktop_width_percent": 100,
+            "max_width": 1200,
+            "columns_desktop": 2,
+            "gap": 30,
+            "background_color": "#ffffff",
+            "card_background_color": "#f9f9f9",
+            "quote_color": "#333333",
+            "author_color": "#000000",
+            "role_color": "#666666",
+            "star_color": "#FFD700",
+            "quote_font_size": 16,
+            "author_font_size": 16,
+            "role_font_size": 14,
+            "card_border_radius": 8,
+            "text_padding": 25,
+            "show_rating": true,
+            "star_size": 18,
+            "testimonial_1_enabled": true,
+            "testimonial_1_image": "shopify://shop_images/image-480x1164.jpg",
+            "testimonial_1_text_position": "right",
+            "testimonial_1_quote": "\"Laura has opened this whole new world to me. A world full of colors, shapes and new forms of expression. I understood through her work, how fashion can be a tool to fully express your artistic self and reinvent yourself as often as you like.\"",
+            "testimonial_1_author": "Julia Rosa Peer",
+            "testimonial_1_role": "",
+            "testimonial_1_rating": 5,
+            "testimonial_2_enabled": true,
+            "testimonial_2_image": "shopify://shop_images/image-480x1021.jpg",
+            "testimonial_2_text_position": "right",
+            "testimonial_2_quote": "\"Laura is fantastic! She really connects with you, is super relaxed, and has a great sense of what suits you. I feel like she brings out the best in me with her clothing choices. Highly recommended!\"",
+            "testimonial_2_author": "Bianca Waechter",
+            "testimonial_2_role": "",
+            "testimonial_2_rating": 5,
+            "testimonial_3_enabled": true,
+            "testimonial_3_image": "shopify://shop_images/image-480x766.jpg",
+            "testimonial_3_text_position": "right",
+            "testimonial_3_quote": "When I contacted Laura to style me for an event I had in Berlin, she didn't hesitate and she immediately jumped into sourcing looks. She is meticulous and pays attention to every detail. She even went as far as putting a team together for us to collaborate creatively. Laura, treats all her clients with the utmost respect and professionalism regardless of whether you have a big budget or small budget or no budget at all. She is a firm believer in, \"I am only as good as my last job\", and her work is testament to that. Thank you Laura, and I look forward to working with you again in the very near future.",
+            "testimonial_3_author": "Girley Jazama",
+            "testimonial_3_role": "",
+            "testimonial_3_rating": 5,
+            "testimonial_4_enabled": false,
+            "testimonial_4_text_position": "right",
+            "testimonial_4_quote": "",
+            "testimonial_4_author": "",
+            "testimonial_4_role": "",
+            "testimonial_4_rating": 5,
+            "testimonial_5_enabled": false,
+            "testimonial_5_text_position": "right",
+            "testimonial_5_quote": "",
+            "testimonial_5_author": "",
+            "testimonial_5_role": "",
+            "testimonial_5_rating": 5,
+            "testimonial_6_enabled": false,
+            "testimonial_6_text_position": "right",
+            "testimonial_6_quote": "",
+            "testimonial_6_author": "",
+            "testimonial_6_role": "",
+            "testimonial_6_rating": 5
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bb93e08_9eA88E"
+      ],
+      "settings": {}
+    },
     "testimonials": {
       "type": "editorial-testimonials",
       "blocks": {
@@ -311,6 +382,7 @@
     "services",
     "featured_collection_NjxVw4",
     "about_preview",
+    "17726381116bba8fff",
     "testimonials",
     "newsletter"
   ]
