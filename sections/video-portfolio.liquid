@@ -1,0 +1,401 @@
+{%- style -%}
+  .video-portfolio {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .video-portfolio__label {
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 4rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .video-portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 990px) {
+    .video-portfolio__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .video-portfolio__grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+  }
+
+  .video-portfolio__card {
+    cursor: pointer;
+  }
+
+  .video-portfolio__thumb {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.05);
+  }
+
+  .video-portfolio__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .video-portfolio__card:hover .video-portfolio__thumb img {
+    transform: scale(1.03);
+  }
+
+  .video-portfolio__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease;
+  }
+
+  .video-portfolio__card:hover .video-portfolio__play {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .video-portfolio__play-icon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .video-portfolio__card:hover .video-portfolio__play-icon {
+    border-color: #fff;
+    transform: scale(1.1);
+  }
+
+  .video-portfolio__play-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba(255, 255, 255, 0.9);
+    margin-left: 3px;
+  }
+
+  .video-portfolio__title {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-portfolio__card:hover .video-portfolio__title {
+    opacity: 0.8;
+  }
+
+  /* Expanded state */
+  .video-portfolio__card.is-expanded {
+    grid-column: 1 / -1;
+    cursor: default;
+  }
+
+  .video-portfolio__card.is-expanded .video-portfolio__thumb {
+    display: none;
+  }
+
+  .video-portfolio__card.is-expanded .video-portfolio__title {
+    display: none;
+  }
+
+  .video-portfolio__expanded {
+    display: none;
+  }
+
+  .video-portfolio__card.is-expanded .video-portfolio__expanded {
+    display: block;
+    animation: videoExpand 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes videoExpand {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .video-portfolio__player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+
+  .video-portfolio__player iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-portfolio__credits {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.6rem 0 0.8rem;
+  }
+
+  .video-portfolio__credits-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    opacity: 0.4;
+    letter-spacing: 0.04em;
+  }
+
+  .video-portfolio__credits-text strong {
+    font-weight: 500;
+    opacity: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  .video-portfolio__close {
+    background: none;
+    border: 1px solid rgba(var(--color-foreground), 0.15);
+    color: rgb(var(--color-foreground));
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 2rem;
+  }
+
+  .video-portfolio__close:hover {
+    opacity: 0.8;
+  }
+{%- endstyle -%}
+
+<section class="video-portfolio color-{{ section.settings.color_scheme }}">
+  {% if section.settings.label != blank %}
+    <p class="video-portfolio__label bm-reveal">{{ section.settings.label }}</p>
+  {% endif %}
+
+  <div class="video-portfolio__grid" data-video-grid>
+    {% for block in section.blocks %}
+      {% assign video_id = block.settings.youtube_id %}
+      <div
+        class="video-portfolio__card"
+        data-video-card
+        data-youtube-id="{{ video_id }}"
+        {{ block.shopify_attributes }}
+      >
+        <div class="video-portfolio__thumb">
+          {% if block.settings.custom_thumbnail != blank %}
+            <img
+              src="{{ block.settings.custom_thumbnail | image_url: width: 600 }}"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+              width="400"
+              height="600"
+            >
+          {% else %}
+            <img
+              src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+              width="400"
+              height="600"
+            >
+          {% endif %}
+          <div class="video-portfolio__play">
+            <span class="video-portfolio__play-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="8,5 20,12 8,19" />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        {% if block.settings.title != blank %}
+          <p class="video-portfolio__title">{{ block.settings.title }}</p>
+        {% endif %}
+
+        <div class="video-portfolio__expanded">
+          <div class="video-portfolio__player" data-player></div>
+          <div class="video-portfolio__credits">
+            <div class="video-portfolio__credits-text">
+              {% if block.settings.title != blank %}
+                <strong>{{ block.settings.title }}</strong><br>
+              {% endif %}
+              {% if block.settings.credits != blank %}
+                {{ block.settings.credits | newline_to_br }}
+              {% endif %}
+            </div>
+            <button class="video-portfolio__close" data-video-close>Close</button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.querySelector('[data-video-grid]');
+    if (!grid) return;
+
+    grid.addEventListener('click', function (e) {
+      var card = e.target.closest('[data-video-card]');
+      if (!card) return;
+
+      /* Close button */
+      if (e.target.closest('[data-video-close]')) {
+        closeCard(card);
+        return;
+      }
+
+      /* Already expanded — ignore clicks on player area */
+      if (card.classList.contains('is-expanded')) return;
+
+      /* Close any other expanded card first */
+      var open = grid.querySelector('.is-expanded');
+      if (open) closeCard(open);
+
+      /* Expand this card */
+      var id = card.getAttribute('data-youtube-id');
+      var player = card.querySelector('[data-player]');
+      player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      card.classList.add('is-expanded');
+
+      /* Scroll into view smoothly */
+      setTimeout(function () {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    });
+
+    function closeCard(card) {
+      var player = card.querySelector('[data-player]');
+      player.innerHTML = '';
+      card.classList.remove('is-expanded');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video Portfolio",
+  "tag": "section",
+  "class": "section-video-portfolio",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Selected Work"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" },
+        { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }
+      ],
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "text",
+          "id": "youtube_id",
+          "label": "YouTube video ID",
+          "info": "The part after watch?v= in the YouTube URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Project Title"
+        },
+        {
+          "type": "textarea",
+          "id": "credits",
+          "label": "Credits",
+          "info": "One credit per line (e.g. Styling: Laura Messerschmitt)",
+          "default": "Styling: Laura Messerschmitt"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_thumbnail",
+          "label": "Custom thumbnail (optional)",
+          "info": "Override the YouTube thumbnail. Best at 2:3 portrait ratio."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Portfolio",
+      "blocks": [
+        {
+          "type": "video",
+          "settings": {
+            "youtube_id": "dQw4w9WgXcQ",
+            "title": "Project Title",
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Photographer Name"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

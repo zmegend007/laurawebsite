@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "video-portfolio": {
+      "type": "video-portfolio",
+      "blocks": {
+        "v1": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "",
+            "title": "Where's Wanda — Apple TV+",
+            "credits": "Styling: Laura Messerschmitt"
+          }
+        },
+        "v2": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "",
+            "title": "Daydreaming — Julia Rosa Peer",
+            "credits": "Styling: Laura Messerschmitt\nDesign: Danny Reinke"
+          }
+        },
+        "v3": {
+          "type": "video",
+          "settings": {
+            "youtube_id": "",
+            "title": "The Body Model — Eilina Karaj",
+            "credits": "Styling: Laura Messerschmitt"
+          }
+        }
+      },
+      "block_order": ["v1", "v2", "v3"],
+      "settings": {
+        "label": "Selected Work",
+        "color_scheme": "scheme-1",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": ["video-portfolio"]
+}
