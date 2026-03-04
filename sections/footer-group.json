@@ -32,7 +32,7 @@
         "info": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "Menu",
             "menu": "footer"
           }
         }
