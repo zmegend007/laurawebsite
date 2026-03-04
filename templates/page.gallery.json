@@ -36,12 +36,22 @@
             "title": "The Body Model — Eilina Karaj",
             "credits": "Styling: Laura Messerschmitt"
           }
+        },
+        "video_GapyYd": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "youtube_id": "",
+            "title": "Project Title",
+            "credits": "Styling: Laura Messerschmitt"
+          }
         }
       },
       "block_order": [
         "v1",
         "v2",
-        "v3"
+        "v3",
+        "video_GapyYd"
       ],
       "settings": {
         "label": "Selected Work",
