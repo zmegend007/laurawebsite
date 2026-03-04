@@ -13,7 +13,7 @@
       "type": "main-page",
       "settings": {
         "padding_top": 52,
-        "padding_bottom": 0
+        "padding_bottom": 52
       }
     },
     "about_image_text": {
@@ -38,7 +38,9 @@
         "heading",
         "text"
       ],
+      "disabled": true,
       "settings": {
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
@@ -117,7 +119,10 @@
           "settings": {
             "button_label": "Get in Touch",
             "button_link": "shopify://pages/contact",
-            "button_style_secondary": false
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
@@ -129,7 +134,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 100,
         "padding_bottom": 100
