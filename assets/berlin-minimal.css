@@ -236,6 +236,13 @@ button[type="submit"] {
    § HEADER — Transparent overlay on hero
    ───────────────────────────────────────────────────── */
 
+/* Collapse the header group row so it takes zero space
+   in the body grid. The header floats over content. */
+.shopify-section-group-header-group {
+  height: 0;
+  overflow: visible;
+}
+
 .section-header {
   position: absolute;
   top: 0;
