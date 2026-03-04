@@ -300,45 +300,60 @@
       ],
       "settings": {}
     },
-    "testimonials": {
-      "type": "editorial-testimonials",
+    "press_logos_Qq34DU": {
+      "type": "press-logos",
       "blocks": {
-        "t1": {
-          "type": "testimonial",
+        "publication_m9MHWf": {
+          "type": "publication",
           "settings": {
-            "quote": "Laura has an incredible eye for detail and truly understands how to make you feel confident in what you wear. She transformed my wardrobe and my self-image.",
-            "author": "Sophie M.",
-            "context": "Personal Styling"
+            "name": "Vogue Germany",
+            "link": ""
           }
         },
-        "t2": {
-          "type": "testimonial",
+        "publication_hVfnK7": {
+          "type": "publication",
           "settings": {
-            "quote": "The rental experience was seamless. The dress arrived perfectly pressed, fit beautifully, and I felt like a million euros at the gala.",
-            "author": "Anna K.",
-            "context": "Designer Rental"
+            "name": "arte magazin",
+            "link": ""
           }
         },
-        "t3": {
-          "type": "testimonial",
+        "publication_GJpMUK": {
+          "type": "publication",
           "settings": {
-            "quote": "Working with Laura on our editorial shoot was a dream. She understood the vision immediately and elevated every look beyond what we imagined.",
-            "author": "Maximilian R.",
-            "context": "Editorial Styling"
+            "name": "Fräulein",
+            "link": ""
+          }
+        },
+        "publication_fhhB7k": {
+          "type": "publication",
+          "settings": {
+            "name": "Discover Germany",
+            "link": ""
+          }
+        },
+        "publication_eqEXfH": {
+          "type": "publication",
+          "settings": {
+            "name": "Chicle Magazine",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "t1",
-        "t2",
-        "t3"
+        "publication_m9MHWf",
+        "publication_hVfnK7",
+        "publication_GJpMUK",
+        "publication_fhhB7k",
+        "publication_eqEXfH"
       ],
-      "disabled": true,
+      "name": "Press Logos",
       "settings": {
-        "label": "Kind Words",
-        "color_scheme": "scheme-2",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "label": "Work Featured IN",
+        "logo_height": 38,
+        "wordmark_size": 1.9,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "newsletter": {
@@ -384,7 +399,7 @@
     "featured_collection_NjxVw4",
     "about_preview",
     "17726381116bba8fff",
-    "testimonials",
+    "press_logos_Qq34DU",
     "newsletter"
   ]
 }
