@@ -11,6 +11,7 @@
   "sections": {
     "about_Hg6Mwg": {
       "type": "about",
+      "disabled": true,
       "name": "About",
       "settings": {
         "heading": "SELECTED WORKS MULTIFORMAT",
@@ -66,7 +67,7 @@
       "settings": {
         "label": "",
         "color_scheme": "scheme-1",
-        "padding_top": 0,
+        "padding_top": 120,
         "padding_bottom": 24
       }
     }
