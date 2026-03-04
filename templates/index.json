@@ -170,7 +170,7 @@
         "row_9YjHjg": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/service-personal-styling_b2d71d15-9d1f-4f6c-b80a-ccf5f3ad010d.png",
+            "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 200€",
             "heading": "Personal Styling",
             "text": "<p>Meet Laura for a one-on-one session and walk away with a look that fits you perfectly. Whether it's a date night, a business event, or a complete style refresh — she'll curate the right outfit from her collection of 90+ designer pieces.</p>",
@@ -181,7 +181,7 @@
         "row_JxyX7F": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/service-event-styling_e1036156-30e3-437c-a555-0d0312e291ef.png",
+            "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
             "heading": "Event & Red Carpet",
             "text": "<p>From Berlinale to Cannes, Laura brings the same editorial precision to your big moment. Full event styling — head to toe look curation, on-site support, and the confidence that every detail has been considered.</p>",
@@ -192,7 +192,7 @@
         "row_TkwCbX": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/service-wardrobe-makeover_61999a19-b3fd-484c-b8d3-53b448fba138.png",
+            "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
             "heading": "Wardrobe Makeover",
             "text": "<p>Laura comes to you and reimagines what you already own. A proper closet audit — what to keep, what to let go, and what's missing. You'll end up with a wardrobe you actually wear, every piece earning its place.</p>",
