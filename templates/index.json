@@ -13,12 +13,12 @@
       "type": "video-hero",
       "settings": {
         "heading": "Laura Messerschmitt",
-        "subheading": "Berlin-Based Fashion Stylist",
+        "subheading": "Personal Stylist & Consultant",
         "video_url": "",
-        "overlay_opacity": 35,
-        "button_label_1": "Explore Collection",
+        "overlay_opacity": 80,
+        "button_label_1": "BOOK SERVICE",
         "button_link_1": "shopify://collections/for-rent",
-        "button_label_2": "Book a Consultation",
+        "button_label_2": "EXPLORE WARDROBE",
         "button_link_2": "shopify://pages/contact"
       }
     },
