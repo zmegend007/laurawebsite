@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "video-portfolio": {
@@ -22,13 +31,18 @@
         "v3": {
           "type": "video",
           "settings": {
-            "youtube_id": "",
+            "youtube_id": "https://youtube.com/shorts/s8-uOMDr1nI?si=W-TLXgeunz2t9b6C",
             "title": "The Body Model — Eilina Karaj",
-            "credits": "Styling: Laura Messerschmitt"
+            "credits": "Styling: Laura Messerschmitt",
+            "custom_thumbnail": "shopify://shop_images/image-480x702.jpg"
           }
         }
       },
-      "block_order": ["v1", "v2", "v3"],
+      "block_order": [
+        "v1",
+        "v2",
+        "v3"
+      ],
       "settings": {
         "label": "Selected Work",
         "color_scheme": "scheme-1",
@@ -37,5 +51,7 @@
       }
     }
   },
-  "order": ["video-portfolio"]
+  "order": [
+    "video-portfolio"
+  ]
 }
