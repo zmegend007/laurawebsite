@@ -254,12 +254,17 @@ button[type="submit"] {
   -webkit-backdrop-filter: blur(12px);
 }
 
-.header-wrapper {
+/* Kill all backgrounds on the header — scheme-1 sets black bg,
+   but we want fully transparent until sticky kicks in. */
+.header-wrapper,
+.header-wrapper.color-scheme-1,
+.header-wrapper[class*="color-"] {
   background: transparent !important;
-  --color-foreground: 255, 255, 255;
+  background-color: transparent !important;
 }
 
-.section-header.shopify-section-header-sticky .header-wrapper {
+/* Also kill the gradient Dawn might apply */
+.section-header .gradient {
   background: transparent !important;
 }
 
