@@ -244,21 +244,13 @@ button[type="submit"] {
 }
 
 .section-header {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   background: transparent;
   border-bottom: none;
-}
-
-/* Solid bg when sticky on scroll */
-.section-header.shopify-section-header-sticky {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Kill all backgrounds on the header — scheme-1 sets black bg,
@@ -783,6 +775,13 @@ button[type="submit"] {
 
 .footer__list-social .list-social__link:hover {
   opacity: 1;
+}
+
+/* Footer menu — horizontal layout */
+.footer-block--menu .footer-block__details-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 2.4rem;
 }
 
 .footer__content-bottom {
