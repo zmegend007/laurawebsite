@@ -796,6 +796,11 @@ button[type="submit"] {
   font-size: 1.05rem;
 }
 
+/* Hide "Powered by Shopify" */
+.copyright__content:last-of-type {
+  display: none;
+}
+
 .footer-block__link {
   letter-spacing: 0.06em;
   font-size: 1.25rem;
