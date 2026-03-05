@@ -295,7 +295,11 @@
   border-color: #c482c1 !important;
 }
 
-/* Rental policy button — frame + icon recolor */
+/* Rental policy button — outer border + SVG recolor */
+.rental-policy {
+  border-color: #c482c1 !important;
+}
+
 .rental-policy svg rect[fill="#1D85E8"] {
   fill: #c482c1 !important;
 }
@@ -303,6 +307,17 @@
 .rental-policy svg path[fill="#4AAFD3"],
 .rental-policy svg g path {
   fill: #c482c1 !important;
+}
+
+/* Kill all remaining blue borders in the widget */
+.rental-policy,
+.rental-policy *,
+[id*="flexcon"] input,
+[id*="flexcon"] select,
+[class*="flexcon"] input,
+[class*="flexcon"] select {
+  border-color: #c482c1 !important;
+  outline-color: #c482c1 !important;
 }
 
 /* Rename "Explore our rental policy" → "Rental Policy" */
