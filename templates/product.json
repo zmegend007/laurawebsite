@@ -41,6 +41,16 @@
             "show_gift_card_recipient": false
           }
         },
+        "flexcon_product_rental_hire_variants_product_Cricq9": {
+          "type": "shopify://apps/flexcon-product-rental-hire/blocks/variants-product/9cc60882-9aac-4e25-a2de-65631b58cb50",
+          "settings": {
+            "font_size_title": 16,
+            "font_size_subtitle": 16,
+            "selector_variant_id": "",
+            "selector_price": "",
+            "selector_price_sale": ""
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -59,16 +69,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "flexcon_product_rental_hire_variants_product_Cricq9": {
-          "type": "shopify://apps/flexcon-product-rental-hire/blocks/variants-product/9cc60882-9aac-4e25-a2de-65631b58cb50",
-          "settings": {
-            "font_size_title": 16,
-            "font_size_subtitle": 16,
-            "selector_variant_id": "",
-            "selector_price": "",
-            "selector_price_sale": ""
-          }
         }
       },
       "block_order": [
@@ -77,10 +77,10 @@
         "price",
         "variant_picker",
         "buy_buttons",
+        "flexcon_product_rental_hire_variants_product_Cricq9",
         "description",
         "collapsible-rental",
-        "share",
-        "flexcon_product_rental_hire_variants_product_Cricq9"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
