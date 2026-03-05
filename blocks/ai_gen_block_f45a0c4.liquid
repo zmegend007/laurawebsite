@@ -46,10 +46,6 @@
     filter: blur({{ block.settings.glow_blur }}px);
   }
 
-  .ai-editorial-grid__card-{{ ai_gen_id }}:hover {
-    transform: translateY(-4px);
-  }
-
   .ai-editorial-grid__card-{{ ai_gen_id }}:hover::before {
     opacity: {{ block.settings.glow_opacity_hover }};
   }
