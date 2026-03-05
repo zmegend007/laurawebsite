@@ -398,6 +398,17 @@ details[open] > .header__submenu {
   padding-top: 0;
 }
 
+/* Featured product on homepage — "Add to cart" → "Book Now" */
+.section-featured-product .product-form__submit span {
+  font-size: 0 !important;
+}
+
+.section-featured-product .product-form__submit span::after {
+  content: "BOOK NOW";
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+}
+
 
 /* ─────────────────────────────────────────────────────
    § VIDEO HERO — Cinematic
