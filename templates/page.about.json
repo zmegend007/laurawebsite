@@ -9,6 +9,63 @@
  */
 {
   "sections": {
+    "editorial_marquee_97WLfi": {
+      "type": "editorial-marquee",
+      "blocks": {
+        "text_eFX8hk": {
+          "type": "text",
+          "settings": {
+            "text": "Personal Styling"
+          }
+        },
+        "text_AVgReM": {
+          "type": "text",
+          "settings": {
+            "text": "Designer Rental"
+          }
+        },
+        "text_ayGQ4n": {
+          "type": "text",
+          "settings": {
+            "text": "Editorial"
+          }
+        },
+        "text_ajigy4": {
+          "type": "text",
+          "settings": {
+            "text": "Events"
+          }
+        },
+        "text_CQn8tR": {
+          "type": "text",
+          "settings": {
+            "text": "Red Carpet"
+          }
+        },
+        "text_8nY6xR": {
+          "type": "text",
+          "settings": {
+            "text": "Berlin"
+          }
+        }
+      },
+      "block_order": [
+        "text_eFX8hk",
+        "text_AVgReM",
+        "text_ayGQ4n",
+        "text_ajigy4",
+        "text_CQn8tR",
+        "text_8nY6xR"
+      ],
+      "name": "Editorial Marquee",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": 50,
+        "reverse": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -90,6 +147,7 @@
         "rental",
         "editorial"
       ],
+      "disabled": true,
       "settings": {
         "label": "What I Do",
         "heading": "Services",
@@ -131,9 +189,10 @@
         "text",
         "button"
       ],
+      "disabled": true,
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 100,
@@ -142,6 +201,7 @@
     }
   },
   "order": [
+    "editorial_marquee_97WLfi",
     "main",
     "about_image_text",
     "services_detail",
