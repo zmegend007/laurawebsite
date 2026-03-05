@@ -9,6 +9,63 @@
  */
 {
   "sections": {
+    "editorial_marquee_nVhdWL": {
+      "type": "editorial-marquee",
+      "blocks": {
+        "text_FYFmfD": {
+          "type": "text",
+          "settings": {
+            "text": "Personal Styling"
+          }
+        },
+        "text_pF3qjw": {
+          "type": "text",
+          "settings": {
+            "text": "Designer Rental"
+          }
+        },
+        "text_RKAfpJ": {
+          "type": "text",
+          "settings": {
+            "text": "Editorial"
+          }
+        },
+        "text_pxgxha": {
+          "type": "text",
+          "settings": {
+            "text": "Events"
+          }
+        },
+        "text_DdQFQ9": {
+          "type": "text",
+          "settings": {
+            "text": "Red Carpet"
+          }
+        },
+        "text_fGmKiX": {
+          "type": "text",
+          "settings": {
+            "text": "Berlin"
+          }
+        }
+      },
+      "block_order": [
+        "text_FYFmfD",
+        "text_pF3qjw",
+        "text_RKAfpJ",
+        "text_pxgxha",
+        "text_DdQFQ9",
+        "text_fGmKiX"
+      ],
+      "name": "Editorial Marquee",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": 50,
+        "reverse": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -19,11 +76,11 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Get in Touch",
+        "heading": "",
         "heading_size": "h1",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "padding_top": 28,
-        "padding_bottom": 80
+        "padding_bottom": 0
       }
     },
     "info": {
@@ -50,7 +107,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 80,
         "padding_bottom": 80
@@ -58,6 +115,7 @@
     }
   },
   "order": [
+    "editorial_marquee_nVhdWL",
     "main",
     "form",
     "info"
