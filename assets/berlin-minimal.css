@@ -405,6 +405,7 @@ details[open] > .header__submenu {
 
 .video-hero {
   min-height: 100vh;
+  z-index: 1;
 }
 
 /* Monochrome video — cinematic greyscale */
