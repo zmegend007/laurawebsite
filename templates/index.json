@@ -9,19 +9,6 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "video-hero",
-      "settings": {
-        "heading": "Laura Messerschmitt",
-        "subheading": "Personal Stylist & Consultant",
-        "video_url": "",
-        "overlay_opacity": 80,
-        "button_label_1": "BOOK SERVICE",
-        "button_link_1": "shopify://collections/styling",
-        "button_label_2": "EXPLORE WARDROBE",
-        "button_link_2": "shopify://collections/for-rent"
-      }
-    },
     "marquee": {
       "type": "editorial-marquee",
       "blocks": {
@@ -72,10 +59,23 @@
       ],
       "settings": {
         "color_scheme": "scheme-1",
-        "speed": 25,
+        "speed": 50,
         "reverse": false,
         "padding_top": 12,
         "padding_bottom": 12
+      }
+    },
+    "hero": {
+      "type": "video-hero",
+      "settings": {
+        "heading": "Laura Messerschmitt",
+        "subheading": "Personal Stylist & Consultant",
+        "video_url": "",
+        "overlay_opacity": 80,
+        "button_label_1": "BOOK SERVICE",
+        "button_link_1": "shopify://collections/styling",
+        "button_label_2": "EXPLORE WARDROBE",
+        "button_link_2": "shopify://collections/for-rent"
       }
     },
     "featured_collection_CyTnGb": {
@@ -339,8 +339,8 @@
     }
   },
   "order": [
-    "hero",
     "marquee",
+    "hero",
     "featured_collection_CyTnGb",
     "collection_grid",
     "about_preview",
