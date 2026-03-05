@@ -325,6 +325,17 @@ button[type="submit"] {
   justify-content: center;
 }
 
+/* Dropdown submenu — solid background, above content */
+.header__submenu.global-settings-popup {
+  background-color: rgb(var(--color-background));
+  z-index: 100;
+  position: absolute;
+}
+
+details[open] > .header__submenu {
+  z-index: 100;
+}
+
 /* Cart icon */
 .header__icon:hover {
   opacity: 0.4;
