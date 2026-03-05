@@ -325,32 +325,37 @@ button[type="submit"] {
   justify-content: center;
 }
 
-/* Dropdown submenu — black bg, white text, above everything */
-.header__submenu,
-.header__submenu.global-settings-popup,
-.header__submenu.list-menu,
-ul.header__submenu {
+/* Dropdown submenu — force black bg, white text, on top of everything */
+.header__submenu.list-menu--disclosure.global-settings-popup {
   background-color: #000 !important;
   color: #fff !important;
   z-index: 9999 !important;
-  position: absolute;
-  border-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   padding: 1.2rem 0 !important;
 }
 
-details[open] > .header__submenu {
+/* Override base.css z-index: -1 on .global-settings-popup */
+.header__submenu.global-settings-popup {
   z-index: 9999 !important;
 }
 
-.header__submenu .header__menu-item,
-.header__submenu .list-menu__item,
-.header__submenu a {
-  color: #fff !important;
+/* Ensure open state also has correct z-index */
+details[open] > .header__submenu {
+  z-index: 9999 !important;
+  opacity: 1 !important;
 }
 
-.header__submenu .header__menu-item:hover,
-.header__submenu .list-menu__item:hover,
-.header__submenu a:hover {
+.header__submenu a,
+.header__submenu .header__menu-item,
+.header__submenu .list-menu__item {
+  color: #fff !important;
+  padding: 0.6rem 2rem !important;
+}
+
+.header__submenu a:hover,
+.header__submenu .list-menu__item:hover {
   opacity: 0.6;
 }
 
