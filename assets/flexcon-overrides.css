@@ -341,6 +341,29 @@
 }
 
 
+/* ─── Hide "Purchase option" label & remove outer box ─── */
+
+label[for="purchase-option"] {
+  display: none !important;
+}
+
+.card-rental {
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* ─── Deposit spacing ─── */
+
+.sub-value,
+[class*="fc-"] [class*="deposit"],
+[class*="fc-"] [class*="sub-value"] {
+  padding-bottom: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+
 /* ─── Remove FlexConversion branding ─── */
 
 [class*="fc-"] [class*="powered"],
