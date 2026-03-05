@@ -295,14 +295,33 @@
   border-color: #c482c1 !important;
 }
 
-/* Rental policy link styling */
+/* Rental policy button — frame + icon recolor */
+.rental-policy svg rect[fill="#1D85E8"] {
+  fill: #c482c1 !important;
+}
+
+.rental-policy svg path[fill="#4AAFD3"],
+.rental-policy svg g path {
+  fill: #c482c1 !important;
+}
+
+/* Rename "Explore our rental policy" → "Rental Policy" */
+.rental-policy span {
+  font-size: 0 !important;
+}
+
+.rental-policy span::after {
+  content: "Rental Policy";
+  font-size: 0.85rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* General link styling inside widget */
 [class*="fc-"] a[class*="policy"],
 [class*="fc-"] a[class*="info"],
-[class*="fc-"] [class*="explore"],
-[class*="fc-"] a[href*="policy"],
 [id*="flexcon"] a {
   color: #c482c1 !important;
-  border-color: #c482c1 !important;
 }
 
 
