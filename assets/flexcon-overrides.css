@@ -15,6 +15,14 @@
   border-radius: 0 !important;
 }
 
+/* Rental date header — force visible text */
+.title-card-rental-date,
+.title-card-rental-date label,
+.title-card-rental-date span,
+#text-flexible-duration {
+  color: #fff !important;
+}
+
 
 /* ─── Typography ─── */
 
