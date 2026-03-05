@@ -83,7 +83,7 @@
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "styling",
-        "products_to_show": 3,
+        "products_to_show": 5,
         "title": "Book consultation",
         "heading_size": "hxl",
         "description": "",
@@ -105,6 +105,64 @@
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 0
+      }
+    },
+    "featured_product_AU9Nfq": {
+      "type": "featured-product",
+      "blocks": {
+        "text_BJCQD8": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MFqGVn": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_HtT7T9": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_U7H8Y9": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_rpQWai": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "text_BJCQD8",
+        "title_MFqGVn",
+        "price_HtT7T9",
+        "variant_picker_U7H8Y9",
+        "buy_buttons_rpQWai"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "outfit-styling",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collection_grid": {
@@ -342,6 +400,7 @@
     "hero",
     "marquee",
     "featured_collection_CyTnGb",
+    "featured_product_AU9Nfq",
     "collection_grid",
     "about_preview",
     "17726381116bba8fff",
