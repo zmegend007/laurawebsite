@@ -325,38 +325,30 @@ button[type="submit"] {
   justify-content: center;
 }
 
-/* Dropdown submenu — force black bg, white text, on top of everything */
-.header__submenu.list-menu--disclosure.global-settings-popup {
+/* Mega menu dropdown — solid black, above all content */
+.mega-menu__content {
   background-color: #000 !important;
-  color: #fff !important;
   z-index: 9999 !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-radius: 0 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-  padding: 1.2rem 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-/* Override base.css z-index: -1 on .global-settings-popup */
-.header__submenu.global-settings-popup {
-  z-index: 9999 !important;
-}
-
-/* Ensure open state also has correct z-index */
-details[open] > .header__submenu {
-  z-index: 9999 !important;
+.mega-menu[open] .mega-menu__content {
   opacity: 1 !important;
+  z-index: 9999 !important;
 }
 
-.header__submenu a,
-.header__submenu .header__menu-item,
-.header__submenu .list-menu__item {
+.mega-menu__link,
+.mega-menu__link--level-2 {
   color: #fff !important;
-  padding: 0.6rem 2rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
 }
 
-.header__submenu a:hover,
-.header__submenu .list-menu__item:hover {
-  opacity: 0.6;
+.mega-menu__link:hover {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Cart icon */
