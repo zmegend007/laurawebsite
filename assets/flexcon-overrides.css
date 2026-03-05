@@ -14,21 +14,50 @@
   color: rgb(var(--color-foreground)) !important;
 }
 
-/* Force readable text inside dark/light containers */
-[id*="flexcon"] *,
-[class*="flexcon"] *,
-[class*="fc-"] * {
-  color: inherit !important;
+/* Force contrast: light bg sections get dark text, dark bg sections get light text */
+[id*="flexcon"] [style*="background-color: rgb(255"],
+[id*="flexcon"] [style*="background-color: #fff"],
+[id*="flexcon"] [style*="background-color: white"],
+[id*="flexcon"] [style*="background: rgb(255"],
+[class*="flexcon"] [style*="background-color: rgb(255"],
+[class*="flexcon"] [style*="background-color: #fff"],
+[class*="flexcon"] [style*="background-color: white"],
+[class*="flexcon"] [style*="background: rgb(255"] {
+  color: #000 !important;
 }
 
-/* Ensure text inside dark boxes is white */
-.color-scheme-1 [id*="flexcon"],
-.color-scheme-1 [class*="flexcon"],
-.color-scheme-1 [class*="fc-"],
-[data-color-scheme="scheme-1"] [id*="flexcon"],
-[data-color-scheme="scheme-1"] [class*="flexcon"],
-[data-color-scheme="scheme-1"] [class*="fc-"] {
-  color: #fff !important;
+[id*="flexcon"] [style*="background-color: rgb(255"] *,
+[id*="flexcon"] [style*="background-color: #fff"] *,
+[id*="flexcon"] [style*="background-color: white"] *,
+[id*="flexcon"] [style*="background: rgb(255"] *,
+[class*="flexcon"] [style*="background-color: rgb(255"] *,
+[class*="flexcon"] [style*="background-color: #fff"] *,
+[class*="flexcon"] [style*="background-color: white"] *,
+[class*="flexcon"] [style*="background: rgb(255"] * {
+  color: #000 !important;
+}
+
+/* Light grey backgrounds also get dark text */
+[id*="flexcon"] [style*="background-color: rgb(245"],
+[id*="flexcon"] [style*="background-color: rgb(240"],
+[id*="flexcon"] [style*="background-color: rgb(235"],
+[id*="flexcon"] [style*="background-color: rgb(230"],
+[class*="flexcon"] [style*="background-color: rgb(245"],
+[class*="flexcon"] [style*="background-color: rgb(240"],
+[class*="flexcon"] [style*="background-color: rgb(235"],
+[class*="flexcon"] [style*="background-color: rgb(230"] {
+  color: #000 !important;
+}
+
+[id*="flexcon"] [style*="background-color: rgb(245"] *,
+[id*="flexcon"] [style*="background-color: rgb(240"] *,
+[id*="flexcon"] [style*="background-color: rgb(235"] *,
+[id*="flexcon"] [style*="background-color: rgb(230"] *,
+[class*="flexcon"] [style*="background-color: rgb(245"] *,
+[class*="flexcon"] [style*="background-color: rgb(240"] *,
+[class*="flexcon"] [style*="background-color: rgb(235"] *,
+[class*="flexcon"] [style*="background-color: rgb(230"] * {
+  color: #000 !important;
 }
 
 
@@ -300,13 +329,22 @@
   border-color: #c482c1 !important;
 }
 
+/* SVG inner rect — keep as subtle tinted background, no stroke */
 .rental-policy svg rect[fill="#1D85E8"] {
-  fill: #c482c1 !important;
+  fill: rgba(196, 130, 193, 0.05) !important;
+  stroke: none !important;
+}
+
+/* Clip rect should stay white */
+.rental-policy svg defs rect {
+  fill: white !important;
+  stroke: none !important;
 }
 
 .rental-policy svg path[fill="#4AAFD3"],
 .rental-policy svg g path {
   fill: #c482c1 !important;
+  stroke: none !important;
 }
 
 /* Kill all remaining blue borders in the widget */
