@@ -326,12 +326,16 @@ button[type="submit"] {
 }
 
 /* Dropdown submenu — black bg, white text, above everything */
-.header__submenu.global-settings-popup {
+.header__submenu,
+.header__submenu.global-settings-popup,
+.header__submenu.list-menu,
+ul.header__submenu {
   background-color: #000 !important;
   color: #fff !important;
   z-index: 9999 !important;
   position: absolute;
   border-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 1.2rem 0 !important;
 }
 
 details[open] > .header__submenu {
@@ -339,12 +343,14 @@ details[open] > .header__submenu {
 }
 
 .header__submenu .header__menu-item,
-.header__submenu .list-menu__item {
+.header__submenu .list-menu__item,
+.header__submenu a {
   color: #fff !important;
 }
 
 .header__submenu .header__menu-item:hover,
-.header__submenu .list-menu__item:hover {
+.header__submenu .list-menu__item:hover,
+.header__submenu a:hover {
   opacity: 0.6;
 }
 
