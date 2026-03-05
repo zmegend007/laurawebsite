@@ -27,18 +27,18 @@
           "type": "price",
           "settings": {}
         },
+        "text_HpezkL": {
+          "type": "text",
+          "settings": {
+            "text": "Price for 3 days including return",
+            "text_style": "body"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
           }
         },
         "flexcon_product_rental_hire_variants_product_Cricq9": {
@@ -49,6 +49,13 @@
             "selector_variant_id": "",
             "selector_price": "",
             "selector_price_sale": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -75,9 +82,10 @@
         "vendor",
         "title",
         "price",
+        "text_HpezkL",
         "variant_picker",
-        "buy_buttons",
         "flexcon_product_rental_hire_variants_product_Cricq9",
+        "buy_buttons",
         "description",
         "collapsible-rental",
         "share"
