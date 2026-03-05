@@ -17,9 +17,9 @@
         "video_url": "",
         "overlay_opacity": 80,
         "button_label_1": "BOOK SERVICE",
-        "button_link_1": "shopify://collections/for-rent",
+        "button_link_1": "shopify://collections/styling",
         "button_label_2": "EXPLORE WARDROBE",
-        "button_link_2": "shopify://pages/contact"
+        "button_link_2": "shopify://collections/for-rent"
       }
     },
     "marquee": {
@@ -78,92 +78,6 @@
         "padding_bottom": 12
       }
     },
-    "intro": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "The Digital Showroom",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Curated fashion for every occasion. Rent designer pieces for your next event or book a personal styling session. Based in Berlin, styled with intention.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "disabled": true,
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 100,
-        "padding_bottom": 52
-      }
-    },
-    "services": {
-      "type": "editorial-services",
-      "blocks": {
-        "styling": {
-          "type": "service",
-          "settings": {
-            "title": "Personal Styling",
-            "text": "One-on-one consultations tailored to your aesthetic, body, and lifestyle. From wardrobe edits to complete transformations.",
-            "link_label": "Learn More",
-            "link": "shopify://products/outfit-styling"
-          }
-        },
-        "service_mRExUP": {
-          "type": "service",
-          "settings": {
-            "title": "Service Title",
-            "text": "Describe this service offering.",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "rental": {
-          "type": "service",
-          "settings": {
-            "title": "Designer Rental",
-            "text": "Access luxury pieces for your next event. Curated, maintained, delivered to your door in Berlin and across Germany.",
-            "link_label": "Browse Collection",
-            "link": "shopify://collections/for-rent"
-          }
-        },
-        "events": {
-          "type": "service",
-          "settings": {
-            "title": "Event Styling",
-            "text": "Red carpet, editorial, and production styling. From concept to final look, every detail considered.",
-            "link_label": "Get in Touch",
-            "link": "shopify://pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "styling",
-        "service_mRExUP",
-        "rental",
-        "events"
-      ],
-      "disabled": true,
-      "settings": {
-        "label": "What I Do",
-        "heading": "Services",
-        "color_scheme": "scheme-1",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "multirow_d7ifF8": {
       "type": "multirow",
       "blocks": {
@@ -180,7 +94,6 @@
         },
         "row_JxyX7F": {
           "type": "row",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
@@ -192,7 +105,6 @@
         },
         "row_TkwCbX": {
           "type": "row",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/image-480x561.jpg",
             "caption": "From 40€/hour",
@@ -225,113 +137,72 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_VVBzMn": {
-      "type": "collection-list",
+    "collection_grid": {
+      "type": "editorial-collection-grid",
       "blocks": {
-        "featured_collection_4CKhBt": {
-          "type": "featured_collection",
+        "col_coats": {
+          "type": "collection",
           "settings": {
             "collection": "coats-jackets"
           }
         },
-        "featured_collection_9jBQx7": {
-          "type": "featured_collection",
+        "col_dresses": {
+          "type": "collection",
           "settings": {
             "collection": "dresses"
           }
         },
-        "featured_collection_xNNTyf": {
-          "type": "featured_collection",
+        "col_bags": {
+          "type": "collection",
           "settings": {
             "collection": "bags"
           }
         },
-        "featured_collection_TMTpwm": {
-          "type": "featured_collection",
+        "col_accessories": {
+          "type": "collection",
           "settings": {
             "collection": "accessories"
           }
         },
-        "featured_collection_4bdH7f": {
-          "type": "featured_collection",
+        "col_bottoms": {
+          "type": "collection",
           "settings": {
             "collection": "bottoms"
           }
         },
-        "featured_collection_Rh4cea": {
-          "type": "featured_collection",
+        "col_shoes": {
+          "type": "collection",
           "settings": {
             "collection": "shoes"
           }
         }
       },
       "block_order": [
-        "featured_collection_4CKhBt",
-        "featured_collection_9jBQx7",
-        "featured_collection_xNNTyf",
-        "featured_collection_TMTpwm",
-        "featured_collection_4bdH7f",
-        "featured_collection_Rh4cea"
+        "col_coats",
+        "col_dresses",
+        "col_bags",
+        "col_accessories",
+        "col_bottoms",
+        "col_shoes"
       ],
-      "name": "t:sections.collection-list.presets.name",
       "settings": {
-        "title": "Categories",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-2",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Categories",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "about_preview": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "About Laura",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Berlin-based fashion stylist with a passion for creating memorable looks. Years of experience in editorial, event, and personal styling — blending high fashion with individual expression.</p>",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Read More",
-            "button_link": "shopify://pages/about",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "disabled": true,
+      "type": "editorial-about",
       "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-2",
-        "color_scheme": "scheme-2",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "label": "About",
+        "heading": "About Laura",
+        "text": "<p>Berlin-based fashion stylist with a passion for creating memorable looks. Years of experience in editorial, event, and personal styling — blending high fashion with individual expression.</p>",
+        "button_label": "Read More",
+        "button_link": "shopify://pages/about",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "17726381116bba8fff": {
@@ -349,7 +220,7 @@
             "quote_color": "#ffffff",
             "author_color": "#ffffff",
             "role_color": "#666666",
-            "star_color": "#c482c1",
+            "star_color": "#c4a882",
             "quote_font_size": 16,
             "author_font_size": 16,
             "role_font_size": 14,
@@ -499,10 +370,8 @@
   "order": [
     "hero",
     "marquee",
-    "intro",
-    "services",
     "multirow_d7ifF8",
-    "collection_list_VVBzMn",
+    "collection_grid",
     "about_preview",
     "17726381116bba8fff",
     "press_logos_Qq34DU",

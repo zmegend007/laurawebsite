@@ -370,6 +370,11 @@ button[type="submit"] {
   min-height: 100vh;
 }
 
+/* Monochrome video — cinematic greyscale */
+.video-hero__media {
+  filter: grayscale(100%);
+}
+
 .video-hero__heading {
   font-weight: 200;
   letter-spacing: 0.1em;
@@ -474,6 +479,32 @@ button[type="submit"] {
    compare_at_price is used to show retail value, not a discount. */
 .price__badge-sale {
   display: none !important;
+}
+
+/* Vendor name — hidden by default, fades in on hover */
+.card__heading + .caption-with-letter-spacing,
+.card-information .card__information-vendor {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.card-wrapper:hover .caption-with-letter-spacing,
+.card-wrapper:hover .card__information-vendor {
+  opacity: 0.5;
+  transform: translateY(0);
+}
+
+/* Remove card background for floating images */
+.card--standard .card__inner {
+  background: transparent;
+}
+
+.card--standard .card__content {
+  padding: 0;
 }
 
 
@@ -751,7 +782,21 @@ button[type="submit"] {
    ───────────────────────────────────────────────────── */
 
 .footer {
-  border-top: none;
+  border-top: 1px solid rgba(var(--color-foreground), 0.06);
+}
+
+/* Brand name above footer content */
+.footer::before {
+  content: 'Laura Messerschmitt';
+  display: block;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.15;
+  padding: 3rem 0 2rem;
 }
 
 .footer__title {
@@ -769,12 +814,17 @@ button[type="submit"] {
 }
 
 .footer__list-social .list-social__link {
-  opacity: 0.35;
+  opacity: 0.4;
   transition: opacity 0.4s ease;
 }
 
 .footer__list-social .list-social__link:hover {
   opacity: 1;
+}
+
+.footer__list-social .list-social__link svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 /* Footer menu — horizontal layout */
@@ -841,6 +891,26 @@ button[type="submit"] {
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+/* Collection page — wider gaps, 2-col desktop for larger images */
+@media screen and (min-width: 990px) {
+  .collection .grid--2-col-desktop {
+    --grid-columns: 2;
+  }
+
+  .template-collection .grid {
+    gap: 2.4rem;
+  }
+}
+
+/* Minimal collection banner */
+.collection-hero {
+  padding: 2rem 0;
+}
+
+.collection-hero__inner {
+  text-align: left;
 }
 
 

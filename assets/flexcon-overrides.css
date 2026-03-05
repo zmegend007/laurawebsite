@@ -1,18 +1,253 @@
-/**
- * FlexConversion CSS Overrides
- *
- * This file contains custom styles to override FlexConversion's
- * default rental calendar and pricing UI to match the Berlin Minimal
- * design direction.
- *
- * FlexConversion injects its own JS/CSS on PDP pages.
- * These overrides ensure visual consistency with the brand.
- *
- * Target: HURR-style horizontal duration cards, branded calendar.
- *
- * NOTE: Populate these overrides once FlexConversion is installed
- * and its CSS class names are inspected.
- */
+/* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+   FLEXCONVERSION OVERRIDES
+   Match the rental widget to Berlin Minimal design system.
+   ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ */
 
-/* Duration card overrides — target HURR-style horizontal layout */
-/* TODO: Inspect FlexConversion DOM and add specific selectors */
+
+/* ─── Global resets ─── */
+
+[id*="flexcon"],
+[class*="flexcon"],
+[class*="fc-"] {
+  font-family: var(--font-body-family) !important;
+  border-radius: 0 !important;
+}
+
+
+/* ─── Typography ─── */
+
+[class*="fc-"] h1,
+[class*="fc-"] h2,
+[class*="fc-"] h3,
+[class*="fc-"] h4 {
+  font-family: var(--font-heading-family) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+[class*="fc-"] label,
+[class*="fc-"] .fc-label {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+
+/* ─── Calendar ─── */
+
+[class*="fc-calendar"],
+[class*="fc-datepicker"] {
+  border: 1px solid rgba(var(--color-foreground), 0.12) !important;
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="fc-calendar"] [class*="selected"],
+[class*="fc-datepicker"] [class*="selected"],
+[class*="fc-"] .selected {
+  background-color: #c4a882 !important;
+  color: #000 !important;
+}
+
+[class*="fc-calendar"] [class*="today"],
+[class*="fc-datepicker"] [class*="today"] {
+  border-color: rgba(var(--color-foreground), 0.3) !important;
+}
+
+/* Day headers */
+[class*="fc-calendar"] th,
+[class*="fc-datepicker"] th {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  opacity: 0.4 !important;
+}
+
+/* Navigation arrows */
+[class*="fc-calendar"] [class*="prev"],
+[class*="fc-calendar"] [class*="next"],
+[class*="fc-datepicker"] [class*="prev"],
+[class*="fc-datepicker"] [class*="next"] {
+  opacity: 0.5 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+[class*="fc-calendar"] [class*="prev"]:hover,
+[class*="fc-calendar"] [class*="next"]:hover,
+[class*="fc-datepicker"] [class*="prev"]:hover,
+[class*="fc-datepicker"] [class*="next"]:hover {
+  opacity: 1 !important;
+}
+
+
+/* ─── Duration pricing cards ─── */
+
+[class*="fc-duration"],
+[class*="fc-pricing-option"],
+[class*="fc-option"] {
+  border: 1px solid rgba(var(--color-foreground), 0.12) !important;
+  background: transparent !important;
+  padding: 1.2rem 1.6rem !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+[class*="fc-duration"]:hover,
+[class*="fc-pricing-option"]:hover,
+[class*="fc-option"]:hover {
+  border-color: rgba(var(--color-foreground), 0.4) !important;
+}
+
+[class*="fc-duration"][class*="active"],
+[class*="fc-duration"][class*="selected"],
+[class*="fc-pricing-option"][class*="active"],
+[class*="fc-pricing-option"][class*="selected"],
+[class*="fc-option"][class*="active"],
+[class*="fc-option"][class*="selected"] {
+  border-color: #c4a882 !important;
+  background: rgba(196, 168, 130, 0.08) !important;
+}
+
+/* Duration label */
+[class*="fc-duration"] [class*="title"],
+[class*="fc-duration"] [class*="label"],
+[class*="fc-pricing-option"] [class*="title"] {
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 0.9rem !important;
+}
+
+/* Price in duration card */
+[class*="fc-duration"] [class*="price"],
+[class*="fc-pricing-option"] [class*="price"] {
+  font-family: var(--font-heading-family) !important;
+  font-weight: 300 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Savings badge */
+[class*="fc-duration"] [class*="save"],
+[class*="fc-duration"] [class*="discount"],
+[class*="fc-pricing-option"] [class*="save"] {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #c4a882 !important;
+  font-weight: 500 !important;
+}
+
+
+/* ─── Rent/Buy toggle ─── */
+
+[class*="fc-toggle"],
+[class*="fc-tab"] {
+  border: 1px solid rgba(var(--color-foreground), 0.12) !important;
+  background: transparent !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  padding: 0.8rem 2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+[class*="fc-toggle"][class*="active"],
+[class*="fc-toggle"][class*="selected"],
+[class*="fc-tab"][class*="active"],
+[class*="fc-tab"][class*="selected"] {
+  background: rgb(var(--color-foreground)) !important;
+  color: rgb(var(--color-background)) !important;
+  border-color: rgb(var(--color-foreground)) !important;
+}
+
+
+/* ─── Buttons ─── */
+
+[class*="fc-"] button[class*="add"],
+[class*="fc-"] button[class*="cart"],
+[class*="fc-"] button[class*="submit"],
+[class*="fc-"] .fc-btn-primary {
+  background: rgb(var(--color-foreground)) !important;
+  color: rgb(var(--color-background)) !important;
+  border: 1px solid rgb(var(--color-foreground)) !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  padding: 1.6rem 4rem !important;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  cursor: pointer !important;
+}
+
+[class*="fc-"] button[class*="add"]:hover,
+[class*="fc-"] button[class*="cart"]:hover,
+[class*="fc-"] button[class*="submit"]:hover,
+[class*="fc-"] .fc-btn-primary:hover {
+  opacity: 0.8 !important;
+  transform: translateY(-2px) !important;
+}
+
+
+/* ─── Inputs & selects ─── */
+
+[class*="fc-"] select,
+[class*="fc-"] input[type="text"],
+[class*="fc-"] input[type="date"] {
+  border: 1px solid rgba(var(--color-foreground), 0.15) !important;
+  background: transparent !important;
+  padding: 1rem 1.2rem !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.02em !important;
+}
+
+[class*="fc-"] select:focus,
+[class*="fc-"] input:focus {
+  border-color: rgb(var(--color-foreground)) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+/* ─── Modal / overlay ─── */
+
+[class*="fc-modal"],
+[class*="fc-overlay"] {
+  background: rgba(0, 0, 0, 0.85) !important;
+}
+
+[class*="fc-modal"] [class*="content"],
+[class*="fc-modal"] [class*="inner"] {
+  background: rgb(var(--color-background)) !important;
+  border: 1px solid rgba(var(--color-foreground), 0.08) !important;
+}
+
+
+/* ─── Remove FlexConversion branding ─── */
+
+[class*="fc-"] [class*="powered"],
+[class*="fc-"] [class*="branding"],
+[class*="fc-"] [class*="logo"] {
+  display: none !important;
+}
+
+
+/* ─── Mobile ─── */
+
+@media screen and (max-width: 749px) {
+  [class*="fc-duration"],
+  [class*="fc-pricing-option"],
+  [class*="fc-option"] {
+    width: 100% !important;
+  }
+
+  [class*="fc-"] button[class*="add"],
+  [class*="fc-"] button[class*="cart"],
+  [class*="fc-"] button[class*="submit"],
+  [class*="fc-"] .fc-btn-primary {
+    width: 100% !important;
+    padding: 1.4rem 2rem !important;
+  }
+}
