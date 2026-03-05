@@ -11,6 +11,24 @@
 [class*="fc-"] {
   font-family: var(--font-body-family) !important;
   border-radius: 0 !important;
+  color: rgb(var(--color-foreground)) !important;
+}
+
+/* Force readable text inside dark/light containers */
+[id*="flexcon"] *,
+[class*="flexcon"] *,
+[class*="fc-"] * {
+  color: inherit !important;
+}
+
+/* Ensure text inside dark boxes is white */
+.color-scheme-1 [id*="flexcon"],
+.color-scheme-1 [class*="flexcon"],
+.color-scheme-1 [class*="fc-"],
+[data-color-scheme="scheme-1"] [id*="flexcon"],
+[data-color-scheme="scheme-1"] [class*="flexcon"],
+[data-color-scheme="scheme-1"] [class*="fc-"] {
+  color: #fff !important;
 }
 
 
@@ -222,6 +240,46 @@
 [class*="fc-modal"] [class*="inner"] {
   background: rgb(var(--color-background)) !important;
   border: 1px solid rgba(var(--color-foreground), 0.08) !important;
+}
+
+
+/* ─── Override blue focus/active borders with theme accent ─── */
+
+[id*="flexcon"] *:focus,
+[class*="flexcon"] *:focus,
+[class*="fc-"] *:focus {
+  outline-color: #c482c1 !important;
+  border-color: #c482c1 !important;
+  box-shadow: none !important;
+}
+
+[id*="flexcon"] [style*="border-color"],
+[class*="flexcon"] [style*="border-color"],
+[class*="fc-"] [style*="border-color"] {
+  border-color: #c482c1 !important;
+}
+
+/* Override any blue inline styles from FlexCon */
+[id*="flexcon"] [style*="blue"],
+[id*="flexcon"] [style*="#007bff"],
+[id*="flexcon"] [style*="#0d6efd"],
+[id*="flexcon"] [style*="rgb(13"],
+[class*="fc-"] [style*="blue"],
+[class*="fc-"] [style*="#007bff"],
+[class*="fc-"] [style*="#0d6efd"],
+[class*="fc-"] [style*="rgb(13"] {
+  border-color: #c482c1 !important;
+  color: #c482c1 !important;
+}
+
+/* Rental policy link styling */
+[class*="fc-"] a[class*="policy"],
+[class*="fc-"] a[class*="info"],
+[class*="fc-"] [class*="explore"],
+[class*="fc-"] a[href*="policy"],
+[id*="flexcon"] a {
+  color: #c482c1 !important;
+  border-color: #c482c1 !important;
 }
 
 
