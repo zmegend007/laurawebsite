@@ -16,9 +16,9 @@
         "subheading": "Personal Stylist & Consultant",
         "video_url": "",
         "overlay_opacity": 80,
-        "button_label_1": "BOOK SERVICE",
+        "button_label_1": "",
         "button_link_1": "shopify://collections/styling",
-        "button_label_2": "EXPLORE WARDROBE",
+        "button_label_2": "",
         "button_link_2": "shopify://collections/for-rent"
       }
     },
