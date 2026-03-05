@@ -409,6 +409,11 @@ details[open] > .header__submenu {
   letter-spacing: 0.18em;
 }
 
+/* Hide "Buy it now" dynamic checkout on featured product — it's in a Shadow DOM iframe, can't restyle text */
+.section-featured-product .shopify-payment-button {
+  display: none !important;
+}
+
 
 /* ─────────────────────────────────────────────────────
    § VIDEO HERO — Cinematic
