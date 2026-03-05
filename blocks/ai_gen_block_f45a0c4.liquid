@@ -245,8 +245,8 @@
     assign has_products = false
     for i in (1..12)
       assign product_key = 'product_' | append: i
-      assign product = block.settings[product_key]
-      if product != blank
+      assign product_ref = block.settings[product_key]
+      if product_ref != blank
         assign has_products = true
         break
       endif
@@ -258,12 +258,19 @@
       {% for i in (1..12) %}
         {% liquid
           assign product_key = 'product_' | append: i
-          assign product = block.settings[product_key]
+          assign product_ref = block.settings[product_key]
           assign ratio_index = i | minus: 1
           assign card_ratio = card_ratios[ratio_index]
+          if product_ref.title
+            assign product = product_ref
+          elsif product_ref != blank
+            assign product = all_products[product_ref]
+          else
+            assign product = null
+          endif
         %}
 
-        {% if product != blank %}
+        {% if product != blank and product.title %}
           <div class="ai-editorial-grid__card-{{ ai_gen_id }} ai-editorial-grid__card-{{ ai_gen_id }}--{{ card_ratio }}">
             <a href="{{ product.url }}" class="ai-editorial-grid__card-link-{{ ai_gen_id }}">
               <div class="ai-editorial-grid__card-content-{{ ai_gen_id }}">
