@@ -20,6 +20,63 @@
         "cta_url": ""
       }
     },
+    "editorial_marquee_mMDwcX": {
+      "type": "editorial-marquee",
+      "blocks": {
+        "text_cCMp9z": {
+          "type": "text",
+          "settings": {
+            "text": "Personal Styling"
+          }
+        },
+        "text_tcpqGR": {
+          "type": "text",
+          "settings": {
+            "text": "Designer Rental"
+          }
+        },
+        "text_gKaMYH": {
+          "type": "text",
+          "settings": {
+            "text": "Editorial"
+          }
+        },
+        "text_9RLhVT": {
+          "type": "text",
+          "settings": {
+            "text": "Events"
+          }
+        },
+        "text_pKF3fW": {
+          "type": "text",
+          "settings": {
+            "text": "Red Carpet"
+          }
+        },
+        "text_RB7p8U": {
+          "type": "text",
+          "settings": {
+            "text": "Berlin"
+          }
+        }
+      },
+      "block_order": [
+        "text_cCMp9z",
+        "text_tcpqGR",
+        "text_gKaMYH",
+        "text_9RLhVT",
+        "text_pKF3fW",
+        "text_RB7p8U"
+      ],
+      "name": "Editorial Marquee",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": 50,
+        "reverse": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "video-portfolio": {
       "type": "video-portfolio",
       "blocks": {
@@ -74,6 +131,7 @@
   },
   "order": [
     "about_Hg6Mwg",
+    "editorial_marquee_mMDwcX",
     "video-portfolio"
   ]
 }
