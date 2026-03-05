@@ -80,6 +80,7 @@
     },
     "featured_collection_CyTnGb": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "styling",
