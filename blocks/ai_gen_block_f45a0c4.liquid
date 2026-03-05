@@ -76,8 +76,6 @@
   .ai-editorial-grid__card-content-{{ ai_gen_id }} {
     position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
   .ai-editorial-grid__image-wrapper-{{ ai_gen_id }} {
@@ -127,8 +125,13 @@
   }
 
   .ai-editorial-grid__info-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: {{ block.settings.card_padding }}px;
-    background-color: {{ block.settings.card_background }};
+    background: linear-gradient(to top, {{ block.settings.card_background }}ee 0%, {{ block.settings.card_background }}cc 60%, transparent 100%);
+    z-index: 1;
   }
 
   .ai-editorial-grid__title-{{ ai_gen_id }} {
