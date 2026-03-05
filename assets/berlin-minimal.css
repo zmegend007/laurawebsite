@@ -262,9 +262,20 @@ button[type="submit"] {
   background-color: transparent !important;
 }
 
-/* Also kill the gradient Dawn might apply */
-.section-header .gradient {
+/* Also kill the gradient Dawn might apply — but NOT on the dropdown submenu */
+.section-header .gradient:not(.header__submenu) {
   background: transparent !important;
+}
+
+/* Nav dropdown — always solid black, regardless of page background */
+.header__submenu {
+  background: #000 !important;
+  background-color: #000 !important;
+  z-index: 9999 !important;
+}
+
+details[open] > .header__submenu {
+  z-index: 9999 !important;
 }
 
 .header {
