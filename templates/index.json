@@ -138,8 +138,8 @@
         "buy_buttons_rpQWai": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         }
       },
@@ -214,12 +214,59 @@
         "col_bottoms",
         "col_shoes"
       ],
+      "disabled": true,
       "settings": {
         "heading": "RENT PIECES",
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 60
       }
+    },
+    "1772731567556a207b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f45a0c4_rMH3VX": {
+          "type": "ai_gen_block_f45a0c4",
+          "settings": {
+            "product_1": "alaia-sabbia-color-size-40-heel-height-13-cm-snakeskin",
+            "product_2": "chanel-bag-width-24-cm-height-12-cm-wallet-on-chain-python-shoulder-bag",
+            "product_3": "jimmy-choo-handtasche-lockett-blau-leder-be-in-love-again-jimmy-choo-handtasche",
+            "product_4": "brand-tom-ford-what-handbag-color-gold-cream-colors-material-leather-width-22-cm-height-15-cm-depth-5-cm-material-leather-color-beige",
+            "product_5": "burberry-prorsum-london-fashion-week-fall-season-2010",
+            "product_6": "re-web-site-4",
+            "product_7": "re-web-site-4",
+            "product_8": "renting-alexander-mcqueen-ring-gold-damen-accessoire-grosse-57-laura-messersch",
+            "product_9": "yves-saint-laurent-easy-y-boston-bag",
+            "product_10": "chanel-pumps-size-36-exotic-leather-heel-8-cm",
+            "product_11": "r-y-augousti-exotic-leather-clutches-mass-width-24-cm-height-11-5-cm",
+            "product_12": "re-web-site-1",
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "section_padding": 40,
+            "mobile_columns": "2",
+            "mobile_aspect_ratio": "square",
+            "card_border_radius": 8,
+            "card_padding": 16,
+            "card_background": "#000000",
+            "text_color": "#ffffff",
+            "price_color": "#c482c1",
+            "title_size": 16,
+            "price_size": 14,
+            "glow_color_1": "#c482c1",
+            "glow_color_2": "#c4a882",
+            "glow_color_3": "#ffffff",
+            "glow_angle": 45,
+            "glow_blur": 12,
+            "glow_opacity": 0.6,
+            "glow_opacity_hover": 1
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f45a0c4_rMH3VX"
+      ],
+      "settings": {}
     },
     "about_preview": {
       "type": "editorial-about",
@@ -403,6 +450,7 @@
     "featured_collection_CyTnGb",
     "featured_product_AU9Nfq",
     "collection_grid",
+    "1772731567556a207b",
     "about_preview",
     "17726381116bba8fff",
     "press_logos_Qq34DU",
