@@ -5,59 +5,14 @@
 
 
 /* ─── Global resets ─── */
+/* DO NOT override color here — FlexCon manages its own text colors
+   per section (dark/light). Overriding breaks light-bg sections. */
 
 [id*="flexcon"],
 [class*="flexcon"],
 [class*="fc-"] {
   font-family: var(--font-body-family) !important;
   border-radius: 0 !important;
-  color: rgb(var(--color-foreground)) !important;
-}
-
-/* Force contrast: light bg sections get dark text, dark bg sections get light text */
-[id*="flexcon"] [style*="background-color: rgb(255"],
-[id*="flexcon"] [style*="background-color: #fff"],
-[id*="flexcon"] [style*="background-color: white"],
-[id*="flexcon"] [style*="background: rgb(255"],
-[class*="flexcon"] [style*="background-color: rgb(255"],
-[class*="flexcon"] [style*="background-color: #fff"],
-[class*="flexcon"] [style*="background-color: white"],
-[class*="flexcon"] [style*="background: rgb(255"] {
-  color: #000 !important;
-}
-
-[id*="flexcon"] [style*="background-color: rgb(255"] *,
-[id*="flexcon"] [style*="background-color: #fff"] *,
-[id*="flexcon"] [style*="background-color: white"] *,
-[id*="flexcon"] [style*="background: rgb(255"] *,
-[class*="flexcon"] [style*="background-color: rgb(255"] *,
-[class*="flexcon"] [style*="background-color: #fff"] *,
-[class*="flexcon"] [style*="background-color: white"] *,
-[class*="flexcon"] [style*="background: rgb(255"] * {
-  color: #000 !important;
-}
-
-/* Light grey backgrounds also get dark text */
-[id*="flexcon"] [style*="background-color: rgb(245"],
-[id*="flexcon"] [style*="background-color: rgb(240"],
-[id*="flexcon"] [style*="background-color: rgb(235"],
-[id*="flexcon"] [style*="background-color: rgb(230"],
-[class*="flexcon"] [style*="background-color: rgb(245"],
-[class*="flexcon"] [style*="background-color: rgb(240"],
-[class*="flexcon"] [style*="background-color: rgb(235"],
-[class*="flexcon"] [style*="background-color: rgb(230"] {
-  color: #000 !important;
-}
-
-[id*="flexcon"] [style*="background-color: rgb(245"] *,
-[id*="flexcon"] [style*="background-color: rgb(240"] *,
-[id*="flexcon"] [style*="background-color: rgb(235"] *,
-[id*="flexcon"] [style*="background-color: rgb(230"] *,
-[class*="flexcon"] [style*="background-color: rgb(245"] *,
-[class*="flexcon"] [style*="background-color: rgb(240"] *,
-[class*="flexcon"] [style*="background-color: rgb(235"] *,
-[class*="flexcon"] [style*="background-color: rgb(230"] * {
-  color: #000 !important;
 }
 
 
