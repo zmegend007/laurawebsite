@@ -78,64 +78,6 @@
         "padding_bottom": 12
       }
     },
-    "featured_product_AU9Nfq": {
-      "type": "featured-product",
-      "blocks": {
-        "text_BJCQD8": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_MFqGVn": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_HtT7T9": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_U7H8Y9": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "buy_buttons_rpQWai": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        }
-      },
-      "block_order": [
-        "text_BJCQD8",
-        "title_MFqGVn",
-        "price_HtT7T9",
-        "variant_picker_U7H8Y9",
-        "buy_buttons_rpQWai"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "outfit-styling",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "small",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collection_grid": {
       "type": "editorial-collection-grid",
       "blocks": {
@@ -206,7 +148,7 @@
             "product_6": "alaia-sabbia-color-size-40-heel-height-13-cm-snakeskin",
             "product_7": "chanel-coat",
             "product_8": "jimmy-choo-handtasche-lockett-blau-leder-be-in-love-again-jimmy-choo-handtasche",
-            "product_9": "brand-yves-saint-laurent-bag-vintage-material-ostrich-leather-large-color-khaki",
+            "product_9": "jimmy-choo-handtasche-lockett-blau-leder-be-in-love-again-jimmy-choo-handtasche",
             "product_10": "loewe-madrid-knitted-coat-pure-wool-black-and-white-size-36-s-38-long",
             "product_11": "tom-ford-silver-size-40-5-made-in-italy-heel-height-13-cm",
             "product_12": "celine-leather-coat",
@@ -237,6 +179,64 @@
         "ai_gen_block_f45a0c4_rMH3VX"
       ],
       "settings": {}
+    },
+    "featured_product_AU9Nfq": {
+      "type": "featured-product",
+      "blocks": {
+        "text_BJCQD8": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MFqGVn": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_HtT7T9": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_U7H8Y9": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_rpQWai": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "text_BJCQD8",
+        "title_MFqGVn",
+        "price_HtT7T9",
+        "variant_picker_U7H8Y9",
+        "buy_buttons_rpQWai"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "outfit-styling",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "about_preview": {
       "type": "editorial-about",
