@@ -20,15 +20,6 @@
     z-index: 1;
   }
 
-  .video-hero__poster {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-
   .video-hero__overlay {
     position: absolute;
     inset: 0;
@@ -148,7 +139,6 @@
   /* Mobile */
   @media screen and (max-width: 749px) {
     .video-hero { height: 100vh; }
-    .video-hero__poster { display: none; }
     .video-hero__heading {
       letter-spacing: 0.12em;
     }
@@ -156,26 +146,16 @@
       padding: 1.4rem 2.8rem;
     }
   }
-
-  @media screen and (min-width: 750px) {
-    .video-hero__poster { display: none; }
-  }
 {%- endstyle -%}
 
 <section class="video-hero">
-  {%- comment -%} Video for desktop {%- endcomment -%}
   <video
-    class="video-hero__media video-hero__video-desktop"
+    class="video-hero__media"
     autoplay
     muted
     loop
     playsinline
     preload="auto"
-    {% if section.settings.poster_image %}
-      poster="{{ section.settings.poster_image | image_url: width: 1920 }}"
-    {% else %}
-      poster="{{ 'hero-poster.webp' | asset_url }}"
-    {% endif %}
   >
     {% if section.settings.video_url != blank %}
       <source src="{{ section.settings.video_url }}" type="video/mp4">
@@ -183,27 +163,6 @@
       <source src="{{ 'hero-video.mp4' | asset_url }}" type="video/mp4">
     {% endif %}
   </video>
-
-  {%- comment -%} Poster image for mobile {%- endcomment -%}
-  {% if section.settings.poster_image %}
-    <img
-      class="video-hero__media video-hero__poster"
-      src="{{ section.settings.poster_image | image_url: width: 800 }}"
-      alt="{{ section.settings.heading | escape }}"
-      loading="eager"
-      width="800"
-      height="1200"
-    >
-  {% else %}
-    <img
-      class="video-hero__media video-hero__poster"
-      src="{{ 'hero-poster.webp' | asset_url }}"
-      alt="{{ section.settings.heading | escape }}"
-      loading="eager"
-      width="800"
-      height="1200"
-    >
-  {% endif %}
 
   <div class="video-hero__overlay"></div>
 
@@ -267,12 +226,6 @@
       "id": "video_url",
       "label": "Video URL (MP4)",
       "info": "Leave blank to use the default hero video. Upload to Settings > Files and paste the URL here."
-    },
-    {
-      "type": "image_picker",
-      "id": "poster_image",
-      "label": "Poster image (mobile fallback)",
-      "info": "Shown on mobile instead of video for performance. Leave blank to use default."
     },
     {
       "type": "range",
