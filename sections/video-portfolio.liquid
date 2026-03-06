@@ -227,6 +227,7 @@
               loading="lazy"
               width="400"
               height="600"
+              onerror="this.onerror=null;this.src='https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg';"
             >
           {% endif %}
           <div class="video-portfolio__play">
