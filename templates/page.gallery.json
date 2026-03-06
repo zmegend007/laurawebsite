@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "editorial_marquee_mMDwcX": {
@@ -66,211 +57,96 @@
         "padding_bottom": 0
       }
     },
-    "editorial_gallery": {
-      "type": "portfolio-gallery",
-      "blocks": {
-        "discover_germany": {
-          "type": "project",
-          "settings": {
-            "title": "Discover Germany — Julia Rosa Peer",
-            "category": "Magazine",
-            "credits": "Styling: Laura Messerschmitt\nPhotography: Philipp Baben der Erde\nMakeup: Maria Soppa\nDesigners: Danny Reinke, Marcel Ostertag, Rudolphi Schmuck\nLocation: The Stue Hotel, Berlin",
-            "year": "2024",
-            "layout_size": "large",
-            "aspect_ratio": "portrait"
-          }
-        },
-        "usha_rani": {
-          "type": "project",
-          "settings": {
-            "title": "Usha Rani — Actress Portrait",
-            "category": "Editorial",
-            "credits": "Styling: Laura Messerschmitt\nPhotography: Alexey Kolbekhin\nMakeup: Natsumua\nModel: Usha Rani",
-            "year": "2024",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
-          }
-        },
-        "body_model": {
-          "type": "project",
-          "settings": {
-            "title": "The Body Model — Eilina Karaj",
-            "category": "Editorial",
-            "credits": "Styling: Laura Messerschmitt\nPhotography: Maryna Listrova\nMakeup: IK Makeup Artist\nModel: Eilina Karaj",
-            "year": "2024",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
-          }
-        },
-        "fraulein": {
-          "type": "project",
-          "settings": {
-            "title": "Fräulein Magazin",
-            "category": "Magazine",
-            "credits": "Styling: Laura Messerschmitt",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
-          }
-        },
-        "punkt12": {
-          "type": "project",
-          "settings": {
-            "title": "Punkt 12 — Style Section",
-            "category": "TV",
-            "credits": "Styling: Laura Messerschmitt\nRTL, Season 2",
-            "layout_size": "medium",
-            "aspect_ratio": "landscape"
-          }
-        },
-        "dance_mv": {
-          "type": "project",
-          "settings": {
-            "title": "Dance — Music Video",
-            "category": "Music Video",
-            "credits": "Styling: Natalia Mueller\nStyling Assistant: Laura Messerschmitt\nPhotography & Art Direction: Constantino Quero Simons\nMakeup & Art Direction: Einat Dan\nModel: Toni",
-            "year": "2024",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
-          }
-        }
-      },
-      "block_order": [
-        "discover_germany",
-        "usha_rani",
-        "body_model",
-        "fraulein",
-        "punkt12",
-        "dance_mv"
-      ],
-      "settings": {
-        "label": "Photo & Editorial",
-        "color_scheme": "scheme-1",
-        "grid_gap": 4,
-        "padding_top": 80,
-        "padding_bottom": 40
-      }
-    },
     "video-portfolio": {
       "type": "video-portfolio",
       "blocks": {
-        "v1": {
+        "v_rebecca": {
           "type": "video",
           "settings": {
-            "youtube_id": "FN-Zt-6UO1FG3lyk",
-            "title": "Where's Wanda — Apple TV+",
-            "credits": "Styling: Laura Messerschmitt & Tabitha Araf\nActress: Lea Drinda\nDesigners: 032c, Bally, Bvlgari, Fendi, Ganni, Lou de Betoly\nBerlin Premiere, Delphi Filmpalast",
-            "custom_thumbnail": "shopify://shop_images/image-480x314.jpg"
+            "youtube_id": "2a7lmH5h0jo",
+            "title": "Rebecca Kunikowski — Red Carpet Style",
+            "credits": "Styling: Laura Messerschmitt\nActress: Rebecca Kunikowski\nDesigners: Balenciaga, Jimmy Choo, Chanel\nCivil War Premiere, Berlin"
           }
         },
-        "v2": {
+        "v_daydreaming": {
           "type": "video",
           "settings": {
-            "youtube_id": "cXMqQgzVjvc",
+            "youtube_id": "xG6aiB2boVA",
             "title": "Daydreaming — Julia Rosa Peer",
-            "credits": "Styling: Laura Messerschmitt\nDesign: Danny Reinke\nModel: Julia Rosa Peer"
+            "credits": "Styling: Laura Messerschmitt\nDesigners: Danny Reinke, Marcel Ostertag\nJewellery: Rudolphi Schmuck, Moderne Zeiten Berlin\nMakeup: Maria Soppa\nCamera: Baben der Erde"
           }
         },
-        "v3": {
+        "v_body": {
           "type": "video",
           "settings": {
             "youtube_id": "s8-uOMDr1nI",
             "title": "The Body Model — Eilina Karaj",
             "credits": "Styling: Laura Messerschmitt\nPhotography: Maryna Listrova\nMakeup: IK Makeup Artist\nModel: Eilina Karaj"
           }
-        }
-      },
-      "block_order": [
-        "v1",
-        "v2",
-        "v3"
-      ],
-      "settings": {
-        "label": "Video Work",
-        "color_scheme": "scheme-1",
-        "padding_top": 80,
-        "padding_bottom": 40
-      }
-    },
-    "red_carpet_gallery": {
-      "type": "portfolio-gallery",
-      "blocks": {
-        "berlinale_girley": {
-          "type": "project",
+        },
+        "v_girley": {
+          "type": "video",
           "settings": {
-            "title": "Berlinale — Girley Jazama",
-            "category": "Red Carpet",
-            "credits": "Styling: Laura Messerschmitt\nActress: Girley Jazama\nDesigner: Danny Reinke\nFilm: Der vermessene Mensch (Measures of Men)\nBerlinale Special, 73rd Berlin International Film Festival",
-            "year": "2023",
-            "layout_size": "large",
-            "aspect_ratio": "portrait"
+            "youtube_id": "6zX9vaqfSaI",
+            "title": "Girley Jazama — Danny Reinke",
+            "credits": "Styling: Laura Messerschmitt\nActress: Girley Jazama\nDesigner: Danny Reinke\nJewellery: Moderne Zeiten Berlin\nPhotography: Stefanie Rumpler / Annie Schuhmacher"
           }
         },
-        "wheres_wanda_premiere": {
-          "type": "project",
+        "v_usha": {
+          "type": "video",
           "settings": {
-            "title": "Where's Wanda? — Berlin Premiere",
-            "category": "Red Carpet",
-            "credits": "Styling: Laura Messerschmitt & Tabitha Araf\nActress: Lea Drinda\nDesigners: 032c, Bally, Bvlgari, Fendi, Ganni, Lou de Betoly\nApple TV+ Original Series\nDelphi Filmpalast, Berlin",
-            "year": "2024",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait",
-            "external_link": "https://www.vogue.de/galerie/wheres-wanda-apple-serie-premiere-berlin"
+            "youtube_id": "lSLk9YiB6uE",
+            "title": "Usha Rani — Actress Portrait",
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Arundhati Shenoy\nMakeup: Natsumua\nFashion: Kisui Berlin, Soeren Reimers, Ferragamo, Fernando Berlin"
           }
         },
-        "daydreaming": {
-          "type": "project",
+        "v_streets": {
+          "type": "video",
           "settings": {
-            "title": "Daydreaming — Julia Rosa Peer",
-            "category": "Editorial",
-            "credits": "Styling: Laura Messerschmitt\nDesigner: Danny Reinke\nModel: Julia Rosa Peer\nLocation: Berlin",
-            "year": "2024",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
+            "youtube_id": "gfSXan77_Ec",
+            "title": "Streets of Berlin — Usha Rani",
+            "credits": "Styling: Laura Messerschmitt\nModel: Usha Rani\nPhotography: Alexey Kolbekhin\nMakeup: Natsumua\nFashion: Zara, Tchibo, Niiki Paris"
           }
         },
-        "berlinale_general": {
-          "type": "project",
+        "v_lea": {
+          "type": "video",
           "settings": {
-            "title": "Berlinale",
-            "category": "Red Carpet",
-            "credits": "Styling: Laura Messerschmitt\nBerlin International Film Festival",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
+            "youtube_id": "AX-0qTHZrdk",
+            "title": "Lea van Acken — Levis",
+            "credits": "Photography: Ronald Dick\nStyling: Tabi Charaf\nStyling Assistant: Laura Messerschmitt\nHair & Makeup: Michael Mayer (Chanel Beauty)\nCreative Direction: Goetz Offergeld / OOR Studio"
           }
         },
-        "cannes": {
-          "type": "project",
+        "v_daydreaming_poetry": {
+          "type": "video",
           "settings": {
-            "title": "Cannes Film Festival",
-            "category": "Red Carpet",
-            "credits": "Styling: Laura Messerschmitt\nFestival de Cannes",
-            "layout_size": "medium",
-            "aspect_ratio": "landscape"
+            "youtube_id": "cXMqQgzVjvc",
+            "title": "Daydreaming — Poetry Edit",
+            "credits": "Styling: Laura Messerschmitt\nDesigner: Danny Reinke\nModel: Julia Rosa Peer"
           }
         },
-        "filmpreis": {
-          "type": "project",
+        "v_dance": {
+          "type": "video",
           "settings": {
-            "title": "Deutscher Filmpreis",
-            "category": "Red Carpet",
-            "credits": "Styling: Laura Messerschmitt\nGerman Film Award Ceremony",
-            "layout_size": "medium",
-            "aspect_ratio": "portrait"
+            "youtube_id": "IPGSxAMYsBc",
+            "title": "Dance — Music Video",
+            "credits": "Styling: Natalia Mueller\nStyling Assistant: Laura Messerschmitt\nArt Direction & Photography: Constantino Quero Simons\nMakeup: Einat Dan\nModel: Toni\nVideography: Vlad Marguilis"
           }
         }
       },
       "block_order": [
-        "berlinale_girley",
-        "wheres_wanda_premiere",
-        "daydreaming",
-        "berlinale_general",
-        "cannes",
-        "filmpreis"
+        "v_rebecca",
+        "v_daydreaming",
+        "v_body",
+        "v_girley",
+        "v_usha",
+        "v_streets",
+        "v_lea",
+        "v_daydreaming_poetry",
+        "v_dance"
       ],
       "settings": {
-        "label": "Red Carpet & Events",
+        "label": "Selected Work",
         "color_scheme": "scheme-1",
-        "grid_gap": 4,
         "padding_top": 80,
         "padding_bottom": 40
       }
@@ -333,9 +209,7 @@
   },
   "order": [
     "editorial_marquee_mMDwcX",
-    "editorial_gallery",
     "video-portfolio",
-    "red_carpet_gallery",
     "press_logos"
   ]
 }
