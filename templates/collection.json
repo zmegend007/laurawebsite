@@ -9,6 +9,63 @@
  */
 {
   "sections": {
+    "editorial_marquee_mnmwkF": {
+      "type": "editorial-marquee",
+      "blocks": {
+        "text_qWiipL": {
+          "type": "text",
+          "settings": {
+            "text": "Personal Styling"
+          }
+        },
+        "text_q4UDh9": {
+          "type": "text",
+          "settings": {
+            "text": "Designer Rental"
+          }
+        },
+        "text_bkmfwh": {
+          "type": "text",
+          "settings": {
+            "text": "Editorial"
+          }
+        },
+        "text_JnKawz": {
+          "type": "text",
+          "settings": {
+            "text": "Events"
+          }
+        },
+        "text_AWWiWi": {
+          "type": "text",
+          "settings": {
+            "text": "Red Carpet"
+          }
+        },
+        "text_RBQLnG": {
+          "type": "text",
+          "settings": {
+            "text": "Berlin"
+          }
+        }
+      },
+      "block_order": [
+        "text_qWiipL",
+        "text_q4UDh9",
+        "text_bkmfwh",
+        "text_JnKawz",
+        "text_AWWiWi",
+        "text_RBQLnG"
+      ],
+      "name": "Editorial Marquee",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": 50,
+        "reverse": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -39,6 +96,7 @@
     }
   },
   "order": [
+    "editorial_marquee_mnmwkF",
     "banner",
     "product-grid"
   ]
