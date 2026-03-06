@@ -145,11 +145,10 @@
     transform: translateY(-2px);
   }
 
-  /* Mobile: show poster, hide video for performance */
+  /* Mobile */
   @media screen and (max-width: 749px) {
     .video-hero { height: 100vh; }
-    .video-hero__video-desktop { display: none; }
-    .video-hero__poster { display: block; }
+    .video-hero__poster { display: none; }
     .video-hero__heading {
       letter-spacing: 0.12em;
     }
@@ -160,7 +159,6 @@
 
   @media screen and (min-width: 750px) {
     .video-hero__poster { display: none; }
-    .video-hero__video-desktop { display: block; }
   }
 {%- endstyle -%}
 
