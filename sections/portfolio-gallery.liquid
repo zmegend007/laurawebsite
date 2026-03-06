@@ -1,0 +1,690 @@
+{%- style -%}
+  .portfolio-gallery {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .portfolio-gallery__label {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .portfolio-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: {{ section.settings.grid_gap }}px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 990px) {
+    .portfolio-gallery__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .portfolio-gallery__grid {
+      gap: 3px;
+      padding: 0 3px;
+    }
+  }
+
+  /* Card */
+  .portfolio-gallery__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(var(--color-foreground), 0.03);
+  }
+
+  .portfolio-gallery__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  @media (max-width: 575px) {
+    .portfolio-gallery__item--large {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+
+  .portfolio-gallery__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 125%;
+    overflow: hidden;
+  }
+
+  .portfolio-gallery__item--landscape .portfolio-gallery__image-wrap {
+    padding-bottom: 75%;
+  }
+
+  .portfolio-gallery__item--square .portfolio-gallery__image-wrap {
+    padding-bottom: 100%;
+  }
+
+  .portfolio-gallery__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .portfolio-gallery__item:hover .portfolio-gallery__image {
+    transform: scale(1.03);
+  }
+
+  /* Category tag */
+  .portfolio-gallery__category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 10px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Hover overlay */
+  .portfolio-gallery__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .portfolio-gallery__item:hover .portfolio-gallery__overlay {
+    opacity: 1;
+  }
+
+  /* Mobile: tap to toggle */
+  .portfolio-gallery__item.is-tapped .portfolio-gallery__overlay {
+    opacity: 1;
+  }
+
+  .portfolio-gallery__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+
+  .portfolio-gallery__item--large .portfolio-gallery__title {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-gallery__credits {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .portfolio-gallery__year {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* Placeholder */
+  .portfolio-gallery__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-foreground), 0.04);
+    color: rgba(var(--color-foreground), 0.2);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── Lightbox ── */
+  .portfolio-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: lbFadeIn 0.3s ease forwards;
+  }
+
+  .portfolio-lightbox.is-active {
+    display: flex;
+  }
+
+  @keyframes lbFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .portfolio-lightbox__inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-lightbox__image {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+  }
+
+  .portfolio-lightbox__info {
+    text-align: center;
+    padding: 20px 0 0;
+    max-width: 600px;
+  }
+
+  .portfolio-lightbox__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
+
+  .portfolio-lightbox__credits {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+  }
+
+  .portfolio-lightbox__year {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 8px;
+  }
+
+  .portfolio-lightbox__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 8px;
+    transition: color 0.3s ease;
+  }
+
+  .portfolio-lightbox__close:hover {
+    color: #fff;
+  }
+
+  /* Navigation arrows */
+  .portfolio-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .portfolio-lightbox__nav:hover {
+    color: #fff;
+  }
+
+  .portfolio-lightbox__nav--prev {
+    left: -60px;
+  }
+
+  .portfolio-lightbox__nav--next {
+    right: -60px;
+  }
+
+  .portfolio-lightbox__nav svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 990px) {
+    .portfolio-lightbox__nav--prev { left: 8px; }
+    .portfolio-lightbox__nav--next { right: 8px; }
+    .portfolio-lightbox__close { top: 8px; right: 8px; }
+    .portfolio-lightbox__inner { max-width: 96vw; }
+  }
+
+  /* Link indicator */
+  .portfolio-gallery__link-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-gallery__item:hover .portfolio-gallery__link-icon {
+    opacity: 1;
+  }
+{%- endstyle -%}
+
+<section class="portfolio-gallery color-{{ section.settings.color_scheme }}" data-portfolio-gallery>
+  {% if section.settings.label != blank %}
+    <p class="portfolio-gallery__label bm-reveal">{{ section.settings.label }}</p>
+  {% endif %}
+
+  <div class="portfolio-gallery__grid">
+    {% for block in section.blocks %}
+      {% liquid
+        assign size_class = ''
+        if block.settings.layout_size == 'large'
+          assign size_class = 'portfolio-gallery__item--large'
+        endif
+        assign ratio_class = ''
+        if block.settings.aspect_ratio == 'landscape'
+          assign ratio_class = 'portfolio-gallery__item--landscape'
+        elsif block.settings.aspect_ratio == 'square'
+          assign ratio_class = 'portfolio-gallery__item--square'
+        endif
+      %}
+
+      <div
+        class="portfolio-gallery__item {{ size_class }} {{ ratio_class }}"
+        data-portfolio-item
+        data-index="{{ forloop.index0 }}"
+        {{ block.shopify_attributes }}
+      >
+        <div class="portfolio-gallery__image-wrap">
+          {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | image_url: width: 1200 }}"
+              alt="{{ block.settings.title | escape }}"
+              class="portfolio-gallery__image"
+              loading="lazy"
+              width="1200"
+              height="{{ 1200 | divided_by: block.settings.image.aspect_ratio | round }}"
+            >
+          {% else %}
+            <div class="portfolio-gallery__placeholder">
+              {{ block.settings.title | default: 'Coming Soon' }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.category != blank %}
+            <span class="portfolio-gallery__category">{{ block.settings.category }}</span>
+          {% endif %}
+
+          {% if block.settings.external_link != blank %}
+            <svg class="portfolio-gallery__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          {% endif %}
+
+          <div class="portfolio-gallery__overlay">
+            {% if block.settings.title != blank %}
+              <h3 class="portfolio-gallery__title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.credits != blank %}
+              <div class="portfolio-gallery__credits">{{ block.settings.credits | newline_to_br }}</div>
+            {% endif %}
+            {% if block.settings.year != blank %}
+              <div class="portfolio-gallery__year">{{ block.settings.year }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="portfolio-lightbox" data-portfolio-lightbox>
+  <div class="portfolio-lightbox__inner">
+    <button class="portfolio-lightbox__close" data-lb-close>Close</button>
+    <button class="portfolio-lightbox__nav portfolio-lightbox__nav--prev" data-lb-prev>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="portfolio-lightbox__nav portfolio-lightbox__nav--next" data-lb-next>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <img class="portfolio-lightbox__image" data-lb-image src="" alt="">
+    <div class="portfolio-lightbox__info">
+      <h3 class="portfolio-lightbox__title" data-lb-title></h3>
+      <div class="portfolio-lightbox__credits" data-lb-credits></div>
+      <div class="portfolio-lightbox__year" data-lb-year></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var gallery = document.querySelector('[data-portfolio-gallery]');
+    if (!gallery) return;
+
+    var items = gallery.querySelectorAll('[data-portfolio-item]');
+    var lightbox = document.querySelector('[data-portfolio-lightbox]');
+    var lbImage = lightbox.querySelector('[data-lb-image]');
+    var lbTitle = lightbox.querySelector('[data-lb-title]');
+    var lbCredits = lightbox.querySelector('[data-lb-credits]');
+    var lbYear = lightbox.querySelector('[data-lb-year]');
+    var currentIndex = 0;
+
+    /* Collect item data */
+    var itemData = [];
+    items.forEach(function(item) {
+      var img = item.querySelector('.portfolio-gallery__image');
+      var titleEl = item.querySelector('.portfolio-gallery__title');
+      var creditsEl = item.querySelector('.portfolio-gallery__credits');
+      var yearEl = item.querySelector('.portfolio-gallery__year');
+      var externalLink = item.closest('[data-portfolio-item]');
+
+      itemData.push({
+        src: img ? img.src.replace(/width=\d+/, 'width=1600') : '',
+        title: titleEl ? titleEl.textContent.trim() : '',
+        credits: creditsEl ? creditsEl.innerHTML : '',
+        year: yearEl ? yearEl.textContent.trim() : '',
+        hasImage: !!img
+      });
+    });
+
+    /* Mobile tap toggle */
+    var isTouchDevice = 'ontouchstart' in window;
+
+    items.forEach(function(item, i) {
+      item.addEventListener('click', function(e) {
+        if (isTouchDevice && !item.classList.contains('is-tapped')) {
+          e.preventDefault();
+          items.forEach(function(el) { el.classList.remove('is-tapped'); });
+          item.classList.add('is-tapped');
+          return;
+        }
+
+        /* Check for external link */
+        var block = item;
+        var linkEl = block.querySelector('.portfolio-gallery__link-icon');
+        /* Open lightbox if image exists */
+        if (itemData[i].hasImage) {
+          openLightbox(i);
+        }
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      var data = itemData[currentIndex];
+      if (!data) return;
+      lbImage.src = data.src;
+      lbImage.alt = data.title;
+      lbTitle.textContent = data.title;
+      lbCredits.innerHTML = data.credits;
+      lbYear.textContent = data.year;
+    }
+
+    function navigate(dir) {
+      var validIndices = [];
+      itemData.forEach(function(d, i) { if (d.hasImage) validIndices.push(i); });
+      var pos = validIndices.indexOf(currentIndex);
+      pos = (pos + dir + validIndices.length) % validIndices.length;
+      currentIndex = validIndices[pos];
+      updateLightbox();
+    }
+
+    /* Lightbox controls */
+    lightbox.querySelector('[data-lb-close]').addEventListener('click', closeLightbox);
+    lightbox.querySelector('[data-lb-prev]').addEventListener('click', function() { navigate(-1); });
+    lightbox.querySelector('[data-lb-next]').addEventListener('click', function() { navigate(1); });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('is-active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+
+    /* Touch swipe for lightbox */
+    var touchStartX = 0;
+    lightbox.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function(e) {
+      var diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        navigate(diff > 0 ? -1 : 1);
+      }
+    }, { passive: true });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Portfolio Gallery",
+  "tag": "section",
+  "class": "section-portfolio-gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Selected Works"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" },
+        { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" },
+        { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }
+      ],
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "Project",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Project title",
+          "default": "Project Title"
+        },
+        {
+          "type": "select",
+          "id": "category",
+          "label": "Category",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "Editorial", "label": "Editorial" },
+            { "value": "Red Carpet", "label": "Red Carpet" },
+            { "value": "Magazine", "label": "Magazine" },
+            { "value": "TV", "label": "TV" },
+            { "value": "Film", "label": "Film" },
+            { "value": "Behind The Scenes", "label": "Behind The Scenes" },
+            { "value": "Music Video", "label": "Music Video" }
+          ],
+          "default": "Editorial"
+        },
+        {
+          "type": "textarea",
+          "id": "credits",
+          "label": "Credits",
+          "info": "One credit per line",
+          "default": "Styling: Laura Messerschmitt"
+        },
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year"
+        },
+        {
+          "type": "select",
+          "id": "layout_size",
+          "label": "Layout size",
+          "options": [
+            { "value": "medium", "label": "Medium (1 col)" },
+            { "value": "large", "label": "Large (2 col)" }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "select",
+          "id": "aspect_ratio",
+          "label": "Aspect ratio",
+          "options": [
+            { "value": "portrait", "label": "Portrait (4:5)" },
+            { "value": "square", "label": "Square (1:1)" },
+            { "value": "landscape", "label": "Landscape (4:3)" }
+          ],
+          "default": "portrait"
+        },
+        {
+          "type": "url",
+          "id": "external_link",
+          "label": "External link (optional)",
+          "info": "Link to article, video, etc."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portfolio Gallery",
+      "blocks": [
+        {
+          "type": "project",
+          "settings": {
+            "title": "Project Title",
+            "category": "Editorial",
+            "credits": "Styling: Laura Messerschmitt",
+            "layout_size": "large"
+          }
+        },
+        {
+          "type": "project",
+          "settings": {
+            "title": "Project Title",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt"
+          }
+        },
+        {
+          "type": "project",
+          "settings": {
+            "title": "Project Title",
+            "category": "Magazine",
+            "credits": "Styling: Laura Messerschmitt"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20
+}
+{% endschema %}

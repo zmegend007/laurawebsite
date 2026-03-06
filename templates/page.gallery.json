@@ -9,17 +9,6 @@
  */
 {
   "sections": {
-    "about_Hg6Mwg": {
-      "type": "about",
-      "disabled": true,
-      "name": "About",
-      "settings": {
-        "heading": "SELECTED WORKS MULTIFORMAT",
-        "body": "<p>Explore the gallery by navigating this page that includes references to previous works, partnerships and much more</p>",
-        "cta_text": "Get in Touch",
-        "cta_url": ""
-      }
-    },
     "editorial_marquee_mMDwcX": {
       "type": "editorial-marquee",
       "blocks": {
@@ -77,6 +66,90 @@
         "padding_bottom": 0
       }
     },
+    "editorial_gallery": {
+      "type": "portfolio-gallery",
+      "blocks": {
+        "discover_germany": {
+          "type": "project",
+          "settings": {
+            "title": "Discover Germany — Julia Rosa Peer",
+            "category": "Magazine",
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Philipp Baben der Erde\nMakeup: Maria Soppa\nDesigners: Danny Reinke, Marcel Ostertag, Rudolphi Schmuck\nLocation: The Stue Hotel, Berlin",
+            "year": "2024",
+            "layout_size": "large",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "usha_rani": {
+          "type": "project",
+          "settings": {
+            "title": "Usha Rani — Actress Portrait",
+            "category": "Editorial",
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Alexey Kolbekhin\nMakeup: Natsumua\nModel: Usha Rani",
+            "year": "2024",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "body_model": {
+          "type": "project",
+          "settings": {
+            "title": "The Body Model — Eilina Karaj",
+            "category": "Editorial",
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Maryna Listrova\nMakeup: IK Makeup Artist\nModel: Eilina Karaj",
+            "year": "2024",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "fraulein": {
+          "type": "project",
+          "settings": {
+            "title": "Fräulein Magazin",
+            "category": "Magazine",
+            "credits": "Styling: Laura Messerschmitt",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "punkt12": {
+          "type": "project",
+          "settings": {
+            "title": "Punkt 12 — Style Section",
+            "category": "TV",
+            "credits": "Styling: Laura Messerschmitt\nRTL, Season 2",
+            "layout_size": "medium",
+            "aspect_ratio": "landscape"
+          }
+        },
+        "dance_mv": {
+          "type": "project",
+          "settings": {
+            "title": "Dance — Music Video",
+            "category": "Music Video",
+            "credits": "Styling: Natalia Mueller\nStyling Assistant: Laura Messerschmitt\nPhotography & Art Direction: Constantino Quero Simons\nMakeup & Art Direction: Einat Dan\nModel: Toni",
+            "year": "2024",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "discover_germany",
+        "usha_rani",
+        "body_model",
+        "fraulein",
+        "punkt12",
+        "dance_mv"
+      ],
+      "settings": {
+        "label": "Photo & Editorial",
+        "color_scheme": "scheme-1",
+        "grid_gap": 4,
+        "padding_top": 80,
+        "padding_bottom": 40
+      }
+    },
     "video-portfolio": {
       "type": "video-portfolio",
       "blocks": {
@@ -85,7 +158,7 @@
           "settings": {
             "youtube_id": "FN-Zt-6UO1FG3lyk",
             "title": "Where's Wanda — Apple TV+",
-            "credits": "Styling: Laura Messerschmitt",
+            "credits": "Styling: Laura Messerschmitt & Tabitha Araf\nActress: Lea Drinda\nDesigners: 032c, Bally, Bvlgari, Fendi, Ganni, Lou de Betoly\nBerlin Premiere, Delphi Filmpalast",
             "custom_thumbnail": "shopify://shop_images/image-480x314.jpg"
           }
         },
@@ -94,7 +167,7 @@
           "settings": {
             "youtube_id": "cXMqQgzVjvc",
             "title": "Daydreaming — Julia Rosa Peer",
-            "credits": "Styling: Laura Messerschmitt\nDesign: Danny Reinke"
+            "credits": "Styling: Laura Messerschmitt\nDesign: Danny Reinke\nModel: Julia Rosa Peer"
           }
         },
         "v3": {
@@ -102,36 +175,167 @@
           "settings": {
             "youtube_id": "s8-uOMDr1nI",
             "title": "The Body Model — Eilina Karaj",
-            "credits": "Styling: Laura Messerschmitt"
-          }
-        },
-        "video_GapyYd": {
-          "type": "video",
-          "disabled": true,
-          "settings": {
-            "youtube_id": "",
-            "title": "Project Title",
-            "credits": "Styling: Laura Messerschmitt"
+            "credits": "Styling: Laura Messerschmitt\nPhotography: Maryna Listrova\nMakeup: IK Makeup Artist\nModel: Eilina Karaj"
           }
         }
       },
       "block_order": [
         "v1",
         "v2",
-        "v3",
-        "video_GapyYd"
+        "v3"
       ],
       "settings": {
-        "label": "",
+        "label": "Video Work",
         "color_scheme": "scheme-1",
-        "padding_top": 120,
-        "padding_bottom": 24
+        "padding_top": 80,
+        "padding_bottom": 40
+      }
+    },
+    "red_carpet_gallery": {
+      "type": "portfolio-gallery",
+      "blocks": {
+        "berlinale_girley": {
+          "type": "project",
+          "settings": {
+            "title": "Berlinale — Girley Jazama",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt\nActress: Girley Jazama\nDesigner: Danny Reinke\nFilm: Der vermessene Mensch (Measures of Men)\nBerlinale Special, 73rd Berlin International Film Festival",
+            "year": "2023",
+            "layout_size": "large",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "wheres_wanda_premiere": {
+          "type": "project",
+          "settings": {
+            "title": "Where's Wanda? — Berlin Premiere",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt & Tabitha Araf\nActress: Lea Drinda\nDesigners: 032c, Bally, Bvlgari, Fendi, Ganni, Lou de Betoly\nApple TV+ Original Series\nDelphi Filmpalast, Berlin",
+            "year": "2024",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait",
+            "external_link": "https://www.vogue.de/galerie/wheres-wanda-apple-serie-premiere-berlin"
+          }
+        },
+        "daydreaming": {
+          "type": "project",
+          "settings": {
+            "title": "Daydreaming — Julia Rosa Peer",
+            "category": "Editorial",
+            "credits": "Styling: Laura Messerschmitt\nDesigner: Danny Reinke\nModel: Julia Rosa Peer\nLocation: Berlin",
+            "year": "2024",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "berlinale_general": {
+          "type": "project",
+          "settings": {
+            "title": "Berlinale",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt\nBerlin International Film Festival",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        },
+        "cannes": {
+          "type": "project",
+          "settings": {
+            "title": "Cannes Film Festival",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt\nFestival de Cannes",
+            "layout_size": "medium",
+            "aspect_ratio": "landscape"
+          }
+        },
+        "filmpreis": {
+          "type": "project",
+          "settings": {
+            "title": "Deutscher Filmpreis",
+            "category": "Red Carpet",
+            "credits": "Styling: Laura Messerschmitt\nGerman Film Award Ceremony",
+            "layout_size": "medium",
+            "aspect_ratio": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "berlinale_girley",
+        "wheres_wanda_premiere",
+        "daydreaming",
+        "berlinale_general",
+        "cannes",
+        "filmpreis"
+      ],
+      "settings": {
+        "label": "Red Carpet & Events",
+        "color_scheme": "scheme-1",
+        "grid_gap": 4,
+        "padding_top": 80,
+        "padding_bottom": 40
+      }
+    },
+    "press_logos": {
+      "type": "press-logos",
+      "blocks": {
+        "pub_vogue": {
+          "type": "publication",
+          "settings": {
+            "name": "Vogue Germany",
+            "link": ""
+          }
+        },
+        "pub_arte": {
+          "type": "publication",
+          "settings": {
+            "name": "arte magazin",
+            "link": ""
+          }
+        },
+        "pub_fraulein": {
+          "type": "publication",
+          "settings": {
+            "name": "Fräulein",
+            "link": ""
+          }
+        },
+        "pub_discover": {
+          "type": "publication",
+          "settings": {
+            "name": "Discover Germany",
+            "link": "https://www.discovergermany.com/julia-rosa-peer-i-knew-i-wanted-to-become-really-good-at-it/"
+          }
+        },
+        "pub_chicle": {
+          "type": "publication",
+          "settings": {
+            "name": "Chicle Magazine",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "pub_vogue",
+        "pub_arte",
+        "pub_fraulein",
+        "pub_discover",
+        "pub_chicle"
+      ],
+      "settings": {
+        "label": "As Seen In",
+        "logo_height": 38,
+        "wordmark_size": 1.4,
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
   "order": [
-    "about_Hg6Mwg",
     "editorial_marquee_mMDwcX",
-    "video-portfolio"
+    "editorial_gallery",
+    "video-portfolio",
+    "red_carpet_gallery",
+    "press_logos"
   ]
 }
