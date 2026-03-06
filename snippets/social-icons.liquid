@@ -40,6 +40,16 @@
       </a>
     </li>
   {%- endif -%}
+  {%- if settings.whatsapp_number != blank -%}
+    <li class="list-social__item">
+      <a href="https://wa.me/{{ settings.whatsapp_number }}" class="link list-social__link" target="_blank" rel="noopener">
+        <span class="svg-wrapper">
+          {{- 'icon-whatsapp.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">WhatsApp</span>
+      </a>
+    </li>
+  {%- endif -%}
   {%- if settings.social_tiktok_link != blank -%}
     <li class="list-social__item">
       <a href="{{ settings.social_tiktok_link }}" class="link list-social__link">
